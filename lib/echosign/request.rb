@@ -13,18 +13,23 @@ module Echosign::Request
     end
   end
 
-  BASE_URL = 'https://api.eu1.echosign.com/api/rest/v5'
-  REFRESH_URL = 'https://api.eu1.echosign.com/oauth/refresh'
+  BASE_URL = 'https://secure.echosign.com/api/rest/v5'
 
   ENDPOINT = { 
-    refresh: REFRESH_URL,
+    refresh: BASE_URL + '/oauth/refresh',
+    base_uri: BASE_URL + '/base_uris',
     user: BASE_URL + '/users',
     agreement: BASE_URL + '/agreements',
     mega_sign: BASE_URL + '/megaSigns',
     reminder: BASE_URL + '/reminders',
     transientDocument: BASE_URL + '/transientDocuments',
     libraryDocument: BASE_URL + '/libraryDocuments',
-    widget: BASE_URL + '/widgets'
+    widget: BASE_URL + '/widgets',
+    view: BASE_URL + '/views',
+    search: BASE_URL + '/search',
+    workflow: BASE_URL + '/workflows',
+    group: BASE_URL + '/groups',
+    megaSign: BASE_URL + '/megaSigns',
   }
 
   # Retrieves the authentication token
