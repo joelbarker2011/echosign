@@ -24,7 +24,12 @@ module Echosign::Request
     reminder: BASE_URL + '/reminders',
     transientDocument: BASE_URL + '/transientDocuments',
     libraryDocument: BASE_URL + '/libraryDocuments',
-    widget: BASE_URL + '/widgets'
+    widget: BASE_URL + '/widgets',
+    view: BASE_URL + '/views',
+    search: BASE_URL + '/search',
+    workflow: BASE_URL + '/workflows',
+    group: BASE_URL + '/groups',
+    megaSign: BASE_URL + '/megaSigns',
   }
 
   # Retrieves the authentication token
