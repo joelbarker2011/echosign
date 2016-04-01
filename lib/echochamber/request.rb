@@ -43,14 +43,9 @@ module Echochamber::Request
   # @param credentials [Echochamber::Credentials] Initialized Echochamber::Credentials
   # @return [String] Valid authentication token
   def self.get_token_from_refresh(credentials)
-    headers = {}
-    encoded_credentials = URI.encode_www_form(credentials)
-    credentials = {}
-    url = ENDPOINT.fetch(:refresh) + "?" + encoded_credentials
-
-    puts url
-    
-    response = post(url, credentials, headers)
+    headers = { :content_type => "application/x-www-form-urlencoded" }
+    credentials = URI.encode_www_form(credentials)
+    response = post(ENDPOINT.fetch(:refresh), credentials, headers)
     response_body = JSON.parse(response.body)
     response_body.fetch("accessToken")
   end

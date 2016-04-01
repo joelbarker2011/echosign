@@ -11,13 +11,14 @@ module Echochamber
     # @param email [String] User email 
     # @param password [String] User password
     # @return [Echochamber::Credentials] Echosign credentials
-    def initialize(client_id, client_secret)
+    def initialize(client_id, client_secret, grant_type, refresh_token)
 
       merge!(
       {
         :client_id => client_id,
         :client_secret => client_secret,
-        :grant_type => "refresh_token"
+        :grant_type => grant_type,
+        :refresh_token => refresh_token
       }
       )
     end
