@@ -43,7 +43,7 @@ module Echochamber::Request
   # @param credentials [Echochamber::Credentials] Initialized Echochamber::Credentials
   # @return [String] Valid authentication token
   def self.get_token_from_refresh(credentials)
-    headers = { :content_type => :json, :accept => :json  }
+    headers = { :content_type => "x-www-form-urlencoded", :accept => :json  }
     credentials = URI.encode_www_form(credentials)
     puts credentials
     puts headers
