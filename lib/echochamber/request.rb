@@ -43,7 +43,7 @@ module Echochamber::Request
   # @return [String] Valid authentication token
   def self.get_token_from_refresh(credentials)
     headers = { :content_type => :json, :accept => :json  }
-    response = post(ENDPOINT.fetch(:token), credentials, headers)
+    response = post(ENDPOINT.fetch(:refresh), credentials, headers)
     response_body = JSON.parse(response.body)
     response_body.fetch("accessToken")
   end
