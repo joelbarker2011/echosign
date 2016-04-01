@@ -14,10 +14,11 @@ module Echochamber::Request
   end
 
   BASE_URL = 'https://api.na1.echosign.com/api/rest/v5'
+  REFRESH_URL = 'https://api.na1.echosign.com/oauth/refresh'
 
   ENDPOINT = { 
     token: BASE_URL + '/auth/tokens',
-    refresh: BASE_URL + '/oauth/refresh',
+    refresh: REFRESH_URL,
     user: BASE_URL + '/users',
     agreement: BASE_URL + '/agreements',
     reminder: BASE_URL + '/reminders',
