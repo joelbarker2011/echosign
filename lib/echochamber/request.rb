@@ -45,6 +45,8 @@ module Echochamber::Request
   def self.get_token_from_refresh(credentials)
     headers = { :content_type => "application/x-www-form-urlencoded" }
     credentials = URI.encode_www_form(credentials)
+    puts credentials
+    puts headers
     response = post(ENDPOINT.fetch(:refresh), credentials, headers)
     response_body = JSON.parse(response.body)
     response_body.fetch("accessToken")
