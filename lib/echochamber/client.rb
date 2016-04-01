@@ -13,7 +13,7 @@ module Echochamber
     # @param credentials [Echochamber::Credentials] Initialized Echochamber::Credentials
     # @return [Echochamber::Client] Initialized Echochamber::Client 
     def initialize(credentials)
-      @token = Echochamber::Request.get_token(credentials)
+      @token = Echochamber::Request.get_token_from_refresh(credentials)
     end
 
     # Creates a user for the current application

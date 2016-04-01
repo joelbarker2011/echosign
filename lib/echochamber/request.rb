@@ -13,10 +13,11 @@ module Echochamber::Request
     end
   end
 
-  BASE_URL = 'https://secure.echosign.com/api/rest/v2'
+  BASE_URL = 'https://api.na1.echosign.com/api/rest/v5'
 
   ENDPOINT = { 
     token: BASE_URL + '/auth/tokens',
+    refresh: BASE_URL + '/oauth/refresh',
     user: BASE_URL + '/users',
     agreement: BASE_URL + '/agreements',
     reminder: BASE_URL + '/reminders',
@@ -30,6 +31,17 @@ module Echochamber::Request
   # @param credentials [Echochamber::Credentials] Initialized Echochamber::Credentials
   # @return [String] Valid authentication token
   def self.get_token(credentials)
+    headers = { :content_type => :json, :accept => :json  }
+    response = post(ENDPOINT.fetch(:token), credentials, headers)
+    response_body = JSON.parse(response.body)
+    response_body.fetch("accessToken")
+  end
+
+  # Retrieves the authentication token
+  #
+  # @param credentials [Echochamber::Credentials] Initialized Echochamber::Credentials
+  # @return [String] Valid authentication token
+  def self.get_token_from_refresh(credentials)
     headers = { :content_type => :json, :accept => :json  }
     response = post(ENDPOINT.fetch(:token), credentials, headers)
     response_body = JSON.parse(response.body)
