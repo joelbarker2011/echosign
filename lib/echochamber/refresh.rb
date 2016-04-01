@@ -14,9 +14,11 @@ module Echochamber
     def initialize(client_id, client_secret)
 
       merge!(
-        client_id: client_id,
-        client_secret: client_secret,
-        grant_type: "refresh_token"
+      {
+        :client_id => client_id,
+        :client_secret => client_secret,
+        :grant_type => "refresh_token"
+      }
       )
     end
 
