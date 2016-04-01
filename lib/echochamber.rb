@@ -3,7 +3,7 @@ require "echochamber/version"
 require 'echochamber/client'
 require 'echochamber/validatable'
 require 'echochamber/credentials'
-require 'echochamber/refresh_credentials'
+require 'echochamber/refresh'
 require 'echochamber/request'
 require 'echochamber/agreement'
 require 'echochamber/user'

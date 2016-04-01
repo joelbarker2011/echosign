@@ -1,5 +1,5 @@
 module Echochamber
-  class RefreshCredentials < Hash
+  class Refresh < Hash
 
     include Validatable
 
