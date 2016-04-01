@@ -46,7 +46,11 @@ module Echochamber::Request
     headers = {}
     encoded_credentials = URI.encode_www_form(credentials)
     credentials = {}
-    response = post(ENDPOINT.fetch(:refresh) + "?" + encoded_credentials, credentials, headers)
+    url = ENDPOINT.fetch(:refresh) + "?" + encoded_credentials
+
+    puts url
+    
+    response = post(url, credentials, headers)
     response_body = JSON.parse(response.body)
     response_body.fetch("accessToken")
   end
