@@ -11,7 +11,7 @@ module Echochamber
     # @param email [String] User email 
     # @param password [String] User password
     # @return [Echochamber::Credentials] Echosign credentials
-    def initialize(client_id, client_secret, grant_type)
+    def initialize(client_id, client_secret)
 
       merge!(
       {
