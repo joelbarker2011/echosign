@@ -14,7 +14,7 @@ module Echochamber
     def initialize(client_id, client_secret, grant_type, refresh_token)
 
       merge!(
-      query: {
+      {
         :client_id => client_id,
         :client_secret => client_secret,
         :refresh_token => refresh_token,
