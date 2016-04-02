@@ -8,7 +8,7 @@ module Echochamber::Request
   # @param user_email [String] Echosign user email
   # @return [Hash] Agreement response body
   def self.create_agreement(body, token, user_id=nil, user_email=nil)
-    headers = { "content_type" => :json, "accept" => :json, 'Access-Token' => token }
+    headers = { "content_type" => "json", "accept" => "json", 'Access-Token' => token }
     headers.merge!('X-User-Id' => user_id) unless user_id.nil?
     headers.merge!('X-User-Email' => user_email) unless user_email.nil?
     response = post(ENDPOINT.fetch(:agreement), body, headers)
@@ -20,7 +20,7 @@ module Echochamber::Request
   # @param token [String] Auth Token
   # @return [Hash] Agreements response body
   def self.get_agreements(token)
-    headers = { "accept" => :json, 'Access-Token' => token }
+    headers = { "accept" => "json", 'Access-Token' => token }
     response = get(ENDPOINT.fetch(:agreement), headers)
     JSON.parse(response.body)
   end
@@ -31,7 +31,7 @@ module Echochamber::Request
   # @param agreement_id [String] ID of agreement to retrieve info on.
   # @return [Hash] Agreement info response body
   def self.agreement_info(token, agreement_id)
-    headers = { "accept" => :json, 'Access-Token' => token }
+    headers = { "accept" => "json", 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement)}/#{agreement_id}"
     response = get(endpoint, headers)
     JSON.parse(response.body)
@@ -105,7 +105,7 @@ module Echochamber::Request
   # @param version_id [String] Version of the agreement as provided by {agreement_info agreement_info}.  If not provided, the latest version of the agreement is used.
   # @return [Hash] Agreement documents response body
   def self.agreement_documents(token, agreement_id, recipient_email=nil, format=nil, version_id=nil)
-    headers = { "accept" => :json, 'Access-Token' => token }
+    headers = { "accept" => "json", 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement)}/#{agreement_id}/documents"
     endpoint << add_query(endpoint, "versionId=#{version_id}") unless version_id.nil?
     endpoint << add_query(endpoint, "participantEmail=#{recipient_email}") unless version_id.nil?
@@ -122,7 +122,7 @@ module Echochamber::Request
   # @param request_body [Hash] Hash for Agreement status update
   # @return [Hash] Agreements response body
   def self.update_agreement_status(token, agreement_id, request_body)
-    headers = { "content_type" => :json, "accept" => :json, 'Access-Token' => token }
+    headers = { "content_type" => "json", "accept" => "json", 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement)}/#{agreement_id}/status"
 
     begin
