@@ -12,7 +12,7 @@ module Echochamber::Request
     headers.merge!('X-User-Email' => user_email) unless user_email.nil?
     endpoint = ENDPOINT.fetch(:libraryDocument)
     response = get(endpoint, headers)
-    JSON.parse(response)
+    JSON.parse(response.body)
   end
 
   # Retrieves library document metadata for a user.
@@ -24,7 +24,7 @@ module Echochamber::Request
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:libraryDocument)}/#{library_document_id}"
     response = get(endpoint, headers)
-    JSON.parse(response)
+    JSON.parse(response.body)
   end
 
   # Retrieves library document file
@@ -36,7 +36,7 @@ module Echochamber::Request
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:libraryDocument)}/#{library_document_id}/documents"
     response = get(endpoint, headers)
-    JSON.parse(response)
+    JSON.parse(response.body)
   end
 
   # Retrieves library document file data
