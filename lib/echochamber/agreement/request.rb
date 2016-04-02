@@ -20,7 +20,7 @@ module Echochamber::Request
   # @param token [String] Auth Token
   # @return [Hash] Agreements response body
   def self.get_agreements(token)
-    headers = { "accept" => "json", 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     response = get(ENDPOINT.fetch(:agreement), headers)
     JSON.parse(response.body)
   end
