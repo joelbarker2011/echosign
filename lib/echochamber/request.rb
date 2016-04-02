@@ -141,8 +141,8 @@ module Echochamber::Request
   def self.post(endpoint, body, headers)
     begin
       HTTParty.post(
-        endpoint, 
-        body.to_json, 
+        endpoint,
+        body, 
         headers
       )
     rescue Exception => error
