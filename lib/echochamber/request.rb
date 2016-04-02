@@ -142,8 +142,8 @@ module Echochamber::Request
     begin
       HTTParty.post(
         endpoint,
-        body, 
-        headers
+        query: body, 
+        headers: headers
       )
     rescue Exception => error
       raise_error(error)
