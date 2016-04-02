@@ -131,7 +131,7 @@ module Echochamber::Request
     begin
       HTTParty.get(
         endpoint, 
-        headers
+        headers: headers
       )
     rescue Exception => error
       raise_error(error)
