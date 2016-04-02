@@ -35,7 +35,7 @@ module Echochamber::Request
     headers = { :content_type => :json, :accept => :json  }
     response = post(ENDPOINT.fetch(:token), credentials, headers)
     response_body = JSON.parse(response.body)
-    response_body.fetch("accessToken")
+    response_body.fetch("access_token")
   end
 
   # Retrieves the authentication token
@@ -47,7 +47,7 @@ module Echochamber::Request
     headers = {}
     response = post(ENDPOINT.fetch(:refresh), credentials, headers)
     response_body = JSON.parse(response.body)
-    response_body.fetch("accessToken")
+    response_body.fetch("access_token")
   end
 
   # Performs REST create_user operation
