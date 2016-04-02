@@ -138,12 +138,11 @@ module Echochamber::Request
     end
   end
 
-  def self.post(endpoint, body, headers)
+  def self.post(endpoint, body)
     begin
       HTTParty.post(
         endpoint,
-        body, 
-        headers
+        body
       )
     rescue Exception => error
       raise_error(error)
@@ -156,7 +155,7 @@ module Echochamber::Request
 
   def self.raise_error(error)
     puts error
-    message = "#{error.inspect}.  \nSee Adobe Echosign REST API documentation for Error code meanings: https://secure.echosign.com/public/docs/restapi/v2"
+    message = "#{error.inspect}.  \nSee Adobe Echosign REST API documentation for Error code meanings: https://secure.echosign.com/public/docs/restapi/v5"
     raise Failure.new message, error
   end
 
