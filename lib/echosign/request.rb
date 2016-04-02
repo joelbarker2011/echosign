@@ -1,7 +1,7 @@
 require 'httparty'
-require 'echochamber/agreement/request'
-require 'echochamber/library_documents/request'
-require 'echochamber/widget/request'
+require 'echosign/agreement/request'
+require 'echosign/library_documents/request'
+require 'echosign/widget/request'
 
 module Echosign::Request
   class Failure < StandardError

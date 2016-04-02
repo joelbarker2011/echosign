@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'echochamber/version'
+require 'echosign/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "echochamber"
+  spec.name          = "echosign"
   spec.version       = Echosign::VERSION
   spec.authors       = ["Cath Thomas"]
   spec.email         = ["cthomas@railjumper.com"]
   spec.summary       = %q{Package summary}
   spec.description   = %q{A ruby gem that simplifies the use of Adobe's EchoSign web API.}
-  spec.homepage      = "http://github.com/kayagoban/echochamber"
+  spec.homepage      = "http://github.com/kayagoban/echosign"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

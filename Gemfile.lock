@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    echochamber (1.0.1)
+    echosign (1.0.1)
       faraday
       json
       rest-client
@@ -79,7 +79,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.6)
-  echochamber!
+  echosign!
   factory_girl
   hitch
   pry

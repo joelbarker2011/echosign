@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-require 'echochamber/validatable'
+require 'echosign/validatable'
 
 describe Echosign::Validatable do
 

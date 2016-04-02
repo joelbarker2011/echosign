@@ -1,9 +1,9 @@
-require 'echochamber/widget/widget_completion_info'
-require 'echochamber/widget/widget_security_option'
-require 'echochamber/widget/widget_signer_security_option'
-require 'echochamber/widget/widget_vaulting_info'
-require 'echochamber/widget/widget_personalization'
-require 'echochamber/widget/widget_status'
+require 'echosign/widget/widget_completion_info'
+require 'echosign/widget/widget_security_option'
+require 'echosign/widget/widget_signer_security_option'
+require 'echosign/widget/widget_vaulting_info'
+require 'echosign/widget/widget_personalization'
+require 'echosign/widget/widget_status'
 
 module Echosign
   class Widget < Hash

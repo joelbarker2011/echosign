@@ -1,6 +1,6 @@
-require 'echochamber/agreement/fileinfo'
-require 'echochamber/agreement/url_file_info'
-require 'echochamber/agreement/recipient'
+require 'echosign/agreement/fileinfo'
+require 'echosign/agreement/url_file_info'
+require 'echosign/agreement/recipient'
 
 module Echosign
   class Agreement < Hash

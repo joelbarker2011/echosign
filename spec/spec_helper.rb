@@ -3,7 +3,7 @@ require 'bundler/setup'
 require 'webmock/rspec'
 require 'vcr'
 require 'factory_girl'
-require 'echochamber'
+require 'echosign'
 require 'pry'
  
 Bundler.setup

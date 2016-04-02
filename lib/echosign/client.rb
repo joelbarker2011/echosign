@@ -1,6 +1,6 @@
-require 'echochamber/agreement/client'
-require 'echochamber/library_documents/client'
-require 'echochamber/widget/client'
+require 'echosign/agreement/client'
+require 'echosign/library_documents/client'
+require 'echosign/widget/client'
 
 
 module Echosign
