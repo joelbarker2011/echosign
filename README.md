@@ -25,7 +25,7 @@ It wouldn't hurt to read Adobe's [Echosign API documentation](https://secure.ech
 ```
 require 'echosign'
 
-credentials = Echosign::Credentials.new(app_id, app_secret, api_key, email, password)
+credentials = Echosign::Refresh.new(app_id, app_secret, refresh_token, grant_type)
 
 client = Echosign::Client.new(credentials)
 ```
