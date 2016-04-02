@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://secure.echosign.com/api/rest/v2/widgets
+    uri: https://secure.echosign.com/api/rest/v5/widgets
     body:
       encoding: US-ASCII
       string: ''

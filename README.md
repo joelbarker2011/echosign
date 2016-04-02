@@ -1,7 +1,7 @@
 echosign
 ===========
 
-Ruby Gem to consume Adobe's EchoSign e-signature service - REST service v2
+Ruby Gem to consume Adobe's EchoSign e-signature service - REST service v5
 
 
 ## Installation
@@ -12,11 +12,11 @@ gem install echosign
 
 ## Documentation
 
-The bulk of the API is on the [Echosign::Client class](http://rdoc.info/github/kayagoban/echosign/frames/Echosign/Client)
+The bulk of the API is on the [Echosign::Client class](http://rdoc.info/github/bernardworthy/echosign/frames/Echosign/Client)
 
-You can read Echosign's full [API Documentation](http://rdoc.info/github/kayagoban/echosign/frames)
+You can read Echosign's full [API Documentation](http://rdoc.info/github/bernardworthy/echosign/frames)
 
-It also wouldn't hurt to read Adobe's [Echosign API documentation](https://secure.echosign.com/public/docs/restapi/v2)
+It also wouldn't hurt to read Adobe's [Echosign API documentation](https://secure.echosign.com/public/docs/restapi/v5)
 
 ## Usage
 

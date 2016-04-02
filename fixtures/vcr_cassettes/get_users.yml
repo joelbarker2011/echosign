@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://secure.echosign.com/api/rest/v2/users?x-user-email=cthomas@railjumper.com
+    uri: https://secure.echosign.com/api/rest/v5/users?x-user-email=cthomas@railjumper.com
     body:
       encoding: US-ASCII
       string: ''
@@ -36,8 +36,8 @@ http_interactions:
       - application/json;charset=UTF-8
     body:
       encoding: UTF-8
-      string: '{"userInfoList":[{"company":"Independent Contractor","email":"cthomas@railjumper.com","fullNameOrEmail":"Cath
-        Thomas","groupId":"2AAABLblqZhDdodmWvyN9d2EEVcCrev1zLJa_frF9npGySVp6C7Vksvyj8l6H5L873v29BKj403E*","userId":"2AAABLblqZhBp6sZ412RCo4_5P1OCDATcuKQf3gzb7M-kea77rqC7h6kzMKSpofswP8rY9Cwv9Vw*"}]}'
+      string: '{"userInfoList":[{"company":"Independent Contractor","email":"cthomas@railjumper.com","fullNameOrEmail":"Bernard
+        Worthy","groupId":"2AAABLblqZhDdodmWvyN9d2EEVcCrev1zLJa_frF9npGySVp6C7Vksvyj8l6H5L873v29BKj403E*","userId":"2AAABLblqZhBp6sZ412RCo4_5P1OCDATcuKQf3gzb7M-kea77rqC7h6kzMKSpofswP8rY9Cwv9Vw*"}]}'
     http_version: 
   recorded_at: Tue, 19 Aug 2014 22:52:34 GMT
 recorded_with: VCR 2.8.0

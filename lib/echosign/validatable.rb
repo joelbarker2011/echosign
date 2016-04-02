@@ -25,7 +25,7 @@ module Echosign
       raise ParameterError, "Exactly one of #{field_group.to_s} should be present" if set_fields != 1
     end
 
-    # TODO (kayagoban) A validator accepting a block for conditional execution
+    # TODO (bernardworthy) A validator accepting a block for conditional execution
     # might be useful.  
     # Maybe require_keys should accept a block.  Figure out later.
 
