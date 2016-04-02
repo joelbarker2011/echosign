@@ -1,4 +1,4 @@
-require 'rest-client'
+require 'httparty'
 require 'echochamber/agreement/request'
 require 'echochamber/library_documents/request'
 require 'echochamber/widget/request'
@@ -85,7 +85,7 @@ module Echochamber::Request
     headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
 
     begin
-      response = RestClient.post( 
+      response = HTTParty.post( 
                                  ENDPOINT.fetch(:transientDocument), 
                                  { 'File-Name' => file_name, 
                                    'Mime-Type' => mime_type, 
@@ -129,7 +129,7 @@ module Echochamber::Request
 
   def self.get(endpoint, headers)
     begin
-      RestClient.get(
+      HTTParty.get(
         endpoint, 
         headers
       )
@@ -140,7 +140,7 @@ module Echochamber::Request
 
   def self.post(endpoint, body, headers)
     begin
-      RestClient.post(
+      HTTParty.post(
         endpoint, 
         body.to_json, 
         headers
