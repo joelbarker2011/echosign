@@ -22,7 +22,8 @@ module Echochamber::Request
   def self.get_agreements(token)
     headers = { "accept" => "json", 'Access-Token' => token }
     response = get(ENDPOINT.fetch(:agreement), headers)
-    JSON.parse(response)
+    puts response
+    JSON.parse(response.body) : nil
   end
 
   # Performs REST GET /agreement/:id operation
