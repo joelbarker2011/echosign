@@ -8,7 +8,7 @@ module Echochamber::Request
   # @param user_email [String] Echosign user email
   # @return [Hash] Agreement response body
   def self.create_agreement(body, token, user_id=nil, user_email=nil)
-    headers = { "content_type" => "json", 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     headers.merge!('X-User-Id' => user_id) unless user_id.nil?
     headers.merge!('X-User-Email' => user_email) unless user_email.nil?
     response = post(ENDPOINT.fetch(:agreement), body, headers)
@@ -122,11 +122,11 @@ module Echochamber::Request
   # @param request_body [Hash] Hash for Agreement status update
   # @return [Hash] Agreements response body
   def self.update_agreement_status(token, agreement_id, request_body)
-    headers = { "content_type" => "json", 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement)}/#{agreement_id}/status"
 
     begin
-      response = RestClient.put(
+      response = HTTParty.put(
         endpoint, 
         request_body.to_json,
         headers

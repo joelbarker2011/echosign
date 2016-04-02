@@ -32,7 +32,7 @@ module Echochamber::Request
   # @param credentials [Echochamber::Credentials] Initialized Echochamber::Credentials
   # @return [String] Valid authentication token
   def self.get_token(credentials)
-    headers = { :content_type => :json, :accept => :json  }
+    headers = {}
     response = post(ENDPOINT.fetch(:token), credentials, headers)
     response_body = JSON.parse(response.body)
     response_body.fetch("access_token")
@@ -57,7 +57,7 @@ module Echochamber::Request
   # @return [Hash] New user response body
   def self.create_user(body, token)
     endpoint = ENDPOINT.fetch(:user) 
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token}
+    headers = { 'Access-Token' => token}
     response = post(endpoint, body, headers)
     JSON.parse(response.body)
   end
@@ -69,7 +69,7 @@ module Echochamber::Request
   # @return [Hash] Response body
   def self.create_reminder(token, body)
   endpoint = ENDPOINT.fetch(:reminder)
-  headers = { :content_type => :json, :accept => :json, 'Access-Token' => token}
+  headers = { 'Access-Token' => token}
   response = post(endpoint, body, headers)
   JSON.parse(response.body)
   end
@@ -82,7 +82,7 @@ module Echochamber::Request
   # @param mime_type [String] Mime type
   # @return [Hash] Transient Document Response Body
   def self.create_transient_document(token, file_name, file_handle, mime_type=nil)
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
 
     begin
       response = HTTParty.post( 

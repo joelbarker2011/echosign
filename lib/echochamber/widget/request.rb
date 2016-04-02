@@ -7,7 +7,7 @@ module Echochamber::Request
   # @return [Hash]
   def self.create_widget(token, widget)
     endpoint = ENDPOINT.fetch(:widget) 
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token}
+    headers = { 'Access-Token' => token}
     headers.merge!('X-User-Id' => widget.user_id) unless widget.user_id.nil?
     headers.merge!('X-User-Email' => widget.user_email) unless widget.user_email.nil?
     response = post(endpoint, widget, headers)
@@ -21,11 +21,11 @@ module Echochamber::Request
   # @param personalization [Echochamber::WidgetPersonalization]
   # @return [Hash] Response body
   def self.personalize_widget(token, widget_id, personalization)
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget)}/#{widget_id}/personalize"
 
     begin
-      response = RestClient.put(
+      response = HTTParty.put(
         endpoint, 
         personalization.to_json,
         headers
@@ -44,11 +44,11 @@ module Echochamber::Request
   # @param status [Echochamber::WidgetStatus]
   # @return [Hash] Response body
   def self.update_widget_status(token, widget_id, status)
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget)}/#{widget_id}/status"
 
     begin
-      response = RestClient.put(
+      response = HTTParty.put(
         endpoint, 
         status.to_json,
         headers 
@@ -67,7 +67,7 @@ module Echochamber::Request
   # @param user_email [String]
   # @return [Hash] Response body
   def self.get_widgets(token, user_id=nil, user_email=nil)
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     headers.merge!('X-User-Id' => user_id) unless user_id.nil?
     headers.merge!('X-User-Email' => user_email) unless user_email.nil?
     endpoint = "#{ENDPOINT.fetch(:widget)}"
@@ -80,7 +80,7 @@ module Echochamber::Request
   # @param widget_id [String]
   # @return [Hash] Response body
   def self.get_widget(token, widget_id)
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget)}/#{widget_id}"
     response = get(endpoint, headers)
     JSON.parse(response.body)
@@ -91,7 +91,7 @@ module Echochamber::Request
   # @param widget_id [String]
   # @return [Hash] Response body
   def self.get_widget_documents(token, widget_id, version_id=nil, participant_email=nil)
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget)}/#{widget_id}/documents"
     endpoint << add_query(endpoint, "versionId=#{version_id}") unless version_id.nil?
     endpoint << add_query(endpoint, "participantEmail=#{participant_email}") unless participant_email.nil?
@@ -104,7 +104,7 @@ module Echochamber::Request
   # @param widget_id [String]
   # @return [Hash] Response body
   def self.get_widget_document_file(token, widget_id, document_id)
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget)}/#{widget_id}/documents/#{document_id}"
     response = get(endpoint, headers)
   end
@@ -114,7 +114,7 @@ module Echochamber::Request
   # @param widget_id [String]
   # @return [Hash] Response body
   def self.get_widget_audit_trail(token, widget_id)
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget)}/#{widget_id}/auditTrail"
     response = get(endpoint, headers)
   end
@@ -124,7 +124,7 @@ module Echochamber::Request
   # @param widget_id [String]
   # @return [Hash] Response body
   def self.get_widget_form_data(token, widget_id)
-    headers = { :content_type => :json, :accept => :json, 'Access-Token' => token }
+    headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget)}/#{widget_id}/formData"
     response = get(endpoint, headers)
   end
