@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'echochamber/validatable'
 
-describe Echochamber::Validatable do
+describe Echosign::Validatable do
 
   let(:first_name)  { "John" }
   let(:last_name)   { "Public" }
@@ -17,7 +17,7 @@ describe Echochamber::Validatable do
 
   let(:validatable_object) do
     class Foo 
-      include Echochamber::Validatable  
+      include Echosign::Validatable  
     end
     Foo.new
   end 
@@ -30,7 +30,7 @@ describe Echochamber::Validatable do
       it "raises an invalid parameter error" do
         expect do 
           validatable_object.validate_field(first_name, params)
-        end.to raise_error(Echochamber::RequiredParameterError)
+        end.to raise_error(Echosign::RequiredParameterError)
       end
     end
 
@@ -40,7 +40,7 @@ describe Echochamber::Validatable do
       it "raises an invalid parameter error" do
         expect do 
           validatable_object.validate_field(first_name, params)
-        end.to raise_error(Echochamber::RequiredParameterError)
+        end.to raise_error(Echosign::RequiredParameterError)
       end
 
     end
@@ -49,7 +49,7 @@ describe Echochamber::Validatable do
       it "raises an invalid parameter error" do
         expect do 
           validatable_object.validate_field([:unknown_field], params)
-        end.to raise_error(Echochamber::RequiredParameterError)
+        end.to raise_error(Echosign::RequiredParameterError)
       end
     end
 
@@ -75,7 +75,7 @@ describe Echochamber::Validatable do
       it 'it raises an error' do
         expect do 
           validatable_object.require_keys(required_fields.push(:unknown_field), params)
-        end.to raise_error(Echochamber::RequiredParameterError)
+        end.to raise_error(Echosign::RequiredParameterError)
       end
     end
   end
@@ -85,7 +85,7 @@ describe Echochamber::Validatable do
       it 'it raises an error' do
         expect do 
           validatable_object.require_exactly_one([:firstName, :lastName], params)
-        end.to raise_error(Echochamber::ParameterError)
+        end.to raise_error(Echosign::ParameterError)
       end
     end
 
@@ -93,7 +93,7 @@ describe Echochamber::Validatable do
       it 'it raises an error' do
         expect do 
           validatable_object.require_exactly_one([:unknown_field], params)
-        end.to raise_error(Echochamber::ParameterError)
+        end.to raise_error(Echosign::ParameterError)
       end
     end
 

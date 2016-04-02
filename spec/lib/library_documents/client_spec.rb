@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Echochamber::Client do
+describe Echosign::Client do
   include_context "shared client"
 
   describe '.get_library_documents' do

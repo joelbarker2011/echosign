@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Echochamber::Client do
+describe Echosign::Client do
   include_context "shared client"
 
   describe '.create_widget' do
@@ -15,19 +15,19 @@ describe Echochamber::Client do
 
     let(:file_info_params) do
       { 
-        documentURL: Echochamber::UrlFileInfo.new(url_file_info_params) 
+        documentURL: Echosign::UrlFileInfo.new(url_file_info_params) 
       }
     end
 
     let(:widget_params) do
       {
         signatureFlow: 'SENDER_SIGNS_LAST',
-        fileInfos: [ Echochamber::Fileinfo.new(file_info_params) ],
+        fileInfos: [ Echosign::Fileinfo.new(file_info_params) ],
         name: 'Test widget'
       }
     end 
 
-    let(:widget) { Echochamber::Widget.new(nil, nil, widget_params) }
+    let(:widget) { Echosign::Widget.new(nil, nil, widget_params) }
 
     it 'returns widget info' do
       VCR.use_cassette('create_widget', :record => :once) do
@@ -44,7 +44,7 @@ describe Echochamber::Client do
         email: "cthomas@railjumper.com"
       }
     end
-    let(:personalization) { Echochamber::WidgetPersonalization.new(personalization_params) }
+    let(:personalization) { Echosign::WidgetPersonalization.new(personalization_params) }
 
     it 'returns widget info' do
       VCR.use_cassette('personalize_widget', :record => :once) do
@@ -62,7 +62,7 @@ describe Echochamber::Client do
         message: 'Hey guys, hope you like this widget.'
       }
     end
-    let(:status) { Echochamber::WidgetStatus.new(status_params) }
+    let(:status) { Echosign::WidgetStatus.new(status_params) }
 
     it 'returns widget info' do
       VCR.use_cassette('update_widget_status', :record => :once) do

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Echochamber do
+describe Echosign do
   it 'returns a version string' do
-    expect(Echochamber::VERSION).to be_a String 
+    expect(Echosign::VERSION).to be_a String 
   end
 end

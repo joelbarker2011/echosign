@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'lib/shared_client.rb'
 
-describe Echochamber::Client do
+describe Echosign::Client do
   include_context "shared client"
 
   describe '.create_user' do
@@ -14,7 +14,7 @@ describe Echochamber::Client do
         title:      'Hedge Wizard'
       }
     end
-    let (:user) { Echochamber::User.new(user_params) }
+    let (:user) { Echosign::User.new(user_params) }
 
     it 'returns the User ID' do
       VCR.use_cassette('create_user', :record => :once) do
@@ -49,7 +49,7 @@ describe Echochamber::Client do
         agreementId: "2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*", 
         comment: "Hey don't forget..." 
     } }
-    let(:reminder) { Echochamber::Reminder.new(reminderInfo) }
+    let(:reminder) { Echosign::Reminder.new(reminderInfo) }
 
     it 'returns result'  do
       VCR.use_cassette('create_reminder', :record => :once) do
@@ -73,6 +73,6 @@ describe Echochamber::Client do
   end
 
 
-end # describe Echochamber::Client
+end # describe Echosign::Client
 
 

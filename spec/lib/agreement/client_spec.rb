@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'lib/shared_client.rb'
 
-describe Echochamber::Client do
+describe Echosign::Client do
   include_context "shared client"
 
   describe '.create_agreement' do
@@ -17,12 +17,12 @@ describe Echochamber::Client do
 
     let(:file_info) do
       { 
-        documentURL: Echochamber::UrlFileInfo.new(url_file_info) 
+        documentURL: Echosign::UrlFileInfo.new(url_file_info) 
       }
     end
 
     let(:file_infos) do
-      [ Echochamber::Fileinfo.new(file_info) ] 
+      [ Echosign::Fileinfo.new(file_info) ] 
     end
 
     let(:agreement_user_id) { nil } 
@@ -31,14 +31,14 @@ describe Echochamber::Client do
     let(:agreement_info) do
       {
         fileInfos: [ file_infos ],
-        recipients: [ Echochamber::Recipient.new({ role: 'SIGNER', email: 'goishi.san@gmail.com'})],
+        recipients: [ Echosign::Recipient.new({ role: 'SIGNER', email: 'goishi.san@gmail.com'})],
         signatureFlow: "SENDER_SIGNS_LAST",
         signatureType: "ESIGN",
         name: "Rumplestiltskin Contract"
       }
     end
 
-    let(:agreement)  { Echochamber::Agreement.new(agreement_user_id, agreement_user_email, agreement_info) }
+    let(:agreement)  { Echosign::Agreement.new(agreement_user_id, agreement_user_email, agreement_info) }
 
     it 'returns the agreement_id' do
       VCR.use_cassette('create_agreement', :record => :once) do

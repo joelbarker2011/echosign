@@ -12,9 +12,9 @@ gem install echochamber
 
 ## Documentation
 
-The bulk of the API is on the [Echochamber::Client class](http://rdoc.info/github/kayagoban/echochamber/frames/Echochamber/Client)
+The bulk of the API is on the [Echosign::Client class](http://rdoc.info/github/kayagoban/echochamber/frames/Echosign/Client)
 
-You can read Echochamber's full [API Documentation](http://rdoc.info/github/kayagoban/echochamber/frames)
+You can read Echosign's full [API Documentation](http://rdoc.info/github/kayagoban/echochamber/frames)
 
 It also wouldn't hurt to read Adobe's [Echosign API documentation](https://secure.echosign.com/public/docs/restapi/v2)
 
@@ -25,9 +25,9 @@ It also wouldn't hurt to read Adobe's [Echosign API documentation](https://secur
 ```
 require 'echochamber'
 
-credentials = Echochamber::Credentials.new(app_id, app_secret, api_key, email, password)
+credentials = Echosign::Credentials.new(app_id, app_secret, api_key, email, password)
 
-client = Echochamber::Client.new(credentials)
+client = Echosign::Client.new(credentials)
 ```
 
 #### Setting up a new agreement from a URL 
@@ -40,7 +40,7 @@ url_file_params = {
 }
 
 file_info_params = {
-     documentURL: Echochamber::UrlFileInfo.new(url_file_params) 
+     documentURL: Echosign::UrlFileInfo.new(url_file_params) 
 }
 
 recipient_params = {
@@ -48,14 +48,14 @@ recipient_params = {
 }
 
 agreement_info_params = {
-     fileInfos:       [ Echochamber::Fileinfo.new(file_info_params) ],
-     recipients:      [ Echochamber::Recipient.new(recipient_params)],
+     fileInfos:       [ Echosign::Fileinfo.new(file_info_params) ],
+     recipients:      [ Echosign::Recipient.new(recipient_params)],
      signatureFlow:   "SENDER_SIGNS_LAST",
      signatureType:   "ESIGN",
      name:            "Rumplestiltskin Contract"
 }
 
-agreement = Echochamber::Agreement.new(sender_id, sender_email, agreement_info) 
+agreement = Echosign::Agreement.new(sender_id, sender_email, agreement_info) 
 
 agreement_id = client.create_agreement(agreement)
 ```
@@ -75,7 +75,7 @@ user_params = {
       title:      'Hedge Wizard'
 }
 
-user = Echochamber::User.new(user_params)
+user = Echosign::User.new(user_params)
 
 user_id = client.create_user(user)
 ```

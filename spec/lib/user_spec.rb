@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Echochamber::User do
+describe Echosign::User do
 
 end
  
