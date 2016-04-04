@@ -1,4 +1,4 @@
-echosign Lauren is Hot
+echosign
 ===========
 
 Ruby Gem to consume Adobe's EchoSign e-signature service - REST service v5
