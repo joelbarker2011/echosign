@@ -30,12 +30,147 @@ module Echosign
     # @option params [Echosign::WidgetMergefieldInfo] :mergeFieldInfo  Optional default values for fields to merge into the document. The values will be presented to the signers for editable fields; for read-only fields the provided values will not be editable during the signing process. Merging data into fields is currently not supported when used with libraryDocumentId or libraryDocumentName. Only file and url are curently supported
     # @option params [Echosign::WidgetCompletionInfo] :widgetAuthFailureInfo URL and associated properties for the error page the user will be taken after failing to authenticate 
     # @option params [Echosign::WidgetSignerSecurityOption] :widgetSignerSecurityOptions Security options that apply to widget signers
-    def initialize(user_id=nil, user_email=nil, params)
-      require_keys([:name, :fileInfos, :signatureFlow], params)
+    def initialize(user_id=nil, user_email=nil, name, fileInfos, signatureFlow, widget_completion_info)
+      # require_keys([:name, :fileInfos, :signatureFlow], params)
       @user_id = user_id
       @user_email = user_email
+
+      # {
+      #   "widgetCreationInfo": {
+      #     "widgetCompletionInfo": {
+      #       "deframe": false,
+      #       "delay": 0,
+      #       "url": ""
+      #     },
+      #     "widgetAuthFailureInfo": {
+      #       "deframe": false,
+      #       "delay": 0,
+      #       "url": ""
+      #     },
+      #     "mergeFieldInfo": [
+      #       {
+      #         "fieldName": "",
+      #         "defaultValue": ""
+      #       }
+      #     ],
+      #     "formFieldLayerTemplates": [
+      #       {
+      #         "transientDocumentId": "",
+      #         "libraryDocumentId": "",
+      #         "libraryDocumentName": "",
+      #         "documentURL": {
+      #           "name": "",
+      #           "url": "",
+      #           "mimeType": ""
+      #         }
+      #       }
+      #     ],
+      #     "securityOptions": {
+      #       "passwordProtection": {
+      #         "ALL_USERS": "enum",
+      #         "EXTERNAL_USERS": "enum",
+      #         "NONE": "enum",
+      #         "INTERNAL_USERS": "enum"
+      #       },
+      #       "kbaProtection": {
+      #         "ALL_USERS": "enum",
+      #         "EXTERNAL_USERS": "enum",
+      #         "NONE": "enum",
+      #         "INTERNAL_USERS": "enum"
+      #       },
+      #       "webIdentityProtection": {
+      #         "ALL_USERS": "enum",
+      #         "EXTERNAL_USERS": "enum",
+      #         "NONE": "enum",
+      #         "INTERNAL_USERS": "enum"
+      #       },
+      #       "protectOpen": false,
+      #       "internalPassword": "",
+      #       "externalPassword": "",
+      #       "openPassword": ""
+      #     },
+      #     "fileInfos": [
+      #       {
+      #         "transientDocumentId": "",
+      #         "libraryDocumentId": "",
+      #         "libraryDocumentName": "",
+      #         "documentURL": {
+      #           "name": "",
+      #           "url": "",
+      #           "mimeType": ""
+      #         }
+      #       }
+      #     ],
+      #     "counterSignerSetInfos": [
+      #       {
+      #         "counterSignerSetRole": {
+      #           "SIGNER": "enum",
+      #           "DELEGATE_TO_SIGNER": "enum",
+      #           "DELEGATE_TO_APPROVER": "enum",
+      #           "APPROVER": "enum"
+      #         },
+      #         "counterSignerSetMemberInfos": [
+      #           {
+      #             "securityOptions": [
+      #               {
+      #                 "authenticationMethod": {
+      #                   "PHONE": "enum",
+      #                   "INHERITED_FROM_DOCUMENT": "enum",
+      #                   "KBA": "enum",
+      #                   "WEB_IDENTITY": "enum",
+      #                   "PASSWORD": "enum",
+      #                   "NONE": "enum"
+      #                 },
+      #                 "phoneInfos": [
+      #                   {
+      #                     "phone": "",
+      #                     "countryCode": ""
+      #                   }
+      #                 ],
+      #                 "password": ""
+      #               }
+      #             ],
+      #             "email": ""
+      #           }
+      #         ]
+      #       }
+      #     ],
+      #     "callbackInfo": "",
+      #     "widgetSignerSecurityOptions": {
+      #       "authenticationMethod": {
+      #         "PHONE": "enum",
+      #         "INHERITED_FROM_DOCUMENT": "enum",
+      #         "KBA": "enum",
+      #         "WEB_IDENTITY": "enum",
+      #         "PASSWORD": "enum",
+      #         "NONE": "enum"
+      #       },
+      #       "phoneInfos": [
+      #         {
+      #           "phone": "",
+      #           "countryCode": ""
+      #         }
+      #       ],
+      #       "password": ""
+      #     },
+      #     "name": "",
+      #     "locale": "",
+      #     "vaultingInfo": {
+      #       "enabled": false
+      #     },
+      #     "signatureFlow": ""
+      #   }
+      # }
       
-      merge!({ widgetCreationInfo: params })
+      merge!({ 
+        widgetCreationInfo: {
+          name,
+          fileInfos, 
+          signatureFlow, 
+          widget_completion_info,
+
+        } 
+      })
     end
 
   end
