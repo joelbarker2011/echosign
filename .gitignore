@@ -2,4 +2,4 @@
 .yardoc
 .yardoc/*
 .DS_Store
-doc
+/doc
