@@ -10,8 +10,8 @@ module Echosign
     attr_reader :token
     # Initializes the Client object
     #
-    # @param credentials [String] Integration key
-    # @return [Echochamber::Client] Initialized Echochamber::Client 
+    # @param credentials [String] Access token or integration key
+    # @return [Echosign::Client] Initialized Echosign::Client 
     def initialize(credentials)
       @token = credentials
     end
