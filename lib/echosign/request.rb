@@ -32,17 +32,6 @@ module Echosign::Request
     megaSign: BASE_URL + '/megaSigns',
   }
 
-  # Retrieves the authentication token
-  #
-  # @param credentials [Echosign::Credentials] Initialized Echosign::Credentials
-  # @return [String] Valid authentication token
-  def self.get_token(credentials)
-    headers = {}
-    response = post(ENDPOINT.fetch(:refresh), credentials, headers)
-    response_body = JSON.parse(response.body)
-    response_body.fetch("access_token")
-  end
-
   # Performs REST create_user operation
   #
   # @param body [Hash] Valid request body
