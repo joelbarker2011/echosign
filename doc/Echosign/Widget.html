@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
   Class: Echosign::Widget
   
-    &mdash; Documentation by YARD 0.9.16
+    &mdash; Documentation by YARD 0.8.7.4
   
 </title>
 
@@ -15,8 +15,9 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Echosign::Widget";
+  hasFrames = window.top.frames.main ? true : false;
   relpath = '../';
+  framesUrl = "../frames.html#!Echosign/Widget.html";
 </script>
 
 
@@ -27,48 +28,51 @@
 
   </head>
   <body>
-    <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html?1"></iframe>
-      <div id="resizer"></div>
-    </div>
-
-    <div id="main" tabindex="-1">
-      <div id="header">
-        <div id="menu">
+    <div id="header">
+      <div id="menu">
   
     <a href="../_index.html">Index (W)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span>
      &raquo; 
     <span class="title">Widget</span>
   
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-        <div id="search">
+      <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../class_list.html">
-
-        <svg width="24" height="24">
-          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
-        </svg>
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
     </a>
   
 </div>
-        <div class="clear"></div>
-      </div>
+      <div class="clear"></div>
+    </div>
 
-      <div id="content"><h1>Class: Echosign::Widget
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Echosign::Widget
   
   
   
 </h1>
-<div class="box_info">
+
+<dl class="box">
   
-  <dl>
-    <dt>Inherits:</dt>
-    <dd>
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
       <span class="inheritName">Hash</span>
       
         <ul class="fullTree">
@@ -81,42 +85,37 @@
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
       
-    </dd>
-  </dl>
-  
-
+      </dd>
+    
   
   
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Validatable.html" title="Echosign::Validatable (module)">Validatable</a></span></dd>
+      
+    
   
   
-  <dl>
-      <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="Validatable.html" title="Echosign::Validatable (module)">Validatable</a></span></dd>
-  </dl>
   
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/echosign/widget.rb</dd>
   
-
-  
-
-  
-  <dl>
-    <dt>Defined in:</dt>
-    <dd>lib/echosign/widget.rb</dd>
-  </dl>
-  
-</div>
+</dl>
+<div class="clear"></div>
 
 
 
 
 
-  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
   <ul class="summary">
     
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#user_email-instance_method" title="#user_email (instance method)">#<strong>user_email</strong>  &#x21d2; Object </a>
+      <a href="#user_email-instance_method" title="#user_email (instance method)">- (Object) <strong>user_email</strong> </a>
     
 
     
@@ -145,7 +144,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#user_id-instance_method" title="#user_id (instance method)">#<strong>user_id</strong>  &#x21d2; Object </a>
+      <a href="#user_id-instance_method" title="#user_id (instance method)">- (Object) <strong>user_id</strong> </a>
     
 
     
@@ -179,7 +178,7 @@
   
     <h2>
       Instance Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
     </h2>
 
     <ul class="summary">
@@ -187,7 +186,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(user_id = nil, user_email = nil, name, fileInfos, signatureFlow, widget_completion_info)  &#x21d2; Widget </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Widget) <strong>initialize</strong>(user_id = nil, user_email = nil, params) </a>
     
 
     
@@ -231,7 +230,7 @@
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(user_id = nil, user_email = nil, name, fileInfos, signatureFlow, widget_completion_info)  &#x21d2; <tt><span class='object_link'><a href="" title="Echosign::Widget (class)">Widget</a></span></tt> 
+    - (<tt><span class='object_link'><a href="" title="Echosign::Widget (class)">Widget</a></span></tt>) <strong>initialize</strong>(user_id = nil, user_email = nil, params) 
   
 
   
@@ -329,12 +328,195 @@ access token.</p>
     
     
     
-    
-    
-    
-    
-    
-    
+    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:name</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The name of the widget that will be used to identify it, in emails and on
+the website (REQUIRED)</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:fileInfos</span>
+          <span class="type">(<tt>Array</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Populate with instances of <span class='object_link'><a href="Fileinfo.html" title="Echosign::Fileinfo (class)">Echosign::Fileinfo</a></span>.  A list
+of one or more files (or references to files) that will be used to create
+the widget. If more than one file is provided, they will be combined before
+the widget is created. Library documents are not permitted. Note: Only one
+of the four parameters in every Fileinfo object must be specified
+(REQUIRED)</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:formFieldLayerTemplates</span>
+          <span class="type">(<tt>Array</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Populate with instances of <span class='object_link'><a href="Fileinfo.html" title="Echosign::Fileinfo (class)">Echosign::Fileinfo</a></span>. 
+Specifies the form field layer template or source of form fields to apply
+on the files in this transaction. If specified, the FileInfo for this
+parameter must refer to a form field layer template via libraryDocumentId
+or libraryDocumentName, or if specified via transientDocumentId or
+documentURL, it must be of a supported file type. Note: Only one of the
+four parameters in every FileInfo object must be specified.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:widgetCompletionInfo</span>
+          <span class="type">(<tt><span class='object_link'><a href="WidgetCompletionInfo.html" title="Echosign::WidgetCompletionInfo (class)">Echosign::WidgetCompletionInfo</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>URL and associated properties for the success page the user will be taken
+to after filling out the widget</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:callbackInfo</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>A publicly accessible url to which EchoSign will perform an HTTP PUT
+operation with the final signed PDF file. HTTP authentication is supported
+using standard embedded syntax - i.e. <a
+href="http://username:password@your.server.com/path/to/file">username:password@your.server.com/path/to/file</a>.
+EchoSign can also communicate with your system using HTTP GET, every time
+there is a new agreement event. Please contact support@echosign.com if you
+wish to use this option.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:securityOptions</span>
+          <span class="type">(<tt><span class='object_link'><a href="WidgetSecurityOption.html" title="Echosign::WidgetSecurityOption (class)">Echosign::WidgetSecurityOption</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Sets optional secondary security parameters for your widget</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:locale</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The locale associated with this widget - specifies the language for the
+signing page and emails, for example en_US or fr_FR. If none specified,
+defaults to the language configured for the widget creator</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:counterSigners</span>
+          <span class="type">(<tt><span class='object_link'><a href="CounterSignerInfo.html" title="Echosign::CounterSignerInfo (class)">Echosign::CounterSignerInfo</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>A list of one or more counter signers</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:vaultingInfo</span>
+          <span class="type">(<tt><span class='object_link'><a href="WidgetVaultingInfo.html" title="Echosign::WidgetVaultingInfo (class)">Echosign::WidgetVaultingInfo</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Sets the vaulting properties that allows EchoSign to securely store
+documents with a vault provider</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:mergeFieldInfo</span>
+          <span class="type">(<tt>Echosign::WidgetMergefieldInfo</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional default values for fields to merge into the document. The values
+will be presented to the signers for editable fields; for read-only fields
+the provided values will not be editable during the signing process.
+Merging data into fields is currently not supported when used with
+libraryDocumentId or libraryDocumentName. Only file and url are curently
+supported</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:widgetAuthFailureInfo</span>
+          <span class="type">(<tt><span class='object_link'><a href="WidgetCompletionInfo.html" title="Echosign::WidgetCompletionInfo (class)">Echosign::WidgetCompletionInfo</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>URL and associated properties for the error page the user will be taken
+after failing to authenticate</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:widgetSignerSecurityOptions</span>
+          <span class="type">(<tt><span class='object_link'><a href="WidgetSignerSecurityOption.html" title="Echosign::WidgetSignerSecurityOption (class)">Echosign::WidgetSignerSecurityOption</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Security options that apply to widget signers</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
 
 
 </div><table class="source_code">
@@ -488,9 +670,9 @@ access token.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget.rb', line 33</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_fileInfos'>fileInfos</span><span class='comma'>,</span> <span class='id identifier rubyid_signatureFlow'>signatureFlow</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_completion_info'>widget_completion_info</span><span class='rparen'>)</span>
-  <span class='comment'># require_keys([:name, :fileInfos, :signatureFlow], params)
-</span>  <span class='ivar'>@user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_user_id'>user_id</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_keys'>require_keys</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:fileInfos</span><span class='comma'>,</span> <span class='symbol'>:signatureFlow</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='ivar'>@user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_user_id'>user_id</span>
   <span class='ivar'>@user_email</span> <span class='op'>=</span> <span class='id identifier rubyid_user_email'>user_email</span>
 
   <span class='comment'># {
@@ -622,10 +804,10 @@ access token.</p>
 </span>  
   <span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='lbrace'>{</span> 
     <span class='label'>widgetCreationInfo:</span> <span class='lbrace'>{</span>
-      <span class='label'>name:</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span>
-      <span class='label'>fileInfos:</span> <span class='id identifier rubyid_fileInfos'>fileInfos</span><span class='comma'>,</span> 
-      <span class='label'>signatureFlow:</span> <span class='id identifier rubyid_signatureFlow'>signatureFlow</span><span class='comma'>,</span>
-      <span class='label'>widgetCompletion_Info:</span> <span class='id identifier rubyid_widget_completion_info'>widget_completion_info</span>
+      <span class='label'>name:</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>fileInfos:</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:fileInfos</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>signatureFlow:</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:signatureFlow</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>widgetCompletion_Info:</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:widget_completion_info</span><span class='rbracket'>]</span>
     <span class='rbrace'>}</span>
   <span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -644,7 +826,7 @@ access token.</p>
       <div class="method_details first">
   <h3 class="signature first" id="user_email-instance_method">
   
-    #<strong>user_email</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+    - (<tt>Object</tt>) <strong>user_email</strong>  <span class="extras">(readonly)</span>
   
 
   
@@ -687,7 +869,7 @@ access token.</p>
       <div class="method_details ">
   <h3 class="signature " id="user_id-instance_method">
   
-    #<strong>user_id</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+    - (<tt>Object</tt>) <strong>user_id</strong>  <span class="extras">(readonly)</span>
   
 
   
@@ -730,12 +912,11 @@ access token.</p>
 
 </div>
 
-      <div id="footer">
-  Generated on Fri Sep  7 16:13:49 2018 by
+    <div id="footer">
+  Generated on Sat Sep  8 17:29:45 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.6.0).
+  0.8.7.4 (ruby-2.6.0).
 </div>
 
-    </div>
   </body>
 </html>
