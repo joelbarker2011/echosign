@@ -1,0 +1,4 @@
+CLIENT_ID     = "ALPVWXBO6WG6GZ"
+CLIENT_SECRET = "88sqiuq8t0z9j1qfmkta0tp9updjwcqd"
+REDIRECT_URI  = "https://example.com/path/to/somewhere"
+SCOPES        = "agreement_read:account agreement_write:account agreement_send:account"
