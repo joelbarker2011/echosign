@@ -30,4 +30,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "json", "~> 1"
   spec.add_dependency "httparty", "~> 0.16"
+  spec.add_dependency "oauth2", "~> 1"
 end
