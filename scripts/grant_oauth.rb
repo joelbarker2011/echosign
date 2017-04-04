@@ -6,7 +6,7 @@ gem 'httplog'
 require 'oauth2'
 require 'httplog'
 
-require './oauth_config'
+require_relative './oauth_config'
 
 if CLIENT_ID == ''
   puts 'Please fill out oauth_config.yml with your application details.'
