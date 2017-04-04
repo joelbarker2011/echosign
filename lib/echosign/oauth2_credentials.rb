@@ -11,6 +11,7 @@ module Echosign
     REFRESH_PATH = '/oauth/refresh'
 
     attr_reader :access_token, :refresh_token, :expires_at
+    attr_accessor :client
 
     # Builds an OAuth2Credentials object
     #
