@@ -19,14 +19,16 @@ module Echosign
     # @param client_secret [String] Client secret
     #
     # @return [Echosign::OAuth2Credentials] Echosign OAuth2 wrapper object
-    def initialize(client_id, client_secret)
+    def initialize(client_id, client_secret, raise_errors = true)
 
       @client = OAuth2::Client.new(
         client_id,
         client_secret,
         site: OAUTH_SITE,
         authorize_url: AUTHORIZE_PATH,
-        token_url: TOKEN_PATH)
+        token_url: TOKEN_PATH,
+        raise_errors: raise_errors
+      )
     end
 
     # Build an authorization endpoint URL for EchoSign's OAuth2 provider
@@ -50,8 +52,8 @@ module Echosign
 
     # Make a request to the token endpoint and return an access token
     #
-    # @param redirect_uri [String] The redirect_url used furing #authorize_url
     # @param code [String] The authorization code obtained after #authorize_url
+    # @param redirect_uri [String] The redirect_url used furing #authorize_url
     #
     # @return [String] An access token that can be used in the EchoSign API
     def get_token(code, redirect_uri)
@@ -78,20 +80,18 @@ module Echosign
     def refresh_token(current_refresh_token = nil)
       @refresh_token = current_refresh_token if current_refresh_token != nil
       opts = {
-        raise_errors: true,
         headers: {
           'Content-Type' => 'application/x-www-form-urlencoded',
         },
         body: {
           'grant_type' => 'refresh_token',
           'refresh_token' => @refresh_token,
+          'client_id' => @client.id,
+          'client_secret' => @client.secret
         }
       }
 
       response = @client.request(:post, REFRESH_PATH, opts)
-
-      error = OAuth::Error.new(response)
-      @client.fail(error) if !(response.parsed.is_a?(Hash) && response.parsed['access_token'])
 
       @access_token = response.parsed['access_token']
       @expires_at = Time.now + response.parsed['expires_in']
