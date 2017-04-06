@@ -54,13 +54,15 @@ module Echosign
     # @param code [String] The authorization code obtained after #authorize_url
     #
     # @return [String] An access token that can be used in the EchoSign API
-    def get_token(redirect_uri, code)
+    def get_token(code, redirect_uri)
       
-      response = @client.get_token(code, redirect_uri: redirect_uri)
+      oauth_token = @client.get_token(code: code,
+                                   redirect_uri: redirect_uri,
+                                   grant_type: 'authorization_code')
 
-      @access_token = response.access_token
-      @refresh_token = response.refresh_token
-      @expires_at = Time.now + response.expires_in
+      @access_token = oauth_token.token
+      @refresh_token = oauth_token.refresh_token
+      @expires_at = oauth_token.expires_at
 
       return @access_token
 
