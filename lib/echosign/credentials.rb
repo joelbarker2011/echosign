@@ -74,7 +74,7 @@ module Echosign
     # @return [String] A new access token to be used in the EchoSign API
     #
     # This method should only be called after #get_token
-    def refresh_token(current_refresh_token = nil)
+    def refresh_access_token(current_refresh_token = nil)
       @refresh_token = current_refresh_token if current_refresh_token != nil
       opts = {
         raise_errors: true,
