@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    echosign (1.0.2)
+    echosign (1.1.7)
       httparty
       json
 

@@ -13,7 +13,7 @@ module Echosign::Request
     end
   end
 
-  BASE_URL = 'https://secure.na1.echosign.com/api/rest/v5'
+  BASE_URL = 'https://secure.na2.echosign.com/api/rest/v5'
 
   ENDPOINT = { 
     refresh: BASE_URL + '/oauth/refresh',
