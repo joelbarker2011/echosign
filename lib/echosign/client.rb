@@ -5,13 +5,13 @@ require 'echosign/widget/client'
 
 module Echosign
 
-  class Client 
+  class Client
 
     attr_reader :token
     # Initializes the Client object
     #
     # @param credentials [Echosign::Credentials] Initialized Echosign::Credentials
-    # @return [Echosign::Client] Initialized Echosign::Client 
+    # @return [Echosign::Client] Initialized Echosign::Client
     def initialize(credentials)
       @token = Echosign::Request.get_token(credentials)
     end
@@ -25,7 +25,7 @@ module Echosign
       user_response.fetch("userId")
     end
 
-    # Creates a reminder 
+    # Creates a reminder
     #
     # @param reminder [Echosign::Reminder]
     # @return [String] Reminder ID
@@ -35,9 +35,9 @@ module Echosign
 
     # Creates a transient document for later referral
     #
-    # @param file_name [String] 
-    # @param mime_type [String] 
-    # @param file_handle [File] 
+    # @param file_name [String]
+    # @param mime_type [String]
+    # @param file_handle [File]
     # @return [String] Transient document ID
     def create_transient_document(file_name, mime_type, file_handle)
       transient_document_response = Echosign::Request.create_transient_document(token, file_name, file_handle, mime_type)
@@ -61,7 +61,7 @@ module Echosign
 
 
     # Gets all the users in an account that the caller has permissions to access.
-    # 
+    #
     # @param user_email [String] The email address of the user whose details are being requested  (REQUIRED)
     # @return [Hash] User info hash
     def get_users(user_email)
@@ -69,7 +69,7 @@ module Echosign
     end
 
     # Gets all the users in an account that the caller has permissions to access.
-    # 
+    #
     # @param user_id [String]
     # @return [Hash] User info hash
     def get_user(user_id)
@@ -77,6 +77,6 @@ module Echosign
     end
 
 
-  end # class Client 
+  end # class Client
 
 end # module Echosign
