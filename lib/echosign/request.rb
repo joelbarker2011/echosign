@@ -124,13 +124,17 @@ module Echosign::Request
   end
 
   def self.post(endpoint, body, headers, options = {})
+    option = {json:false}.merge(options)
     #puts "[Echosign] #{endpoint}"
     #puts "[Echosign] #{headers}" if headers.present?
     #puts "[Echosign] #{body}"
     begin
+      if options[:json]
+        headers.merge!('Content-Type' => 'application/json')
+        body = body.to_json if body.is_a?(Hash)
+      end
       response = HTTParty.post(endpoint, body: body, headers: headers, debug_output:$stdout)
       #puts response
-      #puts response.body
       response
     rescue Exception => error
       raise_error(error)
