@@ -16,6 +16,28 @@ module Echosign
       @token = Echosign::Request.get_token(credentials)
     end
 
+    # Send an agreement operation from a file
+    # This creates a transient document first, then creates the agreement
+    #
+    # @param body [Hash] Request body  (REQUIRED)
+    # @param token [String] Auth token  (REQUIRED)
+    # @param user_id [String] Echosign user ID  (REQUIRED)
+    # @param user_email [String] Echosign user email
+    # @return [Hash] Agreement response body
+    def create_agreement_from_file(agreement_name, recipient_email, file_name, options = {})
+      document_id = create_transient_document(File.basename(file_name), MIME::Types.type_for(file_name).first.content_type, file_name)
+      raise "Could not create transient document from #{file_name}" if document_id.blank?
+      agreement_info = {
+          fileInfos: [ Echosign::Fileinfo.new(transientDocumentId:document_id) ],
+          recipientSetInfos: [ Echosign::Recipient.new(role: 'SIGNER', email: recipient_email) ],
+          signatureFlow: options[:signatureFlow] || options[:signature_flow] || "SENDER_SIGNATURE_NOT_REQUIRED",
+          signatureType: "ESIGN",
+          name: agreement_name}
+      agreement = Echosign::Agreement.new(nil, nil, agreement_info)
+      create_agreement(agreement)
+    end
+
+
     # Creates a user for the current application
     #
     # @param user [Echosign::User]
