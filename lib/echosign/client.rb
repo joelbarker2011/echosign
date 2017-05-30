@@ -16,13 +16,33 @@ module Echosign
       @token = Echosign::Request.get_token(credentials)
     end
 
-    # Send an agreement operation from a file
+
+    # Send an agreement a library document
     # This creates a transient document first, then creates the agreement
     #
-    # @param body [Hash] Request body  (REQUIRED)
-    # @param token [String] Auth token  (REQUIRED)
-    # @param user_id [String] Echosign user ID  (REQUIRED)
-    # @param user_email [String] Echosign user email
+    # @param agreement_name [String] The display name of the agreement (REQUIRED)
+    # @param recipient_email [String] The recipient of the document to sign
+    # @param library_document_Id [String] The library document id (created via the web interface)
+    # @param options [Hash] Options for agreement - eg: {signatureFlow:'SENDER_SIGNATURE_NOT_REQUIRED'}
+    # @return [Hash] Agreement response body
+    def create_agreement_from_library(agreement_name, recipient_email, library_document_Id, options = {})
+      agreement_info = {
+          fileInfos: [ Echosign::Fileinfo.new(libraryDocumentId:library_document_Id) ],
+          recipientSetInfos: [ Echosign::Recipient.new(role: 'SIGNER', email: recipient_email) ],
+          signatureFlow: options[:signatureFlow] || options[:signature_flow] || "SENDER_SIGNATURE_NOT_REQUIRED",
+          signatureType: "ESIGN",
+          name: agreement_name}
+      agreement = Echosign::Agreement.new(nil, nil, agreement_info)
+      create_agreement(agreement)
+    end
+
+    # Send an agreement from a file
+    # This creates a transient document first, then creates the agreement
+    #
+    # @param agreement_name [String] The display name of the agreement (REQUIRED)
+    # @param recipient_email [String] The recipient of the document to sign
+    # @param file_name [String] The full path to the file to upload & send
+    # @param options [Hash] Options for agreement - eg: {signatureFlow:'SENDER_SIGNATURE_NOT_REQUIRED'}
     # @return [Hash] Agreement response body
     def create_agreement_from_file(agreement_name, recipient_email, file_name, options = {})
       document_id = create_transient_document(File.basename(file_name), MIME::Types.type_for(file_name).first.content_type, file_name)
@@ -36,7 +56,6 @@ module Echosign
       agreement = Echosign::Agreement.new(nil, nil, agreement_info)
       create_agreement(agreement)
     end
-
 
     # Creates a user for the current application
     #
