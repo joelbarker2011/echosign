@@ -24,6 +24,7 @@ module Echosign
     # @param recipient_email [String] The recipient of the document to sign
     # @param library_document_Id [String] The library document id (created via the web interface)
     # @param options [Hash] Options for agreement - eg: {signatureFlow:'SENDER_SIGNATURE_NOT_REQUIRED'}
+    #                       To give mergeFieldInfo, pass a hash with key 'merge_field_info', eg: {merge_field_info: {company:'Acme', full_name:'Dave Coaches'}
     # @return [Hash] Agreement response body
     def create_agreement_from_library(agreement_name, recipient_email, library_document_Id, options = {})
       agreement_info = {
@@ -31,7 +32,13 @@ module Echosign
           recipientSetInfos: [ Echosign::Recipient.new(role: 'SIGNER', email: recipient_email) ],
           signatureFlow: options[:signatureFlow] || options[:signature_flow] || "SENDER_SIGNATURE_NOT_REQUIRED",
           signatureType: "ESIGN",
-          name: agreement_name}
+          name: agreement_name,
+        }
+
+      if options[:merge_field_info].present?
+        agreement_info[:mergeFieldInfo] = options[:merge_field_info].map { |key, value| {fieldName:key, defaultValue:value} }
+      end
+
       agreement = Echosign::Agreement.new(nil, nil, agreement_info)
       create_agreement(agreement)
     end
@@ -43,6 +50,7 @@ module Echosign
     # @param recipient_email [String] The recipient of the document to sign
     # @param file_name [String] The full path to the file to upload & send
     # @param options [Hash] Options for agreement - eg: {signatureFlow:'SENDER_SIGNATURE_NOT_REQUIRED'}
+    #                       To give mergeFieldInfo, pass a hash with key 'merge_field_info', eg: {merge_field_info: {company:'Acme', full_name:'Dave Coaches'}
     # @return [Hash] Agreement response body
     def create_agreement_from_file(agreement_name, recipient_email, file_name, options = {})
       document_id = create_transient_document(File.basename(file_name), MIME::Types.type_for(file_name).first.content_type, file_name)
@@ -52,7 +60,13 @@ module Echosign
           recipientSetInfos: [ Echosign::Recipient.new(role: 'SIGNER', email: recipient_email) ],
           signatureFlow: options[:signatureFlow] || options[:signature_flow] || "SENDER_SIGNATURE_NOT_REQUIRED",
           signatureType: "ESIGN",
-          name: agreement_name}
+          name: agreement_name
+        }
+
+      if options[:merge_field_info].present?
+        agreement_info[:mergeFieldInfo] = options[:merge_field_info].map { |key, value| {fieldName:key, defaultValue:value} }
+      end
+
       agreement = Echosign::Agreement.new(nil, nil, agreement_info)
       create_agreement(agreement)
     end
