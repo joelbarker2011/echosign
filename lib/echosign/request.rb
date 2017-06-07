@@ -133,7 +133,7 @@ module Echosign::Request
         headers.merge!('Content-Type' => 'application/json')
         body = body.to_json if body.is_a?(Hash)
       end
-      response = HTTParty.post(endpoint, body: body, headers: headers, debug_output:$stdout)
+      response = HTTParty.post(endpoint, body: body, headers: headers)
       #puts response
       response
     rescue Exception => error
