@@ -5,13 +5,10 @@ module Echosign
 
     # Builds a Credentials object
     #
-    # @param app_id [String] Application key
-    # @param app_secret [String] Application secret
-    # @param api_key [String] API Key
-    # @param email [String] User email 
-    # @param password [String] User password
-    # @return [Echosign::Credentials] Echosign credentials
-    def initialize(client_id, client_secret, grant_type, refresh_token)
+    # @param client_id [String] Application key
+    # @param client_secret [String] Application secret
+    # @param refresh_token [String] OAuth Refresh Token
+    def initialize(client_id, client_secret, refresh_token)
 
       merge!(
       {
