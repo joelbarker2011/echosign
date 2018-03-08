@@ -11,7 +11,9 @@ module Echosign::Request
     headers = { 'Access-Token' => token }
     headers.merge!('X-User-Id' => user_id) unless user_id.nil?
     headers.merge!('X-User-Email' => user_email) unless user_email.nil?
-    response = post(ENDPOINT.fetch(:agreement), body, headers)
+    headers.merge!('Content-Type' => "application/json")
+    response = HTTParty.post(ENDPOINT.fetch(:agreement), :body => body.to_json,
+    :headers => headers)
     JSON.parse(response.body)
   end
 

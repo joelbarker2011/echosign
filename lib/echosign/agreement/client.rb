@@ -7,8 +7,9 @@ module Echosign
    # @param agreement [Echosign::Agreement]
    # @return [String] Agreement ID
    def create_agreement(agreement)
-     agreement_response = Echosign::Request.create_agreement(agreement, token, agreement.user_id, agreement.user_email)
-     agreement_response.fetch("agreementId")
+      agreement_response = Echosign::Request.create_agreement(agreement, token, agreement.user_id, agreement.user_email)
+      puts agreement_response.inspect
+      agreement_response.fetch("agreementId")
    end
 
    # Gets list of agreements

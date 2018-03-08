@@ -14,17 +14,17 @@ module Echosign
     def initialize(app_id, app_secret, api_key, email, password)
 
       merge!(
-      {
-        applicationCredentials:  {
-        applicationId: app_id,
-        applicationSecret: app_secret
-      },
-        userCredentials: {
-        apiKey: api_key,
-        email: email,
-        password: password 
-      }
-      }
+        {
+          applicationCredentials:  {
+          applicationId: app_id,
+          applicationSecret: app_secret
+        },
+          userCredentials: {
+            apiKey: api_key,
+            email: email,
+            password: password 
+          }
+        }
       )
     end
 

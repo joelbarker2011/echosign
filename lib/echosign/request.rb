@@ -13,8 +13,8 @@ module Echosign::Request
     end
   end
 
-  BASE_URL = 'https://api.na1.echosign.com/api/rest/v5'
-  REFRESH_URL = 'https://api.na1.echosign.com/oauth/refresh'
+  BASE_URL = 'https://api.eu1.echosign.com/api/rest/v5'
+  REFRESH_URL = 'https://api.eu1.echosign.com/oauth/refresh'
 
   ENDPOINT = { 
     token: BASE_URL + '/auth/tokens',

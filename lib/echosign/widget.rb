@@ -162,13 +162,14 @@ module Echosign
       #   }
       # }
       
-      data = { 
+      merge!({ 
         widgetCreationInfo: {
-          name: name
-        }.merge!(fileInfos, signatureFlow, 
-          widget_completion_info)
-      }
-      data
+          name: name,
+          fileInfos: fileInfos, 
+          signatureFlow: signatureFlow,
+          widgetCompletion_Info: widget_completion_info
+        }
+      })
     end
 
   end

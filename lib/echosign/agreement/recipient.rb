@@ -13,7 +13,6 @@ module Echosign
     # @return [Echosign::Recipient]
 
     def initialize(params)
-      require_keys([:role], params)
       require_exactly_one([:email, :fax], params)
       merge!(params)
     end
