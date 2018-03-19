@@ -1,6 +1,8 @@
 require 'echosign/agreement/fileinfo'
 require 'echosign/agreement/url_file_info'
 require 'echosign/agreement/recipient'
+require 'echosign/agreement/request_form_field'
+require 'echosign/agreement/form_field_location'
 
 module Echosign
   class Agreement < Hash
