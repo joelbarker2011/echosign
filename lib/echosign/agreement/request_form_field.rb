@@ -8,7 +8,7 @@ module Echosign
     # @param [Hash] params SYMBOL-referenced Hash containing exactly one of the following:
     # @return [Echosign::RequestFormField]
     def initialize(params)
-      require_exactly_one([:locations, :name], params)
+      require_keys([:locations, :name], params)
       merge!(params)
     end
   end

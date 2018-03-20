@@ -32,7 +32,7 @@ module Echosign
     def validate_field(field, params)
       begin
         value = params.fetch(field)
-        required_error(field) if value.nil? || value.empty?
+        required_error(field) if value.nil? || (value.is_a?(String) && value.empty?)
       rescue KeyError
         required_error(field)
       end

@@ -13,7 +13,7 @@ module Echosign
     # @option param [Integer] width (double): Width of the form field in pixels
     # @return [Echosign::FormFieldLocation]
     def initialize(params)
-      require_exactly_one([:pageNumber, :left, :top, :width, :height], params)
+      require_keys([:pageNumber, :left, :top, :width, :height], params)
       merge!(params)
     end
   end
