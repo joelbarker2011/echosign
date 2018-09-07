@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://secure.echosign.com/api/rest/v5/agreements
+    uri: https://api.eu1.echosign.com/api/rest/v5/agreements
     body:
       encoding: UTF-8
       string: '{"documentCreationInfo":{"fileInfos":[[{"documentURL":{"url":"http://findgoplayers.com/resume.pdf","mimeType":"application/pdf","name":"resume.pdf"}}]],"recipients":[{"role":"SIGNER","email":"goishi.san@gmail.com"}],"signatureFlow":"SENDER_SIGNS_LAST","signatureType":"ESIGN","name":"Rumplestiltskin

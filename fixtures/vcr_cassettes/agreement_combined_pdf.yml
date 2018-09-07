@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: https://secure.echosign.com/api/rest/v5/agreements/2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*/combinedDocument?attachSupportingDocuments=true&auditReport=false
+    uri: https://api.eu1.echosign.com/api/rest/v5/agreements/2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*/combinedDocument
     body:
       encoding: US-ASCII
-      string: ''
+      string: 'attachSupportingDocuments=true&auditReport=false'
     headers:
       Accept:
       - '*/*; q=0.5, application/xml'

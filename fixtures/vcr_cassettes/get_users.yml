@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: https://secure.echosign.com/api/rest/v5/users?x-user-email=cthomas@railjumper.com
+    uri: https://api.eu1.echosign.com/api/rest/v5/users
     body:
       encoding: US-ASCII
-      string: ''
+      string: 'x-user-email=nobody@nobody.com'
     headers:
       Accept:
       - '*/*; q=0.5, application/xml'

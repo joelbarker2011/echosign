@@ -31,7 +31,7 @@ describe Echosign::Client do
     let(:agreement_info) do
       {
         fileInfos: [ file_infos ],
-        recipients: [ Echosign::Recipient.new({ role: 'SIGNER', email: 'goishi.san@gmail.com'})],
+        recipientSetInfos: [ Echosign::Recipient.new({ role: 'SIGNER', email: 'goishi.san@gmail.com'})],
         signatureFlow: "SENDER_SIGNS_LAST",
         signatureType: "ESIGN",
         name: "Rumplestiltskin Contract"

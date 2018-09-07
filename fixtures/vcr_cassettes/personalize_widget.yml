@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://secure.echosign.com/api/rest/v5/widgets/2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*/personalize
+    uri: https://api.eu1.echosign.com/api/rest/v5/widgets/2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*/personalize
     body:
       encoding: UTF-8
       string: '{"email":"cthomas@railjumper.com"}'

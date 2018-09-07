@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://secure.echosign.com/api/rest/v5/widgets
+    uri: https://api.eu1.echosign.com/api/rest/v5/widgets
     body:
       encoding: UTF-8
       string: '{"widgetCreationInfo":{"signatureFlow":"SENDER_SIGNS_LAST","fileInfos":[{"documentURL":{"url":"http://findgoplayers.com/resume.pdf","mimeType":"application/pdf","name":"resume.pdf"}}],"name":"Test

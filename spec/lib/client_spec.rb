@@ -25,7 +25,7 @@ describe Echosign::Client do
   end
 
   describe '.get_users' do
-   let(:email) { "cthomas@railjumper.com" }
+   let(:email) { "nobody@nobody.com" }
     it 'returns user data' do
       VCR.use_cassette('get_users', :record => :once) do
         response = client.get_users(email)

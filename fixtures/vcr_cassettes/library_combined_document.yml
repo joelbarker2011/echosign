@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: https://secure.echosign.com/api/rest/v5/libraryDocuments/2AAABLblqZhAlC4t0c3xAJ92RFv44xFGZhbCuHpalUdpcHW9k72imMEG-W1SYCmUoia1ZNgQZ-FE*/combinedDocument?auditReport=true
+    uri: https://api.eu1.echosign.com/api/rest/v5/libraryDocuments/2AAABLblqZhAlC4t0c3xAJ92RFv44xFGZhbCuHpalUdpcHW9k72imMEG-W1SYCmUoia1ZNgQZ-FE*/combinedDocument
     body:
       encoding: US-ASCII
-      string: ''
+      string: 'auditReport=true'
     headers:
       Accept:
       - '*/*; q=0.5, application/xml'

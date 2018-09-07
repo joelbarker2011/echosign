@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://secure.echosign.com/api/rest/v5/transientDocuments
+    uri: https://api.eu1.echosign.com/api/rest/v5/transientDocuments
     body:
       encoding: ASCII-8BIT
       string: !binary |-
