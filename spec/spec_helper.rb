@@ -5,7 +5,6 @@ SimpleCov.start do
   add_filter '/config/'
 end
 
-require 'syck'
 require 'bundler/setup'
 require 'webmock/rspec'
 require 'vcr'
