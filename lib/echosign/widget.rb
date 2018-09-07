@@ -30,8 +30,8 @@ module Echosign
     # @option params [Echosign::WidgetMergefieldInfo] :mergeFieldInfo  Optional default values for fields to merge into the document. The values will be presented to the signers for editable fields; for read-only fields the provided values will not be editable during the signing process. Merging data into fields is currently not supported when used with libraryDocumentId or libraryDocumentName. Only file and url are curently supported
     # @option params [Echosign::WidgetCompletionInfo] :widgetAuthFailureInfo URL and associated properties for the error page the user will be taken after failing to authenticate 
     # @option params [Echosign::WidgetSignerSecurityOption] :widgetSignerSecurityOptions Security options that apply to widget signers
-    def initialize(user_id=nil, user_email=nil, name, fileInfos, signatureFlow, widget_completion_info)
-      # require_keys([:name, :fileInfos, :signatureFlow], params)
+    def initialize(user_id=nil, user_email=nil, params)
+      require_keys([:name, :fileInfos, :signatureFlow], params)
       @user_id = user_id
       @user_email = user_email
 
@@ -164,10 +164,10 @@ module Echosign
       
       merge!({ 
         widgetCreationInfo: {
-          name: name,
-          fileInfos: fileInfos, 
-          signatureFlow: signatureFlow,
-          widgetCompletion_Info: widget_completion_info
+          name: params[:name],
+          fileInfos: params[:fileInfos],
+          signatureFlow: params[:signatureFlow],
+          widgetCompletion_Info: params[:widget_completion_info]
         }
       })
     end

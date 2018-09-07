@@ -17,7 +17,6 @@ module Echosign::Request
   REFRESH_URL = 'https://api.eu1.echosign.com/oauth/refresh'
 
   ENDPOINT = { 
-    token: BASE_URL + '/auth/tokens',
     refresh: REFRESH_URL,
     user: BASE_URL + '/users',
     agreement: BASE_URL + '/agreements',
@@ -33,18 +32,6 @@ module Echosign::Request
   # @param credentials [Echosign::Credentials] Initialized Echosign::Credentials
   # @return [String] Valid authentication token
   def self.get_token(credentials)
-    headers = {}
-    response = post(ENDPOINT.fetch(:token), credentials, headers)
-    response_body = JSON.parse(response.body)
-    response_body.fetch("access_token")
-  end
-
-  # Retrieves the authentication token
-  #
-  # @param credentials [Echosign::Credentials] Initialized Echosign::Credentials
-  # @return [String] Valid authentication token
-  def self.get_token_from_refresh(credentials)
-    # headers = { :content_type => "application/x-www-form-urlencoded" }
     headers = {}
     response = post(ENDPOINT.fetch(:refresh), credentials, headers)
     response_body = JSON.parse(response.body)
