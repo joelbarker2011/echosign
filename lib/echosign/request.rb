@@ -88,11 +88,11 @@ module Echosign::Request
     begin
       response = HTTParty.post( 
                                  ENDPOINT.fetch(:transientDocument), 
-                                 { 'File-Name' => file_name, 
+                                 query: { 'File-Name' => file_name,
                                    'Mime-Type' => mime_type, 
                                    'File' => file_handle,  
                                    :multipart => true}, 
-                                   headers
+                                 headers: headers
                                 )
     rescue Exception => error
       raise_error(error)

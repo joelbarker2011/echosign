@@ -133,8 +133,8 @@ module Echosign::Request
     begin
       response = HTTParty.put(
         endpoint, 
-        request_body.to_json,
-        headers
+        query: request_body.to_json,
+        headers: headers
       )
     rescue Exception => error
       raise_error(error)
