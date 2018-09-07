@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/chamberflag/echosign.svg?branch=master)](https://travis-ci.org/chamberflag/echosign)
+
 echosign
 ===========
 
