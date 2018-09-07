@@ -1,3 +1,10 @@
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter '/spec/'
+  add_filter '/config/'
+end
+
 require 'syck'
 require 'bundler/setup'
 require 'webmock/rspec'
