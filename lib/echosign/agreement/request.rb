@@ -64,6 +64,7 @@ module Echosign::Request
     endpoint << add_query(endpoint, "attachSupportingDocuments=#{attachSupportingDocuments}")
     endpoint << add_query(endpoint, "auditReport=#{auditReport}")
     response = get(endpoint, headers)
+    response.body
   end
 
   # Retrieves data entered by the user into interactive form fields at the time they signed the agreement
@@ -86,6 +87,7 @@ module Echosign::Request
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement)}/#{agreement_id}/documents/#{document_id}"
     response = get(endpoint, headers)
+    response.body
   end
 
   # Performs REST GET /agreement/:id/auditTrail operation
@@ -97,6 +99,7 @@ module Echosign::Request
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement)}/#{agreement_id}/auditTrail"
     response = get(endpoint, headers)
+    response.body
   end
 
   # Performs REST GET /agreement/:id/documents

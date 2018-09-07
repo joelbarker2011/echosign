@@ -110,7 +110,7 @@ module Echosign::Request
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:user)}?x-user-email=#{user_email}"
     response = get(endpoint, headers)
-    JSON.parse(response)
+    JSON.parse(response.body)
   end
 
   # Gets all the users in an account that the caller has permissions to access. 
@@ -122,7 +122,7 @@ module Echosign::Request
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:user)}/#{user_id}"
     response = get(endpoint, headers)
-    JSON.parse(response)
+    JSON.parse(response.body)
   end
 
 
