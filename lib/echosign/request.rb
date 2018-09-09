@@ -17,7 +17,6 @@ module Echosign::Request
   REFRESH_URL = 'https://api.eu1.echosign.com/oauth/refresh'
 
   ENDPOINT = { 
-    token: BASE_URL + '/auth/tokens',
     refresh: REFRESH_URL,
     user: BASE_URL + '/users',
     agreement: BASE_URL + '/agreements',
@@ -33,18 +32,6 @@ module Echosign::Request
   # @param credentials [Echosign::Credentials] Initialized Echosign::Credentials
   # @return [String] Valid authentication token
   def self.get_token(credentials)
-    headers = {}
-    response = post(ENDPOINT.fetch(:token), credentials, headers)
-    response_body = JSON.parse(response.body)
-    response_body.fetch("access_token")
-  end
-
-  # Retrieves the authentication token
-  #
-  # @param credentials [Echosign::Credentials] Initialized Echosign::Credentials
-  # @return [String] Valid authentication token
-  def self.get_token_from_refresh(credentials)
-    # headers = { :content_type => "application/x-www-form-urlencoded" }
     headers = {}
     response = post(ENDPOINT.fetch(:refresh), credentials, headers)
     response_body = JSON.parse(response.body)
@@ -88,11 +75,11 @@ module Echosign::Request
     begin
       response = HTTParty.post( 
                                  ENDPOINT.fetch(:transientDocument), 
-                                 { 'File-Name' => file_name, 
+                                 query: { 'File-Name' => file_name,
                                    'Mime-Type' => mime_type, 
                                    'File' => file_handle,  
                                    :multipart => true}, 
-                                   headers
+                                 headers: headers
                                 )
     rescue Exception => error
       raise_error(error)
@@ -110,7 +97,7 @@ module Echosign::Request
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:user)}?x-user-email=#{user_email}"
     response = get(endpoint, headers)
-    JSON.parse(response)
+    JSON.parse(response.body)
   end
 
   # Gets all the users in an account that the caller has permissions to access. 
@@ -122,7 +109,7 @@ module Echosign::Request
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:user)}/#{user_id}"
     response = get(endpoint, headers)
-    JSON.parse(response)
+    JSON.parse(response.body)
   end
 
 

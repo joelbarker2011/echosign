@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://secure.echosign.com/api/rest/v5/libraryDocuments
+    uri: https://api.eu1.echosign.com/api/rest/v5/libraryDocuments
     body:
       encoding: US-ASCII
       string: ''

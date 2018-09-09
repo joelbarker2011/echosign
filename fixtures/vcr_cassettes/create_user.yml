@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://secure.echosign.com/api/rest/v5/users
+    uri: https://api.eu1.echosign.com/api/rest/v5/users
     body:
       encoding: UTF-8
       string: '{"firstName":"JohnQ","lastName":"Public","email":"publius@comcast.net","password":"kN12oK9p!3","title":"Hedge

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://secure.echosign.com/api/rest/v5/widgets/2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*/status
+    uri: https://api.eu1.echosign.com/api/rest/v5/widgets/2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*/status
     body:
       encoding: UTF-8
       string: '{"value":"DISABLE","message":"Hey guys, hope you like this widget."}'

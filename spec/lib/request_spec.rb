@@ -6,7 +6,7 @@ describe Echosign::Request do
 
   describe '#get_token' do
 
-      it 'returns the accessToken' do
+      it 'returns the access_token' do
         VCR.use_cassette('get_token', :record => :once) do
           token = Echosign::Request.get_token(credentials)
           expect(token).to_not be_nil

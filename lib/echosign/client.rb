@@ -13,7 +13,7 @@ module Echosign
     # @param credentials [Echosign::Credentials] Initialized Echosign::Credentials
     # @return [Echosign::Client] Initialized Echosign::Client 
     def initialize(credentials)
-      @token = Echosign::Request.get_token_from_refresh(credentials)
+      @token = Echosign::Request.get_token(credentials)
     end
 
     # Creates a user for the current application

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://secure.echosign.com/api/rest/v5/auth/tokens
+    uri: https://api.eu1.echosign.com/oauth/refresh
     body:
       encoding: UTF-8
       string: '{"applicationCredentials":{"applicationId":"9QC4444Y2AX82M","applicationSecret":"39066666ee6f71ffc6d488b9457593a7"},"userCredentials":{"apiKey":"XCNUUUUU3URX95Y","email":"cthomas@railjumper.com","password":"dfddkk"}}'
@@ -38,7 +38,7 @@ http_interactions:
       - application/json;charset=UTF-8
     body:
       encoding: UTF-8
-      string: '{"accessToken":"2AAABLblqZhC3HrDExRuNnTr9I-U3z2f2KtGloHKah3ccogCP4HzbN5XSbcKSlxNJDtNCVAq94pM*","expiresIn":1209599}'
+      string: '{"access_token":"2AAABLblqZhC3HrDExRuNnTr9I-U3z2f2KtGloHKah3ccogCP4HzbN5XSbcKSlxNJDtNCVAq94pM*","expires_in":1209599}'
     http_version: 
   recorded_at: Sat, 16 Aug 2014 08:44:33 GMT
 recorded_with: VCR 2.8.0

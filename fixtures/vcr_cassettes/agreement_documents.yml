@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: https://secure.echosign.com/api/rest/v5/agreements/2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*/documents?supportingDocumentContentFormat=CONVERTED_PDF
+    uri: https://api.eu1.echosign.com/api/rest/v5/agreements/2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*/documents
     body:
       encoding: US-ASCII
-      string: ''
+      string: 'supportingDocumentContentFormat=CONVERTED_PDF'
     headers:
       Accept:
       - application/json

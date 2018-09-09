@@ -27,8 +27,8 @@ module Echosign::Request
     begin
       response = HTTParty.put(
         endpoint, 
-        personalization.to_json,
-        headers
+        query: personalization.to_json,
+        headers: headers
       )
     rescue Exception => error
       raise_error(error)
@@ -50,8 +50,8 @@ module Echosign::Request
     begin
       response = HTTParty.put(
         endpoint, 
-        status.to_json,
-        headers 
+        query: status.to_json,
+        headers: headers
       )
     rescue Exception => error
       raise_error(error)
