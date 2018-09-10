@@ -5,7 +5,7 @@ module Echosign
 
     include Validatable
 
-    OAUTH_SITE = 'https://secure.na2.echosign.com'
+    OAUTH_SITE = 'https://api.eu1.echosign.com'
     AUTHORIZE_PATH = '/public/oauth'
     TOKEN_PATH = '/oauth/token'
     REFRESH_PATH = '/oauth/refresh'

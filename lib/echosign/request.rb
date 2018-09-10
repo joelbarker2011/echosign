@@ -13,10 +13,10 @@ module Echosign::Request
     end
   end
 
-  BASE_URL = 'https://secure.na2.echosign.com/api/rest/v5'
+  BASE_URL = 'https://api.eu1.echosign.com/api/rest/v5'
 
   ENDPOINT = { 
-    refresh: BASE_URL + '/oauth/refresh',
+    refresh: 'https://api.eu1.echosign.com/oauth/refresh',
     base_uri: BASE_URL + '/base_uris',
     user: BASE_URL + '/users',
     agreement: BASE_URL + '/agreements',
@@ -31,6 +31,17 @@ module Echosign::Request
     group: BASE_URL + '/groups',
     megaSign: BASE_URL + '/megaSigns',
   }
+
+  # Retrieves the authentication token
+  #
+  # @param credentials [Echosign::Credentials] Initialized Echosign::Credentials
+  # @return [String] Valid authentication token
+  def self.get_token(credentials)
+    headers = {}
+    response = post(ENDPOINT.fetch(:refresh), credentials.refresh_token, headers)
+    response_body = JSON.parse(response.body)
+    response_body.fetch("access_token")
+  end
 
   # Performs REST create_user operation
   #
@@ -124,7 +135,7 @@ module Echosign::Request
     begin
       HTTParty.post(
         endpoint,
-        query: body, 
+        query: body,
         headers: headers
       )
     rescue Exception => error

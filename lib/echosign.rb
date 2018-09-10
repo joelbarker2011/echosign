@@ -2,7 +2,7 @@ require 'json'
 require "echosign/version"
 require 'echosign/client'
 require 'echosign/validatable'
-require 'echosign/credentials'
+require 'echosign/oauth2_credentials'
 require 'echosign/refresh'
 require 'echosign/request'
 require 'echosign/agreement'
