@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
   Class: Echosign::Client
   
-    &mdash; Documentation by YARD 0.9.16
+    &mdash; Documentation by YARD 0.8.7.4
   
 </title>
 
@@ -15,8 +15,9 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Echosign::Client";
+  hasFrames = window.top.frames.main ? true : false;
   relpath = '../';
+  framesUrl = "../frames.html#!Echosign/Client.html";
 </script>
 
 
@@ -27,48 +28,51 @@
 
   </head>
   <body>
-    <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html?1"></iframe>
-      <div id="resizer"></div>
-    </div>
-
-    <div id="main" tabindex="-1">
-      <div id="header">
-        <div id="menu">
+    <div id="header">
+      <div id="menu">
   
     <a href="../_index.html">Index (C)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span>
      &raquo; 
     <span class="title">Client</span>
   
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-        <div id="search">
+      <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../class_list.html">
-
-        <svg width="24" height="24">
-          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
-          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
-        </svg>
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
     </a>
   
 </div>
-        <div class="clear"></div>
-      </div>
+      <div class="clear"></div>
+    </div>
 
-      <div id="content"><h1>Class: Echosign::Client
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Echosign::Client
   
   
   
 </h1>
-<div class="box_info">
+
+<dl class="box">
   
-  <dl>
-    <dt>Inherits:</dt>
-    <dd>
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
       <span class="inheritName">Object</span>
       
         <ul class="fullTree">
@@ -79,39 +83,35 @@
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
       
-    </dd>
-  </dl>
-  
-
+      </dd>
+    
   
   
+    
+  
+    
   
   
   
-
-  
-
-  
-  <dl>
-    <dt>Defined in:</dt>
-    <dd>lib/echosign/client.rb<span class="defines">,<br />
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/echosign/client.rb<span class="defines">,<br />
   lib/echosign/widget/client.rb,<br /> lib/echosign/agreement/client.rb,<br /> lib/echosign/mega_sign/client.rb,<br /> lib/echosign/library_documents/client.rb</span>
 </dd>
-  </dl>
   
-</div>
+</dl>
+<div class="clear"></div>
 
 
 
 
 
-  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
   <ul class="summary">
     
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#token-instance_method" title="#token (instance method)">#<strong>token</strong>  &#x21d2; Object </a>
+      <a href="#token-instance_method" title="#token (instance method)">- (Object) <strong>token</strong> </a>
     
 
     
@@ -145,7 +145,7 @@
   
     <h2>
       Instance Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
     </h2>
 
     <ul class="summary">
@@ -153,7 +153,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#agreement_combined_pdf-instance_method" title="#agreement_combined_pdf (instance method)">#<strong>agreement_combined_pdf</strong>(agreement_id, file_path = nil, versionId = nil, participantEmail = nil, attachSupportingDocuments = true, auditReport = false)  &#x21d2; String </a>
+      <a href="#agreement_combined_pdf-instance_method" title="#agreement_combined_pdf (instance method)">- (String) <strong>agreement_combined_pdf</strong>(agreement_id, file_path = nil, versionId = nil, participantEmail = nil, attachSupportingDocuments = true, auditReport = false) </a>
     
 
     
@@ -178,7 +178,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#agreement_document_file-instance_method" title="#agreement_document_file (instance method)">#<strong>agreement_document_file</strong>(agreement_id, document_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#agreement_document_file-instance_method" title="#agreement_document_file (instance method)">- (String) <strong>agreement_document_file</strong>(agreement_id, document_id, file_path = nil) </a>
     
 
     
@@ -202,7 +202,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#agreement_documents-instance_method" title="#agreement_documents (instance method)">#<strong>agreement_documents</strong>(agreement_id, recipient_email, format, version_id = nil)  &#x21d2; Array </a>
+      <a href="#agreement_documents-instance_method" title="#agreement_documents (instance method)">- (Array) <strong>agreement_documents</strong>(agreement_id, recipient_email, format, version_id = nil) </a>
     
 
     
@@ -226,7 +226,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#agreement_form_data-instance_method" title="#agreement_form_data (instance method)">#<strong>agreement_form_data</strong>(agreement_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#agreement_form_data-instance_method" title="#agreement_form_data (instance method)">- (String) <strong>agreement_form_data</strong>(agreement_id, file_path = nil) </a>
     
 
     
@@ -250,7 +250,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#agreement_info-instance_method" title="#agreement_info (instance method)">#<strong>agreement_info</strong>(agreement_id)  &#x21d2; Hash </a>
+      <a href="#agreement_info-instance_method" title="#agreement_info (instance method)">- (Hash) <strong>agreement_info</strong>(agreement_id) </a>
     
 
     
@@ -274,7 +274,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#agreement_signing_urls-instance_method" title="#agreement_signing_urls (instance method)">#<strong>agreement_signing_urls</strong>(agreement_id)  &#x21d2; Hash </a>
+      <a href="#agreement_signing_urls-instance_method" title="#agreement_signing_urls (instance method)">- (Hash) <strong>agreement_signing_urls</strong>(agreement_id) </a>
     
 
     
@@ -299,7 +299,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#audit_trail_pdf-instance_method" title="#audit_trail_pdf (instance method)">#<strong>audit_trail_pdf</strong>(agreement_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#audit_trail_pdf-instance_method" title="#audit_trail_pdf (instance method)">- (String) <strong>audit_trail_pdf</strong>(agreement_id, file_path = nil) </a>
     
 
     
@@ -323,7 +323,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#cancel_agreement-instance_method" title="#cancel_agreement (instance method)">#<strong>cancel_agreement</strong>(agreement_id, notify_signer = false, comment = nil)  &#x21d2; String </a>
+      <a href="#cancel_agreement-instance_method" title="#cancel_agreement (instance method)">- (String) <strong>cancel_agreement</strong>(agreement_id, notify_signer = false, comment = nil) </a>
     
 
     
@@ -347,7 +347,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#cancel_mega_sign-instance_method" title="#cancel_mega_sign (instance method)">#<strong>cancel_mega_sign</strong>(mega_sign_id, notify_signer = false, comment = nil)  &#x21d2; String </a>
+      <a href="#cancel_mega_sign-instance_method" title="#cancel_mega_sign (instance method)">- (String) <strong>cancel_mega_sign</strong>(mega_sign_id, notify_signer = false, comment = nil) </a>
     
 
     
@@ -371,7 +371,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create_agreement-instance_method" title="#create_agreement (instance method)">#<strong>create_agreement</strong>(agreement)  &#x21d2; String </a>
+      <a href="#create_agreement-instance_method" title="#create_agreement (instance method)">- (String) <strong>create_agreement</strong>(agreement) </a>
     
 
     
@@ -395,7 +395,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create_mega_sign-instance_method" title="#create_mega_sign (instance method)">#<strong>create_mega_sign</strong>(mega_sign)  &#x21d2; String </a>
+      <a href="#create_mega_sign-instance_method" title="#create_mega_sign (instance method)">- (String) <strong>create_mega_sign</strong>(mega_sign) </a>
     
 
     
@@ -419,7 +419,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create_reminder-instance_method" title="#create_reminder (instance method)">#<strong>create_reminder</strong>(reminder)  &#x21d2; String </a>
+      <a href="#create_reminder-instance_method" title="#create_reminder (instance method)">- (String) <strong>create_reminder</strong>(reminder) </a>
     
 
     
@@ -443,7 +443,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create_transient_document-instance_method" title="#create_transient_document (instance method)">#<strong>create_transient_document</strong>(file_name, mime_type, file_handle)  &#x21d2; String </a>
+      <a href="#create_transient_document-instance_method" title="#create_transient_document (instance method)">- (String) <strong>create_transient_document</strong>(file_name, mime_type, file_handle) </a>
     
 
     
@@ -467,7 +467,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create_user-instance_method" title="#create_user (instance method)">#<strong>create_user</strong>(user)  &#x21d2; String </a>
+      <a href="#create_user-instance_method" title="#create_user (instance method)">- (String) <strong>create_user</strong>(user) </a>
     
 
     
@@ -491,7 +491,7 @@ agreement.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create_widget-instance_method" title="#create_widget (instance method)">#<strong>create_widget</strong>(widget)  &#x21d2; Hash </a>
+      <a href="#create_widget-instance_method" title="#create_widget (instance method)">- (Hash) <strong>create_widget</strong>(widget) </a>
     
 
     
@@ -516,7 +516,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_agreements-instance_method" title="#get_agreements (instance method)">#<strong>get_agreements</strong>  &#x21d2; String </a>
+      <a href="#get_agreements-instance_method" title="#get_agreements (instance method)">- (String) <strong>get_agreements</strong> </a>
     
 
     
@@ -540,7 +540,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_library_document-instance_method" title="#get_library_document (instance method)">#<strong>get_library_document</strong>(library_document_id)  &#x21d2; Hash </a>
+      <a href="#get_library_document-instance_method" title="#get_library_document (instance method)">- (Hash) <strong>get_library_document</strong>(library_document_id) </a>
     
 
     
@@ -564,7 +564,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_library_document_file-instance_method" title="#get_library_document_file (instance method)">#<strong>get_library_document_file</strong>(library_document_id, file_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#get_library_document_file-instance_method" title="#get_library_document_file (instance method)">- (String) <strong>get_library_document_file</strong>(library_document_id, file_id, file_path = nil) </a>
     
 
     
@@ -588,7 +588,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_library_document_files-instance_method" title="#get_library_document_files (instance method)">#<strong>get_library_document_files</strong>(library_document_id)  &#x21d2; Hash </a>
+      <a href="#get_library_document_files-instance_method" title="#get_library_document_files (instance method)">- (Hash) <strong>get_library_document_files</strong>(library_document_id) </a>
     
 
     
@@ -612,7 +612,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_library_documents-instance_method" title="#get_library_documents (instance method)">#<strong>get_library_documents</strong>(user_id = nil, user_email = nil)  &#x21d2; Hash </a>
+      <a href="#get_library_documents-instance_method" title="#get_library_documents (instance method)">- (Hash) <strong>get_library_documents</strong>(user_id = nil, user_email = nil) </a>
     
 
     
@@ -636,7 +636,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_mega_signs-instance_method" title="#get_mega_signs (instance method)">#<strong>get_mega_signs</strong>  &#x21d2; String </a>
+      <a href="#get_mega_signs-instance_method" title="#get_mega_signs (instance method)">- (String) <strong>get_mega_signs</strong> </a>
     
 
     
@@ -660,7 +660,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_user-instance_method" title="#get_user (instance method)">#<strong>get_user</strong>(user_id)  &#x21d2; Hash </a>
+      <a href="#get_user-instance_method" title="#get_user (instance method)">- (Hash) <strong>get_user</strong>(user_id) </a>
     
 
     
@@ -684,7 +684,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_users-instance_method" title="#get_users (instance method)">#<strong>get_users</strong>(user_email)  &#x21d2; Hash </a>
+      <a href="#get_users-instance_method" title="#get_users (instance method)">- (Hash) <strong>get_users</strong>(user_email) </a>
     
 
     
@@ -708,7 +708,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_widget-instance_method" title="#get_widget (instance method)">#<strong>get_widget</strong>(widget_id)  &#x21d2; Hash </a>
+      <a href="#get_widget-instance_method" title="#get_widget (instance method)">- (Hash) <strong>get_widget</strong>(widget_id) </a>
     
 
     
@@ -732,7 +732,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_widget_audit_trail-instance_method" title="#get_widget_audit_trail (instance method)">#<strong>get_widget_audit_trail</strong>(widget_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#get_widget_audit_trail-instance_method" title="#get_widget_audit_trail (instance method)">- (String) <strong>get_widget_audit_trail</strong>(widget_id, file_path = nil) </a>
     
 
     
@@ -756,7 +756,7 @@ widget and widgetID in response to the client.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_widget_combined_pdf-instance_method" title="#get_widget_combined_pdf (instance method)">#<strong>get_widget_combined_pdf</strong>(widget_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#get_widget_combined_pdf-instance_method" title="#get_widget_combined_pdf (instance method)">- (String) <strong>get_widget_combined_pdf</strong>(widget_id, file_path = nil) </a>
     
 
     
@@ -781,7 +781,7 @@ widget.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_widget_document_file-instance_method" title="#get_widget_document_file (instance method)">#<strong>get_widget_document_file</strong>(widget_id, document_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#get_widget_document_file-instance_method" title="#get_widget_document_file (instance method)">- (String) <strong>get_widget_document_file</strong>(widget_id, document_id, file_path = nil) </a>
     
 
     
@@ -805,7 +805,7 @@ widget.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_widget_documents-instance_method" title="#get_widget_documents (instance method)">#<strong>get_widget_documents</strong>(widget_id, version_id = nil, participant_email = nil)  &#x21d2; Hash </a>
+      <a href="#get_widget_documents-instance_method" title="#get_widget_documents (instance method)">- (Hash) <strong>get_widget_documents</strong>(widget_id, version_id = nil, participant_email = nil) </a>
     
 
     
@@ -829,7 +829,7 @@ widget.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_widget_form_data-instance_method" title="#get_widget_form_data (instance method)">#<strong>get_widget_form_data</strong>(widget_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#get_widget_form_data-instance_method" title="#get_widget_form_data (instance method)">- (String) <strong>get_widget_form_data</strong>(widget_id, file_path = nil) </a>
     
 
     
@@ -854,7 +854,7 @@ they signed the widget.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_widgets-instance_method" title="#get_widgets (instance method)">#<strong>get_widgets</strong>(user_id = nil, user_email = nil)  &#x21d2; Hash </a>
+      <a href="#get_widgets-instance_method" title="#get_widgets (instance method)">- (Hash) <strong>get_widgets</strong>(user_id = nil, user_email = nil) </a>
     
 
     
@@ -878,7 +878,7 @@ they signed the widget.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(credentials)  &#x21d2; Echosign::Client </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Echosign::Client) <strong>initialize</strong>(credentials) </a>
     
 
     
@@ -904,7 +904,7 @@ they signed the widget.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#library_combined_document-instance_method" title="#library_combined_document (instance method)">#<strong>library_combined_document</strong>(library_document_id, file_path = nil, auditReport = false)  &#x21d2; String </a>
+      <a href="#library_combined_document-instance_method" title="#library_combined_document (instance method)">- (String) <strong>library_combined_document</strong>(library_document_id, file_path = nil, auditReport = false) </a>
     
 
     
@@ -928,7 +928,7 @@ they signed the widget.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#library_document_audit_trail-instance_method" title="#library_document_audit_trail (instance method)">#<strong>library_document_audit_trail</strong>(library_document_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#library_document_audit_trail-instance_method" title="#library_document_audit_trail (instance method)">- (String) <strong>library_document_audit_trail</strong>(library_document_id, file_path = nil) </a>
     
 
     
@@ -952,7 +952,7 @@ they signed the widget.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#mega_sign_combined_pdf-instance_method" title="#mega_sign_combined_pdf (instance method)">#<strong>mega_sign_combined_pdf</strong>(mega_sign_id, file_path = nil, versionId = nil, participantEmail = nil, attachSupportingDocuments = true, auditReport = false)  &#x21d2; String </a>
+      <a href="#mega_sign_combined_pdf-instance_method" title="#mega_sign_combined_pdf (instance method)">- (String) <strong>mega_sign_combined_pdf</strong>(mega_sign_id, file_path = nil, versionId = nil, participantEmail = nil, attachSupportingDocuments = true, auditReport = false) </a>
     
 
     
@@ -977,7 +977,7 @@ mega_sign.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#mega_sign_document_file-instance_method" title="#mega_sign_document_file (instance method)">#<strong>mega_sign_document_file</strong>(mega_sign_id, document_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#mega_sign_document_file-instance_method" title="#mega_sign_document_file (instance method)">- (String) <strong>mega_sign_document_file</strong>(mega_sign_id, document_id, file_path = nil) </a>
     
 
     
@@ -1001,7 +1001,7 @@ mega_sign.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#mega_sign_documents-instance_method" title="#mega_sign_documents (instance method)">#<strong>mega_sign_documents</strong>(mega_sign_id, recipient_email, format, version_id = nil)  &#x21d2; Array </a>
+      <a href="#mega_sign_documents-instance_method" title="#mega_sign_documents (instance method)">- (Array) <strong>mega_sign_documents</strong>(mega_sign_id, recipient_email, format, version_id = nil) </a>
     
 
     
@@ -1025,7 +1025,7 @@ mega_sign.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#mega_sign_form_data-instance_method" title="#mega_sign_form_data (instance method)">#<strong>mega_sign_form_data</strong>(mega_sign_id, file_path = nil)  &#x21d2; String </a>
+      <a href="#mega_sign_form_data-instance_method" title="#mega_sign_form_data (instance method)">- (String) <strong>mega_sign_form_data</strong>(mega_sign_id, file_path = nil) </a>
     
 
     
@@ -1049,7 +1049,7 @@ mega_sign.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#mega_sign_info-instance_method" title="#mega_sign_info (instance method)">#<strong>mega_sign_info</strong>(mega_sign_id)  &#x21d2; Hash </a>
+      <a href="#mega_sign_info-instance_method" title="#mega_sign_info (instance method)">- (Hash) <strong>mega_sign_info</strong>(mega_sign_id) </a>
     
 
     
@@ -1073,7 +1073,7 @@ mega_sign.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#mega_sign_signing_urls-instance_method" title="#mega_sign_signing_urls (instance method)">#<strong>mega_sign_signing_urls</strong>(mega_sign_id)  &#x21d2; Hash </a>
+      <a href="#mega_sign_signing_urls-instance_method" title="#mega_sign_signing_urls (instance method)">- (Hash) <strong>mega_sign_signing_urls</strong>(mega_sign_id) </a>
     
 
     
@@ -1098,7 +1098,7 @@ mega_sign.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#personalize_widget-instance_method" title="#personalize_widget (instance method)">#<strong>personalize_widget</strong>(widget_id, personalization)  &#x21d2; Hash </a>
+      <a href="#personalize_widget-instance_method" title="#personalize_widget (instance method)">- (Hash) <strong>personalize_widget</strong>(widget_id, personalization) </a>
     
 
     
@@ -1122,7 +1122,7 @@ mega_sign.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update_widget_status-instance_method" title="#update_widget_status (instance method)">#<strong>update_widget_status</strong>(widget_id, status)  &#x21d2; Hash </a>
+      <a href="#update_widget_status-instance_method" title="#update_widget_status (instance method)">- (Hash) <strong>update_widget_status</strong>(widget_id, status) </a>
     
 
     
@@ -1152,7 +1152,7 @@ mega_sign.</p>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(credentials)  &#x21d2; <tt><span class='object_link'><a href="" title="Echosign::Client (class)">Echosign::Client</a></span></tt> 
+    - (<tt><span class='object_link'><a href="" title="Echosign::Client (class)">Echosign::Client</a></span></tt>) <strong>initialize</strong>(credentials) 
   
 
   
@@ -1203,7 +1203,7 @@ mega_sign.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/client.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_credentials'>credentials</span><span class='rparen'>)</span>
-  <span class='ivar'>@token</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_token_from_refresh'><span class='object_link'><a href="Request.html#get_token_from_refresh-class_method" title="Echosign::Request.get_token_from_refresh (method)">get_token_from_refresh</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_credentials'>credentials</span><span class='rparen'>)</span>
+  <span class='ivar'>@token</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_token'>get_token</span><span class='lparen'>(</span><span class='id identifier rubyid_credentials'>credentials</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1220,7 +1220,7 @@ mega_sign.</p>
       <div class="method_details first">
   <h3 class="signature first" id="token-instance_method">
   
-    #<strong>token</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+    - (<tt>Object</tt>) <strong>token</strong>  <span class="extras">(readonly)</span>
   
 
   
@@ -1268,7 +1268,7 @@ mega_sign.</p>
       <div class="method_details first">
   <h3 class="signature first" id="agreement_combined_pdf-instance_method">
   
-    #<strong>agreement_combined_pdf</strong>(agreement_id, file_path = nil, versionId = nil, participantEmail = nil, attachSupportingDocuments = true, auditReport = false)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>agreement_combined_pdf</strong>(agreement_id, file_path = nil, versionId = nil, participantEmail = nil, attachSupportingDocuments = true, auditReport = false) 
   
 
   
@@ -1439,7 +1439,7 @@ Default value is false</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/agreement/client.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_agreement_combined_pdf'>agreement_combined_pdf</span><span class='lparen'>(</span><span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_versionId'>versionId</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_participantEmail'>participantEmail</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_attachSupportingDocuments'>attachSupportingDocuments</span><span class='op'>=</span><span class='kw'>true</span><span class='comma'>,</span> <span class='id identifier rubyid_auditReport'>auditReport</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_agreement_combined_pdf'><span class='object_link'><a href="Request.html#agreement_combined_pdf-class_method" title="Echosign::Request.agreement_combined_pdf (method)">agreement_combined_pdf</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_versionId'>versionId</span><span class='comma'>,</span> <span class='id identifier rubyid_participantEmail'>participantEmail</span><span class='comma'>,</span> <span class='id identifier rubyid_attachSupportingDocuments'>attachSupportingDocuments</span><span class='comma'>,</span> <span class='id identifier rubyid_auditReport'>auditReport</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_agreement_combined_pdf'>agreement_combined_pdf</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_versionId'>versionId</span><span class='comma'>,</span> <span class='id identifier rubyid_participantEmail'>participantEmail</span><span class='comma'>,</span> <span class='id identifier rubyid_attachSupportingDocuments'>attachSupportingDocuments</span><span class='comma'>,</span> <span class='id identifier rubyid_auditReport'>auditReport</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -1455,7 +1455,7 @@ Default value is false</p>
       <div class="method_details ">
   <h3 class="signature " id="agreement_document_file-instance_method">
   
-    #<strong>agreement_document_file</strong>(agreement_id, document_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>agreement_document_file</strong>(agreement_id, document_id, file_path = nil) 
   
 
   
@@ -1565,7 +1565,7 @@ to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/agreement/client.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_agreement_document_file'>agreement_document_file</span><span class='lparen'>(</span><span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_document_id'>document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_agreement_document_file'><span class='object_link'><a href="Request.html#agreement_document_file-class_method" title="Echosign::Request.agreement_document_file (method)">agreement_document_file</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_document_id'>document_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_agreement_document_file'>agreement_document_file</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_document_id'>document_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -1581,7 +1581,7 @@ to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="agreement_documents-instance_method">
   
-    #<strong>agreement_documents</strong>(agreement_id, recipient_email, format, version_id = nil)  &#x21d2; <tt>Array</tt> 
+    - (<tt>Array</tt>) <strong>agreement_documents</strong>(agreement_id, recipient_email, format, version_id = nil) 
   
 
   
@@ -1703,7 +1703,7 @@ the latest version of the agreement is used.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/agreement/client.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_agreement_documents'>agreement_documents</span><span class='lparen'>(</span><span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_recipient_email'>recipient_email</span><span class='comma'>,</span> <span class='id identifier rubyid_format'>format</span><span class='comma'>,</span> <span class='id identifier rubyid_version_id'>version_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_agreement_documents'><span class='object_link'><a href="Request.html#agreement_documents-class_method" title="Echosign::Request.agreement_documents (method)">agreement_documents</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_recipient_email'>recipient_email</span><span class='comma'>,</span> <span class='id identifier rubyid_format'>format</span><span class='comma'>,</span> <span class='id identifier rubyid_version_id'>version_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_agreement_documents'>agreement_documents</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_recipient_email'>recipient_email</span><span class='comma'>,</span> <span class='id identifier rubyid_format'>format</span><span class='comma'>,</span> <span class='id identifier rubyid_version_id'>version_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1713,7 +1713,7 @@ the latest version of the agreement is used.</p>
       <div class="method_details ">
   <h3 class="signature " id="agreement_form_data-instance_method">
   
-    #<strong>agreement_form_data</strong>(agreement_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>agreement_form_data</strong>(agreement_id, file_path = nil) 
   
 
   
@@ -1807,7 +1807,7 @@ saved to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/agreement/client.rb', line 107</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_agreement_form_data'>agreement_form_data</span><span class='lparen'>(</span><span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_agreement_form_data'><span class='object_link'><a href="Request.html#agreement_form_data-class_method" title="Echosign::Request.agreement_form_data (method)">agreement_form_data</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_agreement_form_data'>agreement_form_data</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -1823,7 +1823,7 @@ saved to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="agreement_info-instance_method">
   
-    #<strong>agreement_info</strong>(agreement_id)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>agreement_info</strong>(agreement_id) 
   
 
   
@@ -1892,7 +1892,7 @@ saved to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/agreement/client.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_agreement_info'>agreement_info</span><span class='lparen'>(</span><span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_agreement_info'><span class='object_link'><a href="Request.html#agreement_info-class_method" title="Echosign::Request.agreement_info (method)">agreement_info</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_agreement_info'>agreement_info</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1902,7 +1902,7 @@ saved to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="agreement_signing_urls-instance_method">
   
-    #<strong>agreement_signing_urls</strong>(agreement_id)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>agreement_signing_urls</strong>(agreement_id) 
   
 
   
@@ -1972,7 +1972,7 @@ agreement</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/agreement/client.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_agreement_signing_urls'>agreement_signing_urls</span><span class='lparen'>(</span><span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_agreement_signing_urls'><span class='object_link'><a href="Request.html#agreement_signing_urls-class_method" title="Echosign::Request.agreement_signing_urls (method)">agreement_signing_urls</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_agreement_signing_urls'>agreement_signing_urls</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1982,7 +1982,7 @@ agreement</p>
       <div class="method_details ">
   <h3 class="signature " id="audit_trail_pdf-instance_method">
   
-    #<strong>audit_trail_pdf</strong>(agreement_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>audit_trail_pdf</strong>(agreement_id, file_path = nil) 
   
 
   
@@ -2076,7 +2076,7 @@ to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/client.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_audit_trail_pdf'>audit_trail_pdf</span><span class='lparen'>(</span><span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_audit_trail_pdf'><span class='object_link'><a href="Request.html#audit_trail_pdf-class_method" title="Echosign::Request.audit_trail_pdf (method)">audit_trail_pdf</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_audit_trail_pdf'>audit_trail_pdf</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -2092,7 +2092,7 @@ to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="cancel_agreement-instance_method">
   
-    #<strong>cancel_agreement</strong>(agreement_id, notify_signer = false, comment = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>cancel_agreement</strong>(agreement_id, notify_signer = false, comment = nil) 
   
 
   
@@ -2211,7 +2211,7 @@ false.</p>
   <span class='rbrace'>}</span>
   <span class='id identifier rubyid_request_body'>request_body</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='label'>comment:</span> <span class='id identifier rubyid_comment'>comment</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_comment'>comment</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
 
-  <span class='id identifier rubyid_agreement_status_response'>agreement_status_response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update_agreement_status'><span class='object_link'><a href="Request.html#update_agreement_status-class_method" title="Echosign::Request.update_agreement_status (method)">update_agreement_status</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_request_body'>request_body</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_agreement_status_response'>agreement_status_response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_update_agreement_status'>update_agreement_status</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement_id'>agreement_id</span><span class='comma'>,</span> <span class='id identifier rubyid_request_body'>request_body</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_agreement_status_response'>agreement_status_response</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>result</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2222,7 +2222,7 @@ false.</p>
       <div class="method_details ">
   <h3 class="signature " id="cancel_mega_sign-instance_method">
   
-    #<strong>cancel_mega_sign</strong>(mega_sign_id, notify_signer = false, comment = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>cancel_mega_sign</strong>(mega_sign_id, notify_signer = false, comment = nil) 
   
 
   
@@ -2341,7 +2341,7 @@ false.</p>
   <span class='rbrace'>}</span>
   <span class='id identifier rubyid_request_body'>request_body</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='label'>comment:</span> <span class='id identifier rubyid_comment'>comment</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_comment'>comment</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
 
-  <span class='id identifier rubyid_mega_sign_status_response'>mega_sign_status_response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update_mega_sign_status'><span class='object_link'><a href="Request.html#update_mega_sign_status-class_method" title="Echosign::Request.update_mega_sign_status (method)">update_mega_sign_status</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_request_body'>request_body</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_mega_sign_status_response'>mega_sign_status_response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_update_mega_sign_status'>update_mega_sign_status</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_request_body'>request_body</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_mega_sign_status_response'>mega_sign_status_response</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>result</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2352,7 +2352,7 @@ false.</p>
       <div class="method_details ">
   <h3 class="signature " id="create_agreement-instance_method">
   
-    #<strong>create_agreement</strong>(agreement)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>create_agreement</strong>(agreement) 
   
 
   
@@ -2417,7 +2417,7 @@ false.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/agreement/client.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_agreement'>create_agreement</span><span class='lparen'>(</span><span class='id identifier rubyid_agreement'>agreement</span><span class='rparen'>)</span>
-   <span class='id identifier rubyid_agreement_response'>agreement_response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create_agreement'><span class='object_link'><a href="Request.html#create_agreement-class_method" title="Echosign::Request.create_agreement (method)">create_agreement</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_agreement'>agreement</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement'>agreement</span><span class='period'>.</span><span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement'>agreement</span><span class='period'>.</span><span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_agreement_response'>agreement_response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_create_agreement'>create_agreement</span><span class='lparen'>(</span><span class='id identifier rubyid_agreement'>agreement</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement'>agreement</span><span class='period'>.</span><span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_agreement'>agreement</span><span class='period'>.</span><span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
    <span class='id identifier rubyid_agreement_response'>agreement_response</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>agreementId</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2428,7 +2428,7 @@ false.</p>
       <div class="method_details ">
   <h3 class="signature " id="create_mega_sign-instance_method">
   
-    #<strong>create_mega_sign</strong>(mega_sign)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>create_mega_sign</strong>(mega_sign) 
   
 
   
@@ -2494,7 +2494,7 @@ false.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/mega_sign/client.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_mega_sign'>create_mega_sign</span><span class='lparen'>(</span><span class='id identifier rubyid_mega_sign'>mega_sign</span><span class='rparen'>)</span>
-   <span class='id identifier rubyid_mega_sign_response'>mega_sign_response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create_mega_sign'><span class='object_link'><a href="Request.html#create_mega_sign-class_method" title="Echosign::Request.create_mega_sign (method)">create_mega_sign</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_mega_sign'>mega_sign</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign'>mega_sign</span><span class='period'>.</span><span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign'>mega_sign</span><span class='period'>.</span><span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_mega_sign_response'>mega_sign_response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_create_mega_sign'>create_mega_sign</span><span class='lparen'>(</span><span class='id identifier rubyid_mega_sign'>mega_sign</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign'>mega_sign</span><span class='period'>.</span><span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign'>mega_sign</span><span class='period'>.</span><span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
    <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_mega_sign_response'>mega_sign_response</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
    <span class='id identifier rubyid_mega_sign_response'>mega_sign_response</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>mega_signId</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -2506,7 +2506,7 @@ false.</p>
       <div class="method_details ">
   <h3 class="signature " id="create_reminder-instance_method">
   
-    #<strong>create_reminder</strong>(reminder)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>create_reminder</strong>(reminder) 
   
 
   
@@ -2570,7 +2570,7 @@ false.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/client.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_reminder'>create_reminder</span><span class='lparen'>(</span><span class='id identifier rubyid_reminder'>reminder</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_reminder_response'>reminder_response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create_reminder'><span class='object_link'><a href="Request.html#create_reminder-class_method" title="Echosign::Request.create_reminder (method)">create_reminder</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_reminder'>reminder</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_reminder_response'>reminder_response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_create_reminder'>create_reminder</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_reminder'>reminder</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2580,7 +2580,7 @@ false.</p>
       <div class="method_details ">
   <h3 class="signature " id="create_transient_document-instance_method">
   
-    #<strong>create_transient_document</strong>(file_name, mime_type, file_handle)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>create_transient_document</strong>(file_name, mime_type, file_handle) 
   
 
   
@@ -2667,7 +2667,7 @@ false.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/client.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_transient_document'>create_transient_document</span><span class='lparen'>(</span><span class='id identifier rubyid_file_name'>file_name</span><span class='comma'>,</span> <span class='id identifier rubyid_mime_type'>mime_type</span><span class='comma'>,</span> <span class='id identifier rubyid_file_handle'>file_handle</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_transient_document_response'>transient_document_response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create_transient_document'><span class='object_link'><a href="Request.html#create_transient_document-class_method" title="Echosign::Request.create_transient_document (method)">create_transient_document</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_file_name'>file_name</span><span class='comma'>,</span> <span class='id identifier rubyid_file_handle'>file_handle</span><span class='comma'>,</span> <span class='id identifier rubyid_mime_type'>mime_type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_transient_document_response'>transient_document_response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_create_transient_document'>create_transient_document</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_file_name'>file_name</span><span class='comma'>,</span> <span class='id identifier rubyid_file_handle'>file_handle</span><span class='comma'>,</span> <span class='id identifier rubyid_mime_type'>mime_type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_transient_document_response'>transient_document_response</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>transientDocumentId</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2678,7 +2678,7 @@ false.</p>
       <div class="method_details ">
   <h3 class="signature " id="create_user-instance_method">
   
-    #<strong>create_user</strong>(user)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>create_user</strong>(user) 
   
 
   
@@ -2743,7 +2743,7 @@ false.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/client.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_user'>create_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_user_response'>user_response</span>  <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create_user'><span class='object_link'><a href="Request.html#create_user-class_method" title="Echosign::Request.create_user (method)">create_user</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_user_response'>user_response</span>  <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_create_user'>create_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_user_response'>user_response</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>userId</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2754,7 +2754,7 @@ false.</p>
       <div class="method_details ">
   <h3 class="signature " id="create_widget-instance_method">
   
-    #<strong>create_widget</strong>(widget)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>create_widget</strong>(widget) 
   
 
   
@@ -2814,7 +2814,7 @@ widget and widgetID in response to the client</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_widget'>create_widget</span><span class='lparen'>(</span><span class='id identifier rubyid_widget'>widget</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create_widget'><span class='object_link'><a href="Request.html#create_widget-class_method" title="Echosign::Request.create_widget (method)">create_widget</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget'>widget</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_create_widget'>create_widget</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget'>widget</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2824,7 +2824,7 @@ widget and widgetID in response to the client</p>
       <div class="method_details ">
   <h3 class="signature " id="get_agreements-instance_method">
   
-    #<strong>get_agreements</strong>  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>get_agreements</strong> 
   
 
   
@@ -2889,7 +2889,7 @@ widget and widgetID in response to the client</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/agreement/client.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_agreements'>get_agreements</span>
-  <span class='id identifier rubyid_get_agreements_response'>get_agreements_response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_agreements'><span class='object_link'><a href="Request.html#get_agreements-class_method" title="Echosign::Request.get_agreements (method)">get_agreements</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_get_agreements_response'>get_agreements_response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_agreements'>get_agreements</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_get_agreements_response'>get_agreements_response</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>userAgreementList</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2900,7 +2900,7 @@ widget and widgetID in response to the client</p>
       <div class="method_details ">
   <h3 class="signature " id="get_library_document-instance_method">
   
-    #<strong>get_library_document</strong>(library_document_id)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>get_library_document</strong>(library_document_id) 
   
 
   
@@ -2969,7 +2969,7 @@ widget and widgetID in response to the client</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/library_documents/client.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_library_document'>get_library_document</span><span class='lparen'>(</span><span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_library_document'><span class='object_link'><a href="Request.html#get_library_document-class_method" title="Echosign::Request.get_library_document (method)">get_library_document</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_library_document'>get_library_document</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2979,7 +2979,7 @@ widget and widgetID in response to the client</p>
       <div class="method_details ">
   <h3 class="signature " id="get_library_document_file-instance_method">
   
-    #<strong>get_library_document_file</strong>(library_document_id, file_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>get_library_document_file</strong>(library_document_id, file_id, file_path = nil) 
   
 
   
@@ -3084,7 +3084,7 @@ to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/library_documents/client.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_library_document_file'>get_library_document_file</span><span class='lparen'>(</span><span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_id'>file_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_library_document_file'><span class='object_link'><a href="Request.html#get_library_document_file-class_method" title="Echosign::Request.get_library_document_file (method)">get_library_document_file</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_id'>file_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_library_document_file'>get_library_document_file</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_id'>file_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -3100,7 +3100,7 @@ to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_library_document_files-instance_method">
   
-    #<strong>get_library_document_files</strong>(library_document_id)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>get_library_document_files</strong>(library_document_id) 
   
 
   
@@ -3169,7 +3169,7 @@ to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/library_documents/client.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_library_document_files'>get_library_document_files</span><span class='lparen'>(</span><span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_library_document_files'><span class='object_link'><a href="Request.html#get_library_document_files-class_method" title="Echosign::Request.get_library_document_files (method)">get_library_document_files</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_library_document_files'>get_library_document_files</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -3179,7 +3179,7 @@ to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_library_documents-instance_method">
   
-    #<strong>get_library_documents</strong>(user_id = nil, user_email = nil)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>get_library_documents</strong>(user_id = nil, user_email = nil) 
   
 
   
@@ -3271,7 +3271,7 @@ access token.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/library_documents/client.rb', line 10</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_library_documents'>get_library_documents</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_library_documents'><span class='object_link'><a href="Request.html#get_library_documents-class_method" title="Echosign::Request.get_library_documents (method)">get_library_documents</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_library_documents'>get_library_documents</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -3281,7 +3281,7 @@ access token.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_mega_signs-instance_method">
   
-    #<strong>get_mega_signs</strong>  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>get_mega_signs</strong> 
   
 
   
@@ -3346,7 +3346,7 @@ access token.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/mega_sign/client.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_mega_signs'>get_mega_signs</span>
-  <span class='id identifier rubyid_get_mega_signs_response'>get_mega_signs_response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_mega_signs'><span class='object_link'><a href="Request.html#get_mega_signs-class_method" title="Echosign::Request.get_mega_signs (method)">get_mega_signs</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_get_mega_signs_response'>get_mega_signs_response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_mega_signs'>get_mega_signs</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_get_mega_signs_response'>get_mega_signs_response</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>userAgreementList</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -3357,7 +3357,7 @@ access token.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_user-instance_method">
   
-    #<strong>get_user</strong>(user_id)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>get_user</strong>(user_id) 
   
 
   
@@ -3421,7 +3421,7 @@ access token.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/client.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_user'>get_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_user'><span class='object_link'><a href="Request.html#get_user-class_method" title="Echosign::Request.get_user (method)">get_user</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_user'>get_user</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -3431,7 +3431,7 @@ access token.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_users-instance_method">
   
-    #<strong>get_users</strong>(user_email)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>get_users</strong>(user_email) 
   
 
   
@@ -3500,7 +3500,7 @@ access token.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/client.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_users'>get_users</span><span class='lparen'>(</span><span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_users'><span class='object_link'><a href="Request.html#get_users-class_method" title="Echosign::Request.get_users (method)">get_users</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_users'>get_users</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -3510,7 +3510,7 @@ access token.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_widget-instance_method">
   
-    #<strong>get_widget</strong>(widget_id)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>get_widget</strong>(widget_id) 
   
 
   
@@ -3574,7 +3574,7 @@ access token.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_widget'>get_widget</span><span class='lparen'>(</span><span class='id identifier rubyid_widget_id'>widget_id</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_widget'><span class='object_link'><a href="Request.html#get_widget-class_method" title="Echosign::Request.get_widget (method)">get_widget</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_widget'>get_widget</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -3584,7 +3584,7 @@ access token.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_widget_audit_trail-instance_method">
   
-    #<strong>get_widget_audit_trail</strong>(widget_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>get_widget_audit_trail</strong>(widget_id, file_path = nil) 
   
 
   
@@ -3681,7 +3681,7 @@ saved to file.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_widget_audit_trail'>get_widget_audit_trail</span><span class='lparen'>(</span><span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_widget_audit_trail'><span class='object_link'><a href="Request.html#get_widget_audit_trail-class_method" title="Echosign::Request.get_widget_audit_trail (method)">get_widget_audit_trail</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_widget_audit_trail'>get_widget_audit_trail</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -3697,7 +3697,7 @@ saved to file.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_widget_combined_pdf-instance_method">
   
-    #<strong>get_widget_combined_pdf</strong>(widget_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>get_widget_combined_pdf</strong>(widget_id, file_path = nil) 
   
 
   
@@ -3795,7 +3795,7 @@ saved to file.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_widget_combined_pdf'>get_widget_combined_pdf</span><span class='lparen'>(</span><span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_widget_combined_pdf'>get_widget_combined_pdf</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_widget_combined_pdf'>get_widget_combined_pdf</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -3811,7 +3811,7 @@ saved to file.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_widget_document_file-instance_method">
   
-    #<strong>get_widget_document_file</strong>(widget_id, document_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>get_widget_document_file</strong>(widget_id, document_id, file_path = nil) 
   
 
   
@@ -3911,7 +3911,7 @@ saved to file.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_widget_document_file'>get_widget_document_file</span><span class='lparen'>(</span><span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_document_id'>document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_widget_document_file'><span class='object_link'><a href="Request.html#get_widget_document_file-class_method" title="Echosign::Request.get_widget_document_file (method)">get_widget_document_file</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_document_id'>document_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_widget_document_file'>get_widget_document_file</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_document_id'>document_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -3927,7 +3927,7 @@ saved to file.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_widget_documents-instance_method">
   
-    #<strong>get_widget_documents</strong>(widget_id, version_id = nil, participant_email = nil)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>get_widget_documents</strong>(widget_id, version_id = nil, participant_email = nil) 
   
 
   
@@ -4028,7 +4028,7 @@ then latest version will be used.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_widget_documents'>get_widget_documents</span><span class='lparen'>(</span><span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_version_id'>version_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_participant_email'>participant_email</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_widget_documents'><span class='object_link'><a href="Request.html#get_widget_documents-class_method" title="Echosign::Request.get_widget_documents (method)">get_widget_documents</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_version_id'>version_id</span><span class='comma'>,</span> <span class='id identifier rubyid_participant_email'>participant_email</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_widget_documents'>get_widget_documents</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_version_id'>version_id</span><span class='comma'>,</span> <span class='id identifier rubyid_participant_email'>participant_email</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4038,7 +4038,7 @@ then latest version will be used.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_widget_form_data-instance_method">
   
-    #<strong>get_widget_form_data</strong>(widget_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>get_widget_form_data</strong>(widget_id, file_path = nil) 
   
 
   
@@ -4136,7 +4136,7 @@ saved to file.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_widget_form_data'>get_widget_form_data</span><span class='lparen'>(</span><span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_widget_form_data'><span class='object_link'><a href="Request.html#get_widget_form_data-class_method" title="Echosign::Request.get_widget_form_data (method)">get_widget_form_data</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_widget_form_data'>get_widget_form_data</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -4152,7 +4152,7 @@ saved to file.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_widgets-instance_method">
   
-    #<strong>get_widgets</strong>(user_id = nil, user_email = nil)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>get_widgets</strong>(user_id = nil, user_email = nil) 
   
 
   
@@ -4243,7 +4243,7 @@ neither is specified then the user is inferred from the access token</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_widgets'>get_widgets</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_widgets'><span class='object_link'><a href="Request.html#get_widgets-class_method" title="Echosign::Request.get_widgets (method)">get_widgets</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_get_widgets'>get_widgets</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_email'>user_email</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4253,7 +4253,7 @@ neither is specified then the user is inferred from the access token</p>
       <div class="method_details ">
   <h3 class="signature " id="library_combined_document-instance_method">
   
-    #<strong>library_combined_document</strong>(library_document_id, file_path = nil, auditReport = false)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>library_combined_document</strong>(library_document_id, file_path = nil, auditReport = false) 
   
 
   
@@ -4361,7 +4361,7 @@ value will be false.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/library_documents/client.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_library_combined_document'>library_combined_document</span><span class='lparen'>(</span><span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_auditReport'>auditReport</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_library_combined_document'><span class='object_link'><a href="Request.html#library_combined_document-class_method" title="Echosign::Request.library_combined_document (method)">library_combined_document</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_auditReport'>auditReport</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_library_combined_document'>library_combined_document</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_auditReport'>auditReport</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -4377,7 +4377,7 @@ value will be false.</p>
       <div class="method_details ">
   <h3 class="signature " id="library_document_audit_trail-instance_method">
   
-    #<strong>library_document_audit_trail</strong>(library_document_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>library_document_audit_trail</strong>(library_document_id, file_path = nil) 
   
 
   
@@ -4466,7 +4466,7 @@ to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/library_documents/client.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_library_document_audit_trail'>library_document_audit_trail</span><span class='lparen'>(</span><span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_library_document_audit_trail'><span class='object_link'><a href="Request.html#library_document_audit_trail-class_method" title="Echosign::Request.library_document_audit_trail (method)">library_document_audit_trail</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_library_document_audit_trail'>library_document_audit_trail</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_library_document_id'>library_document_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -4482,7 +4482,7 @@ to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="mega_sign_combined_pdf-instance_method">
   
-    #<strong>mega_sign_combined_pdf</strong>(mega_sign_id, file_path = nil, versionId = nil, participantEmail = nil, attachSupportingDocuments = true, auditReport = false)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>mega_sign_combined_pdf</strong>(mega_sign_id, file_path = nil, versionId = nil, participantEmail = nil, attachSupportingDocuments = true, auditReport = false) 
   
 
   
@@ -4653,7 +4653,7 @@ Default value is false</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/mega_sign/client.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mega_sign_combined_pdf'>mega_sign_combined_pdf</span><span class='lparen'>(</span><span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_versionId'>versionId</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_participantEmail'>participantEmail</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_attachSupportingDocuments'>attachSupportingDocuments</span><span class='op'>=</span><span class='kw'>true</span><span class='comma'>,</span> <span class='id identifier rubyid_auditReport'>auditReport</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_combined_pdf'><span class='object_link'><a href="Request.html#mega_sign_combined_pdf-class_method" title="Echosign::Request.mega_sign_combined_pdf (method)">mega_sign_combined_pdf</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_versionId'>versionId</span><span class='comma'>,</span> <span class='id identifier rubyid_participantEmail'>participantEmail</span><span class='comma'>,</span> <span class='id identifier rubyid_attachSupportingDocuments'>attachSupportingDocuments</span><span class='comma'>,</span> <span class='id identifier rubyid_auditReport'>auditReport</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_combined_pdf'>mega_sign_combined_pdf</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_versionId'>versionId</span><span class='comma'>,</span> <span class='id identifier rubyid_participantEmail'>participantEmail</span><span class='comma'>,</span> <span class='id identifier rubyid_attachSupportingDocuments'>attachSupportingDocuments</span><span class='comma'>,</span> <span class='id identifier rubyid_auditReport'>auditReport</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -4669,7 +4669,7 @@ Default value is false</p>
       <div class="method_details ">
   <h3 class="signature " id="mega_sign_document_file-instance_method">
   
-    #<strong>mega_sign_document_file</strong>(mega_sign_id, document_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>mega_sign_document_file</strong>(mega_sign_id, document_id, file_path = nil) 
   
 
   
@@ -4779,7 +4779,7 @@ to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/mega_sign/client.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mega_sign_document_file'>mega_sign_document_file</span><span class='lparen'>(</span><span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_document_id'>document_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_document_file'><span class='object_link'><a href="Request.html#mega_sign_document_file-class_method" title="Echosign::Request.mega_sign_document_file (method)">mega_sign_document_file</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_document_id'>document_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_document_file'>mega_sign_document_file</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_document_id'>document_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -4795,7 +4795,7 @@ to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="mega_sign_documents-instance_method">
   
-    #<strong>mega_sign_documents</strong>(mega_sign_id, recipient_email, format, version_id = nil)  &#x21d2; <tt>Array</tt> 
+    - (<tt>Array</tt>) <strong>mega_sign_documents</strong>(mega_sign_id, recipient_email, format, version_id = nil) 
   
 
   
@@ -4917,7 +4917,7 @@ the latest version of the mega_sign is used.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/mega_sign/client.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mega_sign_documents'>mega_sign_documents</span><span class='lparen'>(</span><span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_recipient_email'>recipient_email</span><span class='comma'>,</span> <span class='id identifier rubyid_format'>format</span><span class='comma'>,</span> <span class='id identifier rubyid_version_id'>version_id</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_documents'><span class='object_link'><a href="Request.html#mega_sign_documents-class_method" title="Echosign::Request.mega_sign_documents (method)">mega_sign_documents</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_recipient_email'>recipient_email</span><span class='comma'>,</span> <span class='id identifier rubyid_format'>format</span><span class='comma'>,</span> <span class='id identifier rubyid_version_id'>version_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_documents'>mega_sign_documents</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_recipient_email'>recipient_email</span><span class='comma'>,</span> <span class='id identifier rubyid_format'>format</span><span class='comma'>,</span> <span class='id identifier rubyid_version_id'>version_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4927,7 +4927,7 @@ the latest version of the mega_sign is used.</p>
       <div class="method_details ">
   <h3 class="signature " id="mega_sign_form_data-instance_method">
   
-    #<strong>mega_sign_form_data</strong>(mega_sign_id, file_path = nil)  &#x21d2; <tt>String</tt> 
+    - (<tt>String</tt>) <strong>mega_sign_form_data</strong>(mega_sign_id, file_path = nil) 
   
 
   
@@ -5021,7 +5021,7 @@ saved to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/mega_sign/client.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mega_sign_form_data'>mega_sign_form_data</span><span class='lparen'>(</span><span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='comma'>,</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_form_data'><span class='object_link'><a href="Request.html#mega_sign_form_data-class_method" title="Echosign::Request.mega_sign_form_data (method)">mega_sign_form_data</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_form_data'>mega_sign_form_data</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_file_path'>file_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -5037,7 +5037,7 @@ saved to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="mega_sign_info-instance_method">
   
-    #<strong>mega_sign_info</strong>(mega_sign_id)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>mega_sign_info</strong>(mega_sign_id) 
   
 
   
@@ -5106,7 +5106,7 @@ saved to disk.</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/mega_sign/client.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mega_sign_info'>mega_sign_info</span><span class='lparen'>(</span><span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_info'><span class='object_link'><a href="Request.html#mega_sign_info-class_method" title="Echosign::Request.mega_sign_info (method)">mega_sign_info</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_info'>mega_sign_info</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -5116,7 +5116,7 @@ saved to disk.</p>
       <div class="method_details ">
   <h3 class="signature " id="mega_sign_signing_urls-instance_method">
   
-    #<strong>mega_sign_signing_urls</strong>(mega_sign_id)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>mega_sign_signing_urls</strong>(mega_sign_id) 
   
 
   
@@ -5186,7 +5186,7 @@ mega_sign</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/mega_sign/client.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mega_sign_signing_urls'>mega_sign_signing_urls</span><span class='lparen'>(</span><span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_signing_urls'><span class='object_link'><a href="Request.html#mega_sign_signing_urls-class_method" title="Echosign::Request.mega_sign_signing_urls (method)">mega_sign_signing_urls</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_mega_sign_signing_urls'>mega_sign_signing_urls</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_mega_sign_id'>mega_sign_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -5196,7 +5196,7 @@ mega_sign</p>
       <div class="method_details ">
   <h3 class="signature " id="personalize_widget-instance_method">
   
-    #<strong>personalize_widget</strong>(widget_id, personalization)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>personalize_widget</strong>(widget_id, personalization) 
   
 
   
@@ -5271,7 +5271,7 @@ mega_sign</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_personalize_widget'>personalize_widget</span><span class='lparen'>(</span><span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_personalization'>personalization</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_personalize_widget'><span class='object_link'><a href="Request.html#personalize_widget-class_method" title="Echosign::Request.personalize_widget (method)">personalize_widget</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_personalization'>personalization</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_personalize_widget'>personalize_widget</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_personalization'>personalization</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -5281,7 +5281,7 @@ mega_sign</p>
       <div class="method_details ">
   <h3 class="signature " id="update_widget_status-instance_method">
   
-    #<strong>update_widget_status</strong>(widget_id, status)  &#x21d2; <tt>Hash</tt> 
+    - (<tt>Hash</tt>) <strong>update_widget_status</strong>(widget_id, status) 
   
 
   
@@ -5356,7 +5356,7 @@ mega_sign</p>
       <pre class="code"><span class="info file"># File 'lib/echosign/widget/client.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_widget_status'>update_widget_status</span><span class='lparen'>(</span><span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Echosign.html" title="Echosign (module)">Echosign</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Request.html" title="Echosign::Request (module)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update_widget_status'><span class='object_link'><a href="Request.html#update_widget_status-class_method" title="Echosign::Request.update_widget_status (method)">update_widget_status</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
+  <span class='const'>Echosign</span><span class='op'>::</span><span class='const'>Request</span><span class='period'>.</span><span class='id identifier rubyid_update_widget_status'>update_widget_status</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_widget_id'>widget_id</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -5367,12 +5367,11 @@ mega_sign</p>
 
 </div>
 
-      <div id="footer">
-  Generated on Fri Sep  7 16:13:49 2018 by
+    <div id="footer">
+  Generated on Sat Sep  8 17:29:45 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.6.0).
+  0.8.7.4 (ruby-2.6.0).
 </div>
 
-    </div>
   </body>
 </html>

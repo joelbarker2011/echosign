@@ -3,3 +3,4 @@
 .yardoc/*
 .DS_Store
 coverage/
+scripts/oauth_config.rb

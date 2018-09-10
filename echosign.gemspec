@@ -6,11 +6,11 @@ require 'echosign/version'
 Gem::Specification.new do |spec|
   spec.name          = "echosign"
   spec.version       = Echosign::VERSION
-  spec.authors       = ["Bernard Worthy"]
-  spec.email         = ["cthomas@railjumper.com"]
+  spec.authors       = ["Cath Thomas", "Justin Martin"]
+  spec.email         = ["justin@fundrx.co"]
   spec.summary       = %q{Package summary}
   spec.description   = %q{A ruby gem that simplifies the use of Adobe's EchoSign web API.}
-  spec.homepage      = "http://github.com/bernardworthy/echosign"
+  spec.homepage      = "http://github.com/fundrx/echochamber"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -29,8 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "factory_girl"
   spec.add_development_dependency "simplecov"
 
-  # spec.add_dependency "faraday"
   spec.add_dependency "json"
   spec.add_dependency "httparty"
-
+  spec.add_dependency "oauth2"
 end

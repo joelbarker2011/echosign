@@ -14,17 +14,22 @@ module Echosign::Request
   end
 
   BASE_URL = 'https://api.eu1.echosign.com/api/rest/v5'
-  REFRESH_URL = 'https://api.eu1.echosign.com/oauth/refresh'
 
   ENDPOINT = { 
-    refresh: REFRESH_URL,
+    refresh: 'https://api.eu1.echosign.com/oauth/refresh',
+    base_uri: BASE_URL + '/base_uris',
     user: BASE_URL + '/users',
     agreement: BASE_URL + '/agreements',
     mega_sign: BASE_URL + '/megaSigns',
     reminder: BASE_URL + '/reminders',
     transientDocument: BASE_URL + '/transientDocuments',
     libraryDocument: BASE_URL + '/libraryDocuments',
-    widget: BASE_URL + '/widgets'
+    widget: BASE_URL + '/widgets',
+    view: BASE_URL + '/views',
+    search: BASE_URL + '/search',
+    workflow: BASE_URL + '/workflows',
+    group: BASE_URL + '/groups',
+    megaSign: BASE_URL + '/megaSigns',
   }
 
   # Retrieves the authentication token
@@ -33,7 +38,7 @@ module Echosign::Request
   # @return [String] Valid authentication token
   def self.get_token(credentials)
     headers = {}
-    response = post(ENDPOINT.fetch(:refresh), credentials, headers)
+    response = post(ENDPOINT.fetch(:refresh), credentials.refresh_token, headers)
     response_body = JSON.parse(response.body)
     response_body.fetch("access_token")
   end
@@ -130,7 +135,7 @@ module Echosign::Request
     begin
       HTTParty.post(
         endpoint,
-        query: body, 
+        query: body,
         headers: headers
       )
     rescue Exception => error
