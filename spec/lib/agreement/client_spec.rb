@@ -48,6 +48,33 @@ describe Echosign::Client do
     end
   end
 
+  describe 'create_agreement_from_library' do
+    it 'returns the agreement_id' do
+      expect(client).to receive(:create_transient_document).and_return(
+        '2AAABLblqZhAvTt7Fn5rekfGISO4HYFWyQp8PXylVvno79LAgPXyooIim4kITjXE5lhCf0wobVTJMV3-PzaWLbjoOJpcmg9ZI8edAw-4KUWmSq16kSn8YgHbvCOs5mArwDlP8rXxWX9C-BiJPLy8NXWTXxkNm-jVvtiSGGol9Qi_KOO9HcWHVm3ForHltsIxofIGwY5syTBawJOGehzkXn9k2SLh1xiTaWmeGPkzYZT8jDUyF5dkTKQ**')
+
+      VCR.use_cassette('create_agreement_from_library', :record => :once) do
+        agreement_id = client.create_agreement_from_file(
+          "Rumplestiltskin Contract",
+          'goishi.san@gmail.com',
+          'fixtures/agreement.pdf')
+        expect(agreement_id).to_not be_nil
+      end
+    end
+  end
+
+  describe 'create_agreement_from_file' do
+    it 'returns the agreement_id' do
+      VCR.use_cassette('create_agreement_from_file', :record => :once) do
+        agreement_id = client.create_agreement_from_library(
+          "Rumplestiltskin Contract",
+          'goishi.san@gmail.com',
+          '3AAABLblqZhBVM83-X2Wos0HwTjSvkKG1dx3U8TPdF6DIwnmhmFS9uVFg36YC3syanC3FHxSALaejaxkhbX9g8K1smE8Lx9vY')
+        expect(agreement_id).to_not be_nil
+      end
+    end
+  end
+
   describe '.get_agreements' do
     it 'returns all agreements' do
       VCR.use_cassette('get_agreements', :record => :once) do

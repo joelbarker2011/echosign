@@ -35,7 +35,7 @@ module Echosign
           name: agreement_name,
         }
 
-      if options[:merge_field_info].present?
+      if options[:merge_field_info]
         agreement_info[:mergeFieldInfo] = options[:merge_field_info].map { |key, value| {fieldName:key, defaultValue:value} }
       end
 
@@ -53,8 +53,10 @@ module Echosign
     #                       To give mergeFieldInfo, pass a hash with key 'merge_field_info', eg: {merge_field_info: {company:'Acme', full_name:'Dave Coaches'}
     # @return [Hash] Agreement response body
     def create_agreement_from_file(agreement_name, recipient_email, file_name, options = {})
+      require 'mime-types'
+
       document_id = create_transient_document(File.basename(file_name), MIME::Types.type_for(file_name).first.content_type, file_name)
-      raise "Could not create transient document from #{file_name}" if document_id.blank?
+      raise "Could not create transient document from #{file_name}" if document_id.nil?
       agreement_info = {
           fileInfos: [ Echosign::Fileinfo.new(transientDocumentId:document_id) ],
           recipientSetInfos: [ Echosign::Recipient.new(role: 'SIGNER', email: recipient_email) ],
@@ -63,7 +65,7 @@ module Echosign
           name: agreement_name
         }
 
-      if options[:merge_field_info].present?
+      if options[:merge_field_info]
         agreement_info[:mergeFieldInfo] = options[:merge_field_info].map { |key, value| {fieldName:key, defaultValue:value} }
       end
 

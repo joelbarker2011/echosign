@@ -29,8 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "factory_girl"
   spec.add_development_dependency "simplecov"
 
-  # spec.add_dependency "faraday"
   spec.add_dependency "json"
   spec.add_dependency "httparty"
-
+  spec.add_dependency "mime-types"
 end

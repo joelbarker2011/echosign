@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.eu1.echosign.com/api/rest/v5/agreements
+    body:
+      encoding: UTF-8
+      string: '{"documentCreationInfo":{"fileInfos":[[{"transientDocumentId":"2AAABLblqZhAvTt7Fn5rekfGISO4HYFWyQp8PXylVvno79LAgPXyooIim4kITjXE5lhCf0wobVTJMV3-PzaWLbjoOJpcmg9ZI8edAw-4KUWmSq16kSn8YgHbvCOs5mArwDlP8rXxWX9C-BiJPLy8NXWTXxkNm-jVvtiSGGol9Qi_KOO9HcWHVm3ForHltsIxofIGwY5syTBawJOGehzkXn9k2SLh1xiTaWmeGPkzYZT8jDUyF5dkTKQ**"}]],"recipients":[{"role":"SIGNER","email":"goishi.san@gmail.com"}],"signatureFlow":"SENDER_SIGNS_LAST","signatureType":"ESIGN","name":"Rumplestiltskin
+        Contract"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Access-Token:
+      - 2AAABLblqZhC3HrDExRuNnTr9I-U3z2f2KtGloHKah3ccogCP4HzbN5XSbcKSlxNJDtNCVAq94pM*
+      Content-Length:
+      - '485'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 18 Aug 2014 10:32:17 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - JSESSIONID=7526490328E61961D2BE4362E2D3B893.ord-prod-app1; Path=/; Secure;
+        HttpOnly
+      Content-Length:
+      - '95'
+      Strict-Transport-Security:
+      - max-age=31536000;
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      X-Robots-Tag:
+      - none
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"agreementId":"2AAABLblqZhDH5O_Xd8tfOd1Zo9wVISPLZOaCZMbrNqEFQbBC4RqW7W1FgVWp4lhWk8cG5ctTnEU*"}'
+    http_version: 
+  recorded_at: Mon, 18 Aug 2014 10:32:20 GMT
+recorded_with: VCR 2.8.0
