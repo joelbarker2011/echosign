@@ -3,7 +3,7 @@ module Echosign
 
     include Validatable
 
-    # Creates an Echosign::Recipient object 
+    # Creates an Echosign::Recipient object
     #
     # @param [Hash] params SYMBOL-referenced Hash.  Role, and either fax or email is required.
     # @option params [String] :role ['SIGNER' or 'APPROVER']: Specify the role of recipient (REQUIRED)
@@ -14,9 +14,9 @@ module Echosign
 
     def initialize(params)
       require_exactly_one([:email, :fax], params)
-      merge!(params)
+      email_or_fax = params[:email] ? {email:params[:email]} : {fax:params[:fax]}
+      merge!(recipientSetMemberInfos:email_or_fax, recipientSetRole:params[:role])
     end
 
   end
 end
-

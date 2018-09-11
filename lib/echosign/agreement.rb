@@ -21,7 +21,7 @@ module Echosign
     # @option params [String] :signatureFlow ['SENDER_SIGNATURE_NOT_REQUIRED' or 'SENDER_SIGNS_LAST' or 'SENDER_SIGNS_FIRST' or 'SEQUENTIAL' or 'PARALLEL']: Selects the workflow you would like to use - whether the sender needs to sign before the recipient, after the recipient, or not at all. The possible values for this variable are SENDER_SIGNATURE_NOT_REQUIRED, SENDER_SIGNS_LAST, SENDER_SIGNS_FIRST, SEQUENTIAL or PARALLEL.  (REQUIRED)
     # @option params [String] :signatureType ['ESIGN' or 'WRITTEN']: Specifies the type of signature you would like to request - written or eSignature. The possible values are ESIGN or WRITTEN  (REQUIRED)
     # @option params [String] :name The name of the agreement that will be used to identify it, in emails and on the website. (REQUIRED)
-    # @return [Echosign::Agreement] 
+    # @return [Echosign::Agreement]
     def initialize(user_id=nil, user_email=nil, params)
       @user_id = user_id
       @user_email = user_email

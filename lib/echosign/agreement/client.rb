@@ -7,8 +7,9 @@ module Echosign
    # @param agreement [Echosign::Agreement]
    # @return [String] Agreement ID
    def create_agreement(agreement)
-      agreement_response = Echosign::Request.create_agreement(agreement, token, agreement.user_id, agreement.user_email)
-      agreement_response.fetch("agreementId")
+     agreement_response = Echosign::Request.create_agreement(agreement, token, agreement.user_id, agreement.user_email)
+     return agreement_response['agreementId'] if agreement_response.has_key?('agreementId')
+     raise "Error creating agreement - response was #{agreement_response}"
    end
 
    # Gets list of agreements
@@ -21,7 +22,7 @@ module Echosign
    end
 
    # Gets detailed info on an agreement
-   # 
+   #
    # @param agreement_id [String] ID of agreement to retrieve info on.
    # @return [Hash] Detailed agreement info
    def agreement_info(agreement_id)
@@ -29,7 +30,7 @@ module Echosign
    end
 
    # Cancel agreement
-   # 
+   #
    # @param agreement_id [String] (REQUIRED)
    # @param notify_signer [Boolean] Whether to notify the signer by email of the cancellation.  Default is false.
    # @param comment [String] Comment regarding this cancellation.
@@ -37,7 +38,7 @@ module Echosign
    def cancel_agreement(agreement_id, notify_signer=false, comment=nil)
      request_body = {
        "value" => "CANCEL",
-       "notifySigner" => notify_signer 
+       "notifySigner" => notify_signer
      }
      request_body.merge!(comment: comment) unless comment.nil?
 
@@ -46,7 +47,7 @@ module Echosign
    end
 
    # All documents relating to an agreement
-   # 
+   #
    # @param agreement_id [String] (REQUIRED)
    # @param recipient_email [String] The email address of the participant to be used to retrieve documents. (REQUIRED)
    # @param format [String] Content format of the supported documents. It can have two possible values ORIGINAL or CONVERTED_PDF. (REQUIRED)
@@ -81,7 +82,7 @@ module Echosign
    end
 
    # Gets a single combined PDF document for the documents associated with an agreement.
-   # 
+   #
    # @param agreement_id [String]  (REQUIRED)
    # @param file_path [String] File path to save the document.  If no file path is given, nothing is saved to disk.
    # @param versionId [String] The version identifier of agreement as provided by get_agreement. If not provided then latest version will be used
@@ -100,7 +101,7 @@ module Echosign
    end
 
    # Retrieves library document audit trail file
-   # 
+   #
    # @param agreement_id [String]  (REQUIRED)
    # @param file_path [String] File path where to save the CSV file.  If no file path is given, nothing is saved to disk.
    # @return [String] Raw bytes representing CSV file
