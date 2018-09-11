@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://secure.echosign.com/oauth/refresh
+    body:
+      encoding: UTF-8
+      string: client_id=9Q444442AX82M&client_secret=390db09fc6672388b9457593a7&grant_type=refresh_token&refresh_token=3AAABLblqZhCNb-X2YXthBgBsEVpM1xC0EATrsDEo0yAmXOIlM58tuASRzYaMjhUGNbRQga8syqE%2A
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 23:41:11 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - none
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"3AAABLblqZhA9xhGH0gLPM8cKzF-pe_Uv_0_w72y8CqySA1kyRLveqY7fWZo_M3GC9u-ogYb3eAnD95YpnnlerKigV6IZHqFZ","token_type":"Bearer","expires_in":3600}'
+    http_version: 
+  recorded_at: Tue, 11 Sep 2018 23:41:11 GMT
+recorded_with: VCR 2.8.0

@@ -55,6 +55,7 @@ module Echosign
     # @return [String] An access token that can be used in the EchoSign API
     def get_token(code, redirect_uri)
       
+      @client.options[:token_url] = TOKEN_PATH
       oauth_token = @client.get_token(code: code,
                                    redirect_uri: redirect_uri,
                                    grant_type: :authorization_code)
@@ -76,24 +77,12 @@ module Echosign
     # This method should only be called after #get_token
     def refresh_access_token(current_refresh_token = nil)
       @refresh_token = current_refresh_token if current_refresh_token != nil
-      opts = {
-        raise_errors: true,
-        headers: {
-          'Content-Type' => 'application/x-www-form-urlencoded',
-        },
-        body: {
-          'grant_type' => 'refresh_token',
-          'refresh_token' => @refresh_token,
-        }
-      }
 
-      response = @client.request(:post, REFRESH_PATH, opts)
+      @client.options[:token_url] = REFRESH_PATH
+      oauth_token = @client.get_token(grant_type: :refresh_token, refresh_token: @refresh_token)
 
-      error = OAuth::Error.new(response)
-      @client.fail(error) if !(response.parsed.is_a?(Hash) && response.parsed['access_token'])
-
-      @access_token = response.parsed['access_token']
-      @expires_at = Time.now + response.parsed['expires_in']
+      @access_token = oauth_token.token
+      @expires_at = oauth_token.expires_at
 
       return @access_token
 
