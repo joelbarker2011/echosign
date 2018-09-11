@@ -2,43 +2,45 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.eu1.echosign.com/oauth/refresh
+    uri: https://secure.echosign.com/oauth/token
     body:
       encoding: UTF-8
-      string: '{"applicationCredentials":{"applicationId":"9QC4444Y2AX82M","applicationSecret":"39066666ee6f71ffc6d488b9457593a7"},"userCredentials":{"apiKey":"XCNUUUUU3URX95Y","email":"cthomas@railjumper.com","password":"dfddkk"}}'
+      string: client_id=9Q444442AX82M&client_secret=390db09fc6672388b9457593a7&code=CBNCKBAAHBCAABAAsl_mVpKa1ksh2FrdZmjju5IzTQ2lynIE&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fexample.com%2Foauth%2Fcallback
     headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '216'
       User-Agent:
-      - Ruby
+      - Faraday v0.12.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sat, 16 Aug 2014 08:44:33 GMT
+      - Tue, 11 Sep 2018 19:07:58 GMT
       Server:
       - Apache
-      Content-Length:
-      - '115'
       Strict-Transport-Security:
       - max-age=31536000;
-      P3p:
-      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       X-Robots-Tag:
       - none
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Transfer-Encoding:
+      - chunked
       Content-Type:
       - application/json;charset=UTF-8
     body:
       encoding: UTF-8
-      string: '{"access_token":"2AAABLblqZhC3HrDExRuNnTr9I-U3z2f2KtGloHKah3ccogCP4HzbN5XSbcKSlxNJDtNCVAq94pM*","expires_in":1209599}'
+      string: '{"access_token":"3AAABLblqZhAN-cxVlpFIUv3XdlgqlyWF8qVbIWnUmmvkAB4u6yPBE50XAqTqzLNCjbWS8QKAZPdgYOaqZHv6EE5LEJOc5NOK","refresh_token":"3AAABLblqZhCNb-X2YXthBgBsEVpM1xC0EATrsDEo0yAmXOIlM58tuASRzYaMjhUGNbRQga8syqE*","token_type":"Bearer","expires_in":3600}'
     http_version: 
-  recorded_at: Sat, 16 Aug 2014 08:44:33 GMT
+  recorded_at: Tue, 11 Sep 2018 19:07:58 GMT
 recorded_with: VCR 2.8.0
