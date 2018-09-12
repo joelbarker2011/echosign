@@ -9,6 +9,7 @@ module Echosign
     AUTHORIZE_PATH = '/public/oauth'
     TOKEN_PATH = '/oauth/token'
     REFRESH_PATH = '/oauth/refresh'
+    REVOKE_PATH = '/oauth/revoke'
 
     attr_reader :access_token, :refresh_token, :expires_at
 
@@ -95,22 +96,15 @@ module Echosign
     # @return [void]
     def revoke_token(which = :access)
 
-      opts = {
-        raise_errors: true,
-        headers: {
-          'Content-Type' => 'application/x-www-form-urlencoded',
-        },
-        body: {
-          'token' => (which == :access) ? @access_token : @refresh_token,
-        }
-      }
+      if which == :access
+        @client.request(:post, REVOKE_PATH, body: { token: @access_token })
+      else
+        @client.request(:post, REVOKE_PATH, body: { token: @refresh_token })
+        @refresh_token = nil
+      end
 
-      response = @client.request(:post, REVOKE_PATH, opts)
-
-      error = OAuth::Error.new(response)
-      @auth_client.fail(error) if response.parsed.is_a?(Hash) && response.parsed['error']
-
-      return
+      @access_token = nil
+      @expires_at = nil
 
     end
 
