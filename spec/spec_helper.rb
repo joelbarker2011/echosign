@@ -24,7 +24,7 @@ VCR.configure do |c|
 end
 
 RSpec.configure do |config|
-  config.include WebMock
+  config.include WebMock::API
   config.include FactoryGirl::Syntax::Methods
 end
 
