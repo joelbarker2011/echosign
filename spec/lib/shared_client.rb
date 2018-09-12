@@ -1,15 +1,9 @@
 RSpec.shared_context "shared client" do
-
-  let(:app_id)        { "9Q444442AX82M" }
-  let(:app_secret)    { "390db09fc6672388b9457593a7" }
-
-  let(:credentials) do  
-    Echosign::Credentials.new(app_id, app_secret)
-  end
+  let(:access_token)  { "3AAABLblqZhAN-cxVlpFIUv3XdlgqlyWF8qVbIWnUmmvkAB4u6yPBE50XAqTqzLNCjbWS8QKAZPdgYOaqZHv6EE5LEJOc5NOK" }
 
   let(:client) do
     VCR.use_cassette('get_token', :record => :once) do
-      Echosign::Client.new(credentials) 
+      Echosign::Client.new(access_token)
     end
   end
 end

@@ -4,6 +4,9 @@ require 'lib/shared_client.rb'
 describe Echosign::Credentials do
   include_context "shared client"
 
+  let(:app_id)        { "9Q444442AX82M" }
+  let(:app_secret)    { "390db09fc6672388b9457593a7" }
+
   describe '#get_token' do
       it 'returns the access_token' do
         VCR.use_cassette('get_token', :record => :once) do
