@@ -407,7 +407,13 @@ on the website. (REQUIRED)</p>
 28
 29
 30
-31</pre>
+31
+32
+33
+34
+35
+36
+37</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/echosign/agreement.rb', line 25</span>
@@ -416,7 +422,13 @@ on the website. (REQUIRED)</p>
   <span class='ivar'>@user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_user_id'>user_id</span>
   <span class='ivar'>@user_email</span> <span class='op'>=</span> <span class='id identifier rubyid_user_email'>user_email</span>
   <span class='comment'>#TODO (cthomas) barf if user_id or user_email are blank
-</span>  <span class='id identifier rubyid_require_keys'>require_keys</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:signatureType</span><span class='comma'>,</span> <span class='symbol'>:recipientSetInfos</span><span class='comma'>,</span> <span class='symbol'>:signatureFlow</span><span class='comma'>,</span> <span class='symbol'>:fileInfos</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='symbol'>:recipients</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_warn'>warn</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NOTE: :recipients param in </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'>.new is deprecated; use :recipientSetInfos instead.\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+         <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'>.new called from </span><span class='embexpr_beg'>#{</span><span class='const'>Gem</span><span class='period'>.</span><span class='id identifier rubyid_location_of_caller'>location_of_caller</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+    <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:recipientSetInfos</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span> <span class='symbol'>:recipients</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_require_keys'>require_keys</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:signatureType</span><span class='comma'>,</span> <span class='symbol'>:recipientSetInfos</span><span class='comma'>,</span> <span class='symbol'>:signatureFlow</span><span class='comma'>,</span> <span class='symbol'>:fileInfos</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='label'>documentCreationInfo:</span> <span class='id identifier rubyid_params'>params</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
