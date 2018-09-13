@@ -24,9 +24,6 @@ GEM
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
     hashdiff (0.3.7)
-    highline (1.6.21)
-    hitch (1.0.2)
-      highline (>= 1.6.2)
     httparty (0.16.2)
       multi_xml (>= 0.5.2)
     i18n (0.6.11)
@@ -76,7 +73,6 @@ DEPENDENCIES
   bundler (~> 1.6)
   echosign!
   factory_girl
-  hitch
   pry
   rake
   rspec
