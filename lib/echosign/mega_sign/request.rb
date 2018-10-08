@@ -126,17 +126,7 @@ module Echosign::Request
   def self.update_mega_sign_status(token, mega_sign_id, request_body)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:megaSign)}/#{mega_sign_id}/status"
-
-    begin
-      response = HTTParty.put(
-        endpoint, 
-        request_body.to_json,
-        headers
-      )
-    rescue Exception => error
-      raise_error(error)
-    end
-
+    response = put(endpoint, request_body.to_json, headers)
     JSON.parse(response.body)
   end
 

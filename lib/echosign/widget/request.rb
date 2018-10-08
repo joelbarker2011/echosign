@@ -23,17 +23,7 @@ module Echosign::Request
   def self.personalize_widget(token, widget_id, personalization)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget)}/#{widget_id}/personalize"
-
-    begin
-      response = HTTParty.put(
-        endpoint, 
-        query: personalization.to_json,
-        headers: headers
-      )
-    rescue Exception => error
-      raise_error(error)
-    end
-
+    response = put(endpoint, personalization.to_json, headers)
     JSON.parse(response.body)
   end
 
@@ -46,17 +36,7 @@ module Echosign::Request
   def self.update_widget_status(token, widget_id, status)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget)}/#{widget_id}/status"
-
-    begin
-      response = HTTParty.put(
-        endpoint, 
-        query: status.to_json,
-        headers: headers
-      )
-    rescue Exception => error
-      raise_error(error)
-    end
-
+    response = put(endpoint, status.to_json, headers)
     JSON.parse(response.body)
   end
 

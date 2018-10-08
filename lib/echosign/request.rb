@@ -130,6 +130,16 @@ module Echosign::Request
     end
   end
 
+  def self.put(endpoint, query, headers)
+    begin
+      headers.merge!('Content-Type' => 'application/json')
+      response = HTTParty.put(endpoint, body: query, headers: headers)
+      response
+    rescue Exception => error
+      raise_error(error)
+    end
+  end
+
   def self.add_query(url, query)
     (url.include?('?') ? '&' : '?') + query
   end
