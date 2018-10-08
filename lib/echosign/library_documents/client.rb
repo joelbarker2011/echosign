@@ -8,7 +8,7 @@ module Echosign
     # @param user_email [String] The email address of the user whose library documents are being requested. If both user_id and user_email are provided then user_id is given preference. If neither is specified then the user is inferred from the access token.
     # @return [Hash] Library documents metadata
     def get_library_documents(user_id=nil, user_email=nil)
-      Echosign::Request.get_library_documents(token, user_id, user_email)
+      request(:get_library_documents, user_id, user_email)
     end
 
     # Retrieves library document metadata 
@@ -16,7 +16,7 @@ module Echosign
     # @param library_document_id [String] (REQUIRED)
     # @return [Hash] Library document metadata
     def get_library_document(library_document_id)
-      Echosign::Request.get_library_document(token, library_document_id)
+      request(:get_library_document, library_document_id)
     end
 
     # Retrieves library document files metadata
@@ -24,7 +24,7 @@ module Echosign
     # @param library_document_id [String] (REQUIRED)
     # @return [Hash] Library document files metadata
     def get_library_document_files(library_document_id)
-      Echosign::Request.get_library_document_files(token, library_document_id)
+      request(:get_library_document_files, library_document_id)
     end
 
     # Retrieves library document file data
@@ -34,7 +34,7 @@ module Echosign
     # @param file_path [String] File path for saving the document.  If none is given, nothing will be saved to disk.
     # @return [String] Raw library document file data
     def get_library_document_file(library_document_id, file_id, file_path=nil)
-      response = Echosign::Request.get_library_document_file(token, library_document_id, file_id)
+      response = request(:get_library_document_file, library_document_id, file_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
         file.write(response)
@@ -49,7 +49,7 @@ module Echosign
     # @param file_path [String] File path for saving the document.  If none is given, nothing will be saved to disk.
     # @return [String] Raw library document file data
     def library_document_audit_trail(library_document_id, file_path=nil)
-      response = Echosign::Request.library_document_audit_trail(token, library_document_id)
+      response = request(:library_document_audit_trail, library_document_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
         file.write(response)
@@ -65,7 +65,7 @@ module Echosign
     # @param auditReport [Boolean] When set to YES attach an audit report to the library document PDF. Default value will be false.
     # @return [String] Raw library combined document file data
     def library_combined_document(library_document_id, file_path=nil, auditReport=false)
-      response = Echosign::Request.library_combined_document(token, library_document_id, auditReport)
+      response = request(:library_combined_document, library_document_id, auditReport)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
         file.write(response)
@@ -74,10 +74,5 @@ module Echosign
       response
     end
 
-
-
-
   end
 end
-
-

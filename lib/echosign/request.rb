@@ -36,7 +36,7 @@ module Echosign::Request
   # @param body [Hash] Valid request body
   # @param token [String] Auth Token
   # @return [Hash] New user response body
-  def self.create_user(body, token)
+  def self.create_user(token, body)
     endpoint = ENDPOINT.fetch(:user)
     headers = { 'Access-Token' => token}
     response = post(endpoint, body, headers)

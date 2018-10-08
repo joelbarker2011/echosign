@@ -7,7 +7,7 @@ module Echosign
     # @param widget [Echosign::Widget]
     # @return [Hash]
     def create_widget(widget)
-      Echosign::Request.create_widget(token, widget)
+      request(:create_widget, widget)
     end
 
     # Personalize the widget to a signable document for a specific known user
@@ -16,7 +16,7 @@ module Echosign
     # @param personalization [Echosign::WidgetPersonalization]
     # @return [Hash] Operation result
     def personalize_widget(widget_id, personalization)
-      Echosign::Request.personalize_widget(token, widget_id, personalization)
+      request(:personalize_widget, widget_id, personalization)
     end
 
     # Enables or Disables a widget
@@ -25,7 +25,7 @@ module Echosign
     # @param status [Echosign::WidgetStatus]
     # @return [Hash] Widget status
     def update_widget_status(widget_id, status)
-      Echosign::Request.update_widget_status(token, widget_id, status)
+      request(:update_widget_status, widget_id, status)
     end
 
     # Retrieves widgets for a user
@@ -34,7 +34,7 @@ module Echosign
     # @param user_email [String] The email address of the user whose widgets are being requested. If both user_id  and user_email are provided then user_id is given preference. If neither is specified then the user is inferred from the access token
     # @return [Hash] Widgets info
     def get_widgets(user_id=nil, user_email=nil)
-      Echosign::Request.get_widgets(token, user_id, user_email)
+      request(:get_widgets, user_id, user_email)
     end
 
     # Retrieves the details of a widget
@@ -42,7 +42,7 @@ module Echosign
     # @param widget_id
     # @return [Hash] Detailed widget info
     def get_widget(widget_id)
-      Echosign::Request.get_widget(token, widget_id)
+      request(:get_widget, widget_id)
     end
 
     # Retrieves the IDs of the documents associated with widget.
@@ -52,7 +52,7 @@ module Echosign
     # @param participant_email [String] The email address of the participant to be used to retrieve documents
     # @return [Hash] Info about widget documents
     def get_widget_documents(widget_id, version_id=nil, participant_email=nil)
-      Echosign::Request.get_widget_documents(token, widget_id, version_id, participant_email)
+      request(:get_widget_documents, widget_id, version_id, participant_email)
     end
 
     # Retrieves the file stream of a document of a widget
@@ -62,7 +62,7 @@ module Echosign
     # @param file_path [String] File path where to save the document.  If none is given, nothing will be saved to file.
     # @return [String] Raw file stream
     def get_widget_document_file(widget_id, document_id, file_path=nil)
-      response = Echosign::Request.get_widget_document_file(token, widget_id, document_id)
+      response = request(:get_widget_document_file, widget_id, document_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
         file.write(response)
@@ -78,7 +78,7 @@ module Echosign
     # @param file_path [String] File path where to save the document.  If none is given, nothing will be saved to file.
     # @return [String] Raw file stream
     def get_widget_audit_trail(widget_id, file_path=nil)
-      response = Echosign::Request.get_widget_audit_trail(token, widget_id)
+      response = request(:get_widget_audit_trail, widget_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
         file.write(response)
@@ -94,7 +94,7 @@ module Echosign
     # @param file_path [String] File path where to save the document.  If none is given, nothing will be saved to file.
     # @return [String] Raw file stream
     def get_widget_combined_pdf(widget_id, file_path=nil)
-      response = Echosign::Request.get_widget_combined_pdf(token, widget_id)
+      response = request(:get_widget_combined_pdf, widget_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
         file.write(response)
@@ -110,7 +110,7 @@ module Echosign
     # @param file_path [String] File path where to save the document.  If none is given, nothing will be saved to file.
     # @return [String] Raw file stream
     def get_widget_form_data(widget_id, file_path=nil)
-      response = Echosign::Request.get_widget_form_data(token, widget_id)
+      response = request(:get_widget_form_data, widget_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
         file.write(response)
@@ -119,9 +119,5 @@ module Echosign
       response
     end
 
-
-
-
   end
 end
-

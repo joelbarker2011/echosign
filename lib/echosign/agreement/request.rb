@@ -7,7 +7,7 @@ module Echosign::Request
   # @param user_id [String] Echosign user ID  (REQUIRED)
   # @param user_email [String] Echosign user email
   # @return [Hash] Agreement response body
-  def self.create_agreement(body, token, user_id=nil, user_email=nil)
+  def self.create_agreement(token, body, user_id=nil, user_email=nil)
     headers = { 'Access-Token' => token }
     headers.merge!('X-User-Id' => user_id) unless user_id.nil?
     headers.merge!('X-User-Email' => user_email) unless user_email.nil?
