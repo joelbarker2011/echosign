@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     echosign (1.0.2)
-      httparty
-      json
+      httparty (~> 0.16)
+      json (~> 1)
 
 GEM
   remote: https://rubygems.org/
@@ -72,14 +72,14 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.6)
   echosign!
-  factory_girl
-  pry
-  rake
-  rspec
-  simplecov
-  vcr
-  webmock
-  yard
+  factory_girl (~> 4)
+  pry (~> 0.10)
+  rake (~> 10)
+  rspec (~> 3)
+  simplecov (~> 0.16)
+  vcr (~> 4)
+  webmock (~> 3)
+  yard (~> 0.8)
 
 BUNDLED WITH
    1.16.4
