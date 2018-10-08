@@ -20,7 +20,6 @@ module Echosign::Request
     refresh: REFRESH_URL,
     user: BASE_URL + '/users',
     agreement: BASE_URL + '/agreements',
-    mega_sign: BASE_URL + '/megaSigns',
     reminder: BASE_URL + '/reminders',
     transientDocument: BASE_URL + '/transientDocuments',
     libraryDocument: BASE_URL + '/libraryDocuments',
