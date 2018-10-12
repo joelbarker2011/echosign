@@ -25,9 +25,9 @@ module Echosign
       require_keys([:url])
       merge!(
         {
-          :deframe => deframe,
-          :delay => delay,
-          :url => url,
+          deframe: deframe,
+          delay: delay,
+          url: url,
         }
       )
     end

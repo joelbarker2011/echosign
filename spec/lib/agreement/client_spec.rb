@@ -40,7 +40,7 @@ describe Echosign::Client do
     let(:agreement) { Echosign::Agreement.new(agreement_user_id, agreement_user_email, agreement_info) }
 
     it 'returns the agreement_id' do
-      VCR.use_cassette('create_agreement', :record => :once) do
+      VCR.use_cassette('create_agreement', record: :once) do
         agreement_id = client.create_agreement(agreement)
         expect(agreement_id).to_not be_nil
       end
@@ -49,7 +49,7 @@ describe Echosign::Client do
 
   describe '.get_agreements' do
     it 'returns all agreements' do
-      VCR.use_cassette('get_agreements', :record => :once) do
+      VCR.use_cassette('get_agreements', record: :once) do
         response = client.get_agreements
         expect(response).to_not be_nil
       end
@@ -59,7 +59,7 @@ describe Echosign::Client do
   describe '.agreement_info' do
     let(:agreement_id) { "2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*" }
     it 'returns detailed agreement info' do
-      VCR.use_cassette('agreement_info', :record => :once) do
+      VCR.use_cassette('agreement_info', record: :once) do
         response = client.agreement_info(agreement_id)
         expect(response).to_not be_nil
       end
@@ -69,7 +69,7 @@ describe Echosign::Client do
   describe '.agreement_form_data' do
     let(:agreement_id) { "2AAABLblqZhDvfdYluvps8mSzQXnXr074OVtMYTwTVtljZYFJNi43iuzYeBaPUUOMTSlGXrt04Sw*" }
     it 'returns CSV data' do
-      VCR.use_cassette('agreement_form_data', :record => :once) do
+      VCR.use_cassette('agreement_form_data', record: :once) do
         response = client.agreement_form_data(agreement_id)
         expect(response).to_not be_nil
       end
@@ -80,7 +80,7 @@ describe Echosign::Client do
     let(:agreement_id) { "2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*" }
 
     it 'returns the result of the operation' do
-      VCR.use_cassette('cancel_agreement', :record => :once) do
+      VCR.use_cassette('cancel_agreement', record: :once) do
         result = client.cancel_agreement(agreement_id, true, 'Just because')
         expect(result).to_not be_nil
       end
@@ -94,7 +94,7 @@ describe Echosign::Client do
     let(:version_id) { nil }
 
     it 'returns information about documents for this agreement' do
-      VCR.use_cassette('agreement_documents', :record => :once) do
+      VCR.use_cassette('agreement_documents', record: :once) do
         result = client.agreement_documents(agreement_id, recipient_email, format, version_id)
         expect(result).to_not be_nil
       end
@@ -106,7 +106,7 @@ describe Echosign::Client do
     let(:document_id) { "2AAABLblqZhDcteEO9jy6gSat9d_3XgpPVpxhetoDCpU4L9PoolGv_3mqgKL1DhIGTXTHhqAHlHk*" }
 
     it 'returns a document file from the selected agreement' do
-      VCR.use_cassette('agreement_document_file', :record => :once) do
+      VCR.use_cassette('agreement_document_file', record: :once) do
         result = client.agreement_document_file(agreement_id, document_id)
         expect(result).to be_a String
         expect(result).to_not be_nil
@@ -118,7 +118,7 @@ describe Echosign::Client do
     let(:agreement_id) { "2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*" }
 
     it 'returns a pdf file for an audit trail on the agreement' do
-      VCR.use_cassette('audit_trail_pdf', :record => :once) do
+      VCR.use_cassette('audit_trail_pdf', record: :once) do
         result = client.audit_trail_pdf(agreement_id)
         expect(result).to be_a String
         expect(result).to_not be_nil
@@ -130,7 +130,7 @@ describe Echosign::Client do
     let(:agreement_id) { "2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*" }
 
     it 'returns a combined pdf file ' do
-      VCR.use_cassette('agreement_combined_pdf', :record => :once) do
+      VCR.use_cassette('agreement_combined_pdf', record: :once) do
         result = client.agreement_combined_pdf(agreement_id)
         expect(result).to be_a String
         expect(result).to_not be_nil
@@ -142,7 +142,7 @@ describe Echosign::Client do
     let(:agreement_id) { "2AAABLblqZhDdfTP0uM4EIz2UE2Mq27D7PXGl7Uk3e5nO4RtzlkN8GMANmeVwUVRWGGuUGCQoRQc*" }
 
     it 'returns URL information for the agreement' do
-      VCR.use_cassette('agreement_signing_urls', :record => :once) do
+      VCR.use_cassette('agreement_signing_urls', record: :once) do
         result = client.agreement_signing_urls(agreement_id)
         expect(result).to be_a Hash
       end

@@ -29,7 +29,7 @@ describe Echosign::Client do
     let(:widget) { Echosign::Widget.new(nil, nil, widget_params) }
 
     it 'returns widget info' do
-      VCR.use_cassette('create_widget', :record => :once) do
+      VCR.use_cassette('create_widget', record: :once) do
         widget_response = client.create_widget(widget)
         expect(widget_response).to be_a Hash
       end
@@ -46,7 +46,7 @@ describe Echosign::Client do
     let(:personalization) { Echosign::WidgetPersonalization.new(personalization_params) }
 
     it 'returns widget info' do
-      VCR.use_cassette('personalize_widget', :record => :once) do
+      VCR.use_cassette('personalize_widget', record: :once) do
         widget_response = client.personalize_widget(widget_id, personalization)
         expect(widget_response).to be_a Hash
       end
@@ -64,7 +64,7 @@ describe Echosign::Client do
     let(:status) { Echosign::WidgetStatus.new(status_params) }
 
     it 'returns widget info' do
-      VCR.use_cassette('update_widget_status', :record => :once) do
+      VCR.use_cassette('update_widget_status', record: :once) do
         widget_response = client.update_widget_status(widget_id, status)
         expect(widget_response).to be_a Hash
       end
@@ -73,7 +73,7 @@ describe Echosign::Client do
 
   describe '.get_widgets' do
     it 'returns widgets info' do
-      VCR.use_cassette('get_widgets', :record => :once) do
+      VCR.use_cassette('get_widgets', record: :once) do
         widget_response = client.get_widgets
         expect(widget_response).to be_a Hash
       end
@@ -83,7 +83,7 @@ describe Echosign::Client do
   describe '.get_widget' do
     let(:widget_id) { "2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*" }
     it 'returns widget info' do
-      VCR.use_cassette('get_widget', :record => :once) do
+      VCR.use_cassette('get_widget', record: :once) do
         widget_response = client.get_widget(widget_id)
         expect(widget_response).to be_a Hash
       end
@@ -94,7 +94,7 @@ describe Echosign::Client do
     let(:widget_id) { "2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*" }
 
     it 'returns widget documents info' do
-      VCR.use_cassette('get_widget_documents', :record => :once) do
+      VCR.use_cassette('get_widget_documents', record: :once) do
         widget_response = client.get_widget_documents(widget_id)
         expect(widget_response).to be_a Hash
       end
@@ -106,7 +106,7 @@ describe Echosign::Client do
     let(:document_id) { "2AAABLblqZhCGyGn1bpbXp-Kt-QXX8fsBWhjjO-bUKd0NQ184Xxm-mE6gg0DN0e-3k0Lwj6IPw9Q*" }
 
     it 'returns widget document file' do
-      VCR.use_cassette('get_widget_document_file', :record => :once) do
+      VCR.use_cassette('get_widget_document_file', record: :once) do
         widget_response = client.get_widget_document_file(widget_id, document_id)
         expect(widget_response).to_not be_nil
       end

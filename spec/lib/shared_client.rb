@@ -4,7 +4,7 @@ RSpec.shared_context "shared client" do
   }
 
   let(:client) do
-    VCR.use_cassette('get_token', :record => :once) do
+    VCR.use_cassette('get_token', record: :once) do
       Echosign::Client.new(access_token)
     end
   end

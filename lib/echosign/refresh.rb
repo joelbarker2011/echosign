@@ -10,10 +10,10 @@ module Echosign
     def initialize(client_id, client_secret, refresh_token)
       merge!(
         {
-          :client_id => client_id,
-          :client_secret => client_secret,
-          :refresh_token => refresh_token,
-          :grant_type => "refresh_token"
+          client_id: client_id,
+          client_secret: client_secret,
+          refresh_token: refresh_token,
+          grant_type: "refresh_token"
         }
       )
     end

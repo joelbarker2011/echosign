@@ -17,7 +17,7 @@ describe Echosign::Client do
     let (:user) { Echosign::User.new(user_params) }
 
     it 'returns the User ID' do
-      VCR.use_cassette('create_user', :record => :once) do
+      VCR.use_cassette('create_user', record: :once) do
         user_id = client.create_user(user)
         expect(user_id).to_not be_nil
       end
@@ -27,7 +27,7 @@ describe Echosign::Client do
   describe '.get_users' do
     let(:email) { "nobody@nobody.com" }
     it 'returns user data' do
-      VCR.use_cassette('get_users', :record => :once) do
+      VCR.use_cassette('get_users', record: :once) do
         response = client.get_users(email)
         expect(response).to be_a Hash
       end
@@ -37,7 +37,7 @@ describe Echosign::Client do
   describe '.get_user' do
     let(:id) { "2AAABLblqZhBp6sZ412RCo4_5P1OCDATcuKQf3gzb7M-kea77rqC7h6kzMKSpofswP8rY9Cwv9Vw*" }
     it 'returns user data' do
-      VCR.use_cassette('get_user', :record => :once) do
+      VCR.use_cassette('get_user', record: :once) do
         response = client.get_user(id)
         expect(response).to be_a Hash
       end
@@ -53,7 +53,7 @@ describe Echosign::Client do
     let(:reminder) { Echosign::Reminder.new(reminderInfo) }
 
     it 'returns result' do
-      VCR.use_cassette('create_reminder', :record => :once) do
+      VCR.use_cassette('create_reminder', record: :once) do
         response = client.create_reminder(reminder)
         expect(response).to be_a Hash
       end
@@ -66,7 +66,7 @@ describe Echosign::Client do
     let(:file) { File.new("fixtures/agreement.pdf", 'rb') }
 
     it 'returns the transient document ID' do
-      VCR.use_cassette('create_transient_document', :record => :once) do
+      VCR.use_cassette('create_transient_document', record: :once) do
         tran_doc_id = client.create_transient_document(file_name, mime_type, file)
         expect(tran_doc_id).to_not be_nil
       end
