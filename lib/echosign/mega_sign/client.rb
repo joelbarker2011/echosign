@@ -94,8 +94,10 @@ module Echosign
     # @param auditReport [Boolean] When set to YES, attach an audit report to the signed mega_sign PDF. Default
     #   value is false
     # @return [String] Raw bytes from document file
-    def mega_sign_combined_pdf(mega_sign_id, file_path = nil, versionId = nil, participantEmail = nil, attachSupportingDocuments = true, auditReport = false)
-      response = request(:mega_sign_combined_pdf, mega_sign_id, versionId, participantEmail, attachSupportingDocuments, auditReport)
+    def mega_sign_combined_pdf(mega_sign_id, file_path = nil, versionId = nil, participantEmail = nil,
+                               attachSupportingDocuments = true, auditReport = false)
+      response = request(:mega_sign_combined_pdf, mega_sign_id, versionId, participantEmail, attachSupportingDocuments,
+                         auditReport)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
         file.write(response)

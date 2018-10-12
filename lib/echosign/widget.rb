@@ -32,7 +32,8 @@ module Echosign
     #   Echosign::Fileinfo}.  Specifies the form field layer template or source of form fields to apply on the files
     #   in this transaction. If specified, the FileInfo for this parameter must refer to a form field layer template
     #   via libraryDocumentId or libraryDocumentName, or if specified via transientDocumentId or documentURL, it
-    #   must be of a supported file type. Note: Only one of the four parameters in every FileInfo object must be specified.
+    #   must be of a supported file type. Note: Only one of the four parameters in every FileInfo object must be
+    #   specified.
     # @option params [Echosign::WidgetCompletionInfo] :widgetCompletionInfo URL and associated properties for the
     #   success page the user will be taken to after filling out the widget
     # @option params [String] :callbackInfo A publicly accessible url to which EchoSign will perform an HTTP PUT

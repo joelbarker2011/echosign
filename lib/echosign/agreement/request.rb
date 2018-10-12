@@ -53,7 +53,8 @@ module Echosign::Request
   # @param token [String] Auth Token
   # @param agreement_id [String] ID of agreement to retrieve info on.
   # @return [String] Raw bytes from document file
-  def self.agreement_combined_pdf(token, base_uri, agreement_id, versionId, participantEmail, attachSupportingDocuments, auditReport)
+  def self.agreement_combined_pdf(token, base_uri, agreement_id, versionId, participantEmail,
+                                  attachSupportingDocuments, auditReport)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement, base_uri)}/#{agreement_id}/combinedDocument"
     endpoint << add_query(endpoint, "versionId=#{versionId}") unless versionId.nil?
