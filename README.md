@@ -22,14 +22,48 @@ It wouldn't hurt to read Adobe's [Echosign API documentation](https://secure.ech
 
 ## Usage
 
-#### Initializing a client
+#### Initializing a client with an existing refresh token
 
 ```
 require 'echosign'
 
-credentials = Echosign::Refresh.new(app_id, app_secret, refresh_token)
+credentials = Echosign::Credentials.new(app_id, app_secret)
+access_token = credentials.refresh_access_token(refresh_token)
 
-client = Echosign::Client.new(credentials)
+client = Echosign::Client.new(access_token)
+```
+
+#### Initializing a client with an authorization code
+
+Workflow before authorizing:
+- `redirect_uri` must be set in the EchoSign API configuration
+- `scope` will typically be something like `'agreement_write:account agreement_send:account'`
+
+```
+require 'echosign'
+
+credentials = Echosign::Credentials.new(app_id, app_secret)
+redirect_to credentials.authorize_url(redirect_uri, scope)
+```
+
+Workflow after authorizing:
+```
+require 'echosign'
+
+credentials = Echosign::Credentials.new(app_id, app_secret)
+token = credentials.get_token(params[:code], redirect_uri)
+
+# you should persist credentials.refresh_token somewhere to use in future
+
+client = Echosign::Client.new(token)
+```
+
+#### Initializing a client with a legacy integration key
+
+```
+require 'echosign'
+
+client = Echosign::Client.new(integration_key)
 ```
 
 #### Setting up a new agreement from a URL 
