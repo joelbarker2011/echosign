@@ -8,9 +8,9 @@ module Echosign::Request
   # @return [Hash] MegaSign response body
   def self.create_mega_sign(token, base_uri, body, user_id = nil, user_email = nil)
     headers = { 'Access-Token' => token }
-    headers.merge!('X-User-Id' => user_id) unless user_id.nil?
-    headers.merge!('X-User-Email' => user_email) unless user_email.nil?
-    headers.merge!('Content-Type' => "application/json")
+    headers['X-User-Id'] = user_id unless user_id.nil?
+    headers['X-User-Email'] = user_email unless user_email.nil?
+    headers['Content-Type'] = "application/json"
     response = HTTParty.post(ENDPOINT.fetch(:megaSign, base_uri), body: body.to_json,
                                                                   headers: headers)
     JSON.parse(response.body)

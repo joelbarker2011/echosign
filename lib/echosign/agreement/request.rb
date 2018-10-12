@@ -8,8 +8,8 @@ module Echosign::Request
   # @return [Hash] Agreement response body
   def self.create_agreement(token, base_uri, body, user_id = nil, user_email = nil)
     headers = { 'Access-Token' => token }
-    headers.merge!('X-User-Id' => user_id) unless user_id.nil?
-    headers.merge!('X-User-Email' => user_email) unless user_email.nil?
+    headers['X-User-Id'] = user_id unless user_id.nil?
+    headers['X-User-Email'] = user_email unless user_email.nil?
     response = post(ENDPOINT.fetch(:agreement, base_uri), body, headers, json: true)
     JSON.parse(response.body)
   end

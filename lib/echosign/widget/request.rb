@@ -8,8 +8,8 @@ module Echosign::Request
   def self.create_widget(token, base_uri, widget)
     endpoint = ENDPOINT.fetch(:widget, base_uri)
     headers = { 'Access-Token' => token }
-    headers.merge!('X-User-Id' => widget.user_id) unless widget.user_id.nil?
-    headers.merge!('X-User-Email' => widget.user_email) unless widget.user_email.nil?
+    headers['X-User-Id'] = widget.user_id unless widget.user_id.nil?
+    headers['X-User-Email'] = widget.user_email unless widget.user_email.nil?
     response = post(endpoint, widget, headers)
     JSON.parse(response.body)
   end
@@ -48,8 +48,8 @@ module Echosign::Request
   # @return [Hash] Response body
   def self.get_widgets(token, base_uri, user_id = nil, user_email = nil)
     headers = { 'Access-Token' => token }
-    headers.merge!('X-User-Id' => user_id) unless user_id.nil?
-    headers.merge!('X-User-Email' => user_email) unless user_email.nil?
+    headers['X-User-Id'] = user_id unless user_id.nil?
+    headers['X-User-Email'] = user_email unless user_email.nil?
     endpoint = "#{ENDPOINT.fetch(:widget, base_uri)}"
     response = get(endpoint, headers)
     JSON.parse(response.body)

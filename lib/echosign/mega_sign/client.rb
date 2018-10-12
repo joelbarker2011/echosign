@@ -38,7 +38,7 @@ module Echosign
         "value" => "CANCEL",
         "notifySigner" => notify_signer
       }
-      request_body.merge!(comment: comment) unless comment.nil?
+      request_body[:comment] = comment unless comment.nil?
 
       mega_sign_status_response = request(:update_mega_sign_status, mega_sign_id, request_body)
       mega_sign_status_response.fetch('result')

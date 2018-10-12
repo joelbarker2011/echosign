@@ -9,8 +9,8 @@ module Echosign::Request
   # @return [Hash] Library documents metadata
   def self.get_library_documents(token, base_uri, user_id = nil, user_email = nil)
     headers = { 'Access-Token' => token }
-    headers.merge!('X-User-Id' => user_id) unless user_id.nil?
-    headers.merge!('X-User-Email' => user_email) unless user_email.nil?
+    headers['X-User-Id'] = user_id unless user_id.nil?
+    headers['X-User-Email'] = user_email unless user_email.nil?
     endpoint = ENDPOINT.fetch(:libraryDocument, base_uri)
     response = get(endpoint, headers)
     JSON.parse(response.body)

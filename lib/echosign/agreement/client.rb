@@ -39,7 +39,7 @@ module Echosign
         "value" => "CANCEL",
         "notifySigner" => notify_signer
       }
-      request_body.merge!(comment: comment) unless comment.nil?
+      request_body[:comment] = comment unless comment.nil?
 
       agreement_status_response = request(:update_agreement_status, agreement_id, request_body)
       agreement_status_response.fetch('result')

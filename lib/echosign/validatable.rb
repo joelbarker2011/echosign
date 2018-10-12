@@ -20,7 +20,7 @@ module Echosign
           set_fields += 1
         end
       end
-      raise ParameterError, "Exactly one of #{field_group.to_s} should be present" if set_fields != 1
+      raise ParameterError, "Exactly one of #{field_group} should be present" if set_fields != 1
     end
 
     # TODO (bernardworthy) A validator accepting a block for conditional execution
@@ -39,7 +39,7 @@ module Echosign
     private
 
     def required_error(field)
-      raise RequiredParameterError, "Nil, empty or missing required parameter: #{field.to_s}"
+      raise RequiredParameterError, "Nil, empty or missing required parameter: #{field}"
     end
 
     # If blank? did not exist, we would need to invent it.

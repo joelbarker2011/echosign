@@ -87,7 +87,7 @@ module Echosign::Request
   def self.create_transient_document(token, base_uri, file_name, file_handle, mime_type = nil)
     headers = { 'Access-Token' => token }
     if file_handle.is_a?(String)
-      raise "Cannot find file: #{file_handle}" unless File.exists?(file_handle)
+      raise "Cannot find file: #{file_handle}" unless File.exist?(file_handle)
 
       file_handle = File.new(file_handle)
     end
@@ -142,7 +142,7 @@ module Echosign::Request
     # puts "[Echosign] #{body}"
     begin
       if options[:json]
-        headers.merge!('Content-Type' => 'application/json')
+        headers['Content-Type'] = 'application/json'
         body = body.to_json if body.is_a?(Hash)
       end
       response = HTTParty.post(endpoint, body: body, headers: headers)
@@ -154,7 +154,7 @@ module Echosign::Request
 
   def self.put(endpoint, query, headers)
     begin
-      headers.merge!('Content-Type' => 'application/json')
+      headers['Content-Type'] = 'application/json'
       response = HTTParty.put(endpoint, body: query, headers: headers)
       response
     rescue Exception => error
