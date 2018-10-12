@@ -1,14 +1,13 @@
 module Echosign::Request
-
   # Creates a widget and returns the Javascript snippet and URL to access the widget and widgetID in response to
   #   the client
-  # 
+  #
   # @param token [String] Auth token
   # @param widget [Echosign::Widget]
   # @return [Hash]
   def self.create_widget(token, base_uri, widget)
     endpoint = ENDPOINT.fetch(:widget, base_uri)
-    headers = { 'Access-Token' => token}
+    headers = { 'Access-Token' => token }
     headers.merge!('X-User-Id' => widget.user_id) unless widget.user_id.nil?
     headers.merge!('X-User-Email' => widget.user_email) unless widget.user_email.nil?
     response = post(endpoint, widget, headers)
@@ -47,7 +46,7 @@ module Echosign::Request
   # @param user_id [String]
   # @param user_email [String]
   # @return [Hash] Response body
-  def self.get_widgets(token, base_uri, user_id=nil, user_email=nil)
+  def self.get_widgets(token, base_uri, user_id = nil, user_email = nil)
     headers = { 'Access-Token' => token }
     headers.merge!('X-User-Id' => user_id) unless user_id.nil?
     headers.merge!('X-User-Email' => user_email) unless user_email.nil?
@@ -71,7 +70,7 @@ module Echosign::Request
   #
   # @param widget_id [String]
   # @return [Hash] Response body
-  def self.get_widget_documents(token, base_uri, widget_id, version_id=nil, participant_email=nil)
+  def self.get_widget_documents(token, base_uri, widget_id, version_id = nil, participant_email = nil)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget, base_uri)}/#{widget_id}/documents"
     endpoint << add_query(endpoint, "versionId=#{version_id}") unless version_id.nil?
@@ -109,5 +108,4 @@ module Echosign::Request
     endpoint = "#{ENDPOINT.fetch(:widget, base_uri)}/#{widget_id}/formData"
     response = get(endpoint, headers)
   end
-
 end

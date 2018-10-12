@@ -1,5 +1,4 @@
 module Echosign::Request
-
   # Performs REST create_mega_sign operation
   #
   # @param body [Hash] Request body  (REQUIRED)
@@ -7,13 +6,13 @@ module Echosign::Request
   # @param user_id [String] Echosign user ID  (REQUIRED)
   # @param user_email [String] Echosign user email
   # @return [Hash] MegaSign response body
-  def self.create_mega_sign(token, base_uri, body, user_id=nil, user_email=nil)
+  def self.create_mega_sign(token, base_uri, body, user_id = nil, user_email = nil)
     headers = { 'Access-Token' => token }
     headers.merge!('X-User-Id' => user_id) unless user_id.nil?
     headers.merge!('X-User-Email' => user_email) unless user_email.nil?
     headers.merge!('Content-Type' => "application/json")
     response = HTTParty.post(ENDPOINT.fetch(:megaSign, base_uri), :body => body.to_json,
-    :headers => headers)
+                                                                  :headers => headers)
     JSON.parse(response.body)
   end
 
@@ -52,7 +51,7 @@ module Echosign::Request
   end
 
   # Gets a single combined PDF document for the documents associated with an mega_sign.
-  # 
+  #
   # @param token [String] Auth Token
   # @param mega_sign_id [String] ID of mega_sign to retrieve info on.
   # @return [String] Raw bytes from document file
@@ -67,7 +66,7 @@ module Echosign::Request
   end
 
   # Retrieves data entered by the user into interactive form fields at the time they signed the mega_sign
-  # 
+  #
   # @param token [String] Auth Token
   # @param mega_sign_id [String]  (REQUIRED)
   # @return [String] Raw bytes representing CSV file
@@ -108,7 +107,7 @@ module Echosign::Request
   # @param version_id [String] Version of the mega_sign as provided by {mega_sign_info mega_sign_info}.  If not
   #   provided, the latest version of the mega_sign is used.
   # @return [Hash] MegaSign documents response body
-  def self.mega_sign_documents(token, base_uri, mega_sign_id, recipient_email=nil, format=nil, version_id=nil)
+  def self.mega_sign_documents(token, base_uri, mega_sign_id, recipient_email = nil, format = nil, version_id = nil)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:megaSign, base_uri)}/#{mega_sign_id}/documents"
     endpoint << add_query(endpoint, "versionId=#{version_id}") unless version_id.nil?
@@ -117,7 +116,6 @@ module Echosign::Request
     response = get(endpoint, headers)
     JSON.parse(response.body)
   end
-
 
   # Performs REST PUT /mega_sign/:id operation
   #
@@ -131,5 +129,4 @@ module Echosign::Request
     response = put(endpoint, request_body.to_json, headers)
     JSON.parse(response.body)
   end
-
 end

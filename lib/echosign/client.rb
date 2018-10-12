@@ -2,17 +2,14 @@ require 'echosign/agreement/client'
 require 'echosign/library_documents/client'
 require 'echosign/widget/client'
 
-
 module Echosign
-
   class Client
-
     attr_reader :token
 
     # Initializes the Client object
     #
     # @param token [String] Access token or integration key
-    # @return [Echochamber::Client] Initialized Echochamber::Client 
+    # @return [Echochamber::Client] Initialized Echochamber::Client
     def initialize(token)
       @token = token
       @base_uri = nil
@@ -23,7 +20,7 @@ module Echosign
     # @param user [Echosign::User]
     # @return [String] User ID of new Echosign user
     def create_user(user)
-      user_response  = request(:create_user, user)
+      user_response = request(:create_user, user)
       user_response.fetch("userId")
     end
 
@@ -51,7 +48,7 @@ module Echosign
     # @param agreement_id [String]  (REQUIRED)
     # @param file_path [String] File path to save the document.  If no file path is given, nothing is saved to disk.
     # @return [String] Raw bytes from document file
-    def audit_trail_pdf(agreement_id, file_path=nil)
+    def audit_trail_pdf(agreement_id, file_path = nil)
       response = request(:audit_trail_pdf, agreement_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
@@ -90,7 +87,5 @@ module Echosign
       @base_uri ||= Echosign::Request.get_base_uris(@token).fetch('api_access_point')
       Echosign::Request.send(method, @token, @base_uri, *params)
     end
-
   end # class Client
-
 end # module Echosign

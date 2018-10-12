@@ -1,19 +1,17 @@
 module Echosign
-
-  class Client 
-
+  class Client
     # Retrieves library documents metadata for a user.
     #
-    # @param user_id [String] The ID of the user whose library documents are being requested. 
+    # @param user_id [String] The ID of the user whose library documents are being requested.
     # @param user_email [String] The email address of the user whose library documents are being requested. If both
     #   user_id and user_email are provided then user_id is given preference. If neither is specified then the user
     #   is inferred from the access token.
     # @return [Hash] Library documents metadata
-    def get_library_documents(user_id=nil, user_email=nil)
+    def get_library_documents(user_id = nil, user_email = nil)
       request(:get_library_documents, user_id, user_email)
     end
 
-    # Retrieves library document metadata 
+    # Retrieves library document metadata
     #
     # @param library_document_id [String] (REQUIRED)
     # @return [Hash] Library document metadata
@@ -35,7 +33,7 @@ module Echosign
     # @param file_id [String] (REQUIRED)
     # @param file_path [String] File path for saving the document.  If none is given, nothing will be saved to disk.
     # @return [String] Raw library document file data
-    def get_library_document_file(library_document_id, file_id, file_path=nil)
+    def get_library_document_file(library_document_id, file_id, file_path = nil)
       response = request(:get_library_document_file, library_document_id, file_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
@@ -50,7 +48,7 @@ module Echosign
     # @param library_document_id (REQUIRED)
     # @param file_path [String] File path for saving the document.  If none is given, nothing will be saved to disk.
     # @return [String] Raw library document file data
-    def library_document_audit_trail(library_document_id, file_path=nil)
+    def library_document_audit_trail(library_document_id, file_path = nil)
       response = request(:library_document_audit_trail, library_document_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
@@ -67,7 +65,7 @@ module Echosign
     # @param auditReport [Boolean] When set to YES attach an audit report to the library document PDF. Default value
     #   will be false.
     # @return [String] Raw library combined document file data
-    def library_combined_document(library_document_id, file_path=nil, auditReport=false)
+    def library_combined_document(library_document_id, file_path = nil, auditReport = false)
       response = request(:library_combined_document, library_document_id, auditReport)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
@@ -76,6 +74,5 @@ module Echosign
       end
       response
     end
-
   end
 end

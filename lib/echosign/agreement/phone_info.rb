@@ -1,9 +1,8 @@
 module Echosign
   class PhoneInfo < Hash
-
     include Validatable
 
-    # PhoneInfo 
+    # PhoneInfo
     #
     # @param [Hash] params SYMBOL-referenced Hash.
     # @option params [String] :phone The phone number required for the recipient to view and sign the document
@@ -16,6 +15,5 @@ module Echosign
       require_keys([:phone], params)
       merge!(params)
     end
-
   end
 end

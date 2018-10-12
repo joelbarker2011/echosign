@@ -1,10 +1,9 @@
 module Echosign
-  class WidgetStatus< Hash
-
+  class WidgetStatus < Hash
     include Validatable
 
-    # Status object 
-    # 
+    # Status object
+    #
     # @option [Hash] params
     # @option params [String] :value The status to which the widget is to be updated. The possible values for this
     #   variable are ENABLE and DISABLE (REQUIRED)
@@ -19,6 +18,5 @@ module Echosign
       require_exactly_one([:message, :redirectUrl], params)
       merge!(params)
     end
-
   end
 end

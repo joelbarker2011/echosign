@@ -6,39 +6,38 @@ describe Echosign::Client do
   include_context "shared client"
 
   describe '.create_agreement' do
-
     let(:url_file_info) do
       {
-      url: 'http://findgoplayers.com/resume.pdf',
-      mimeType: 'application/pdf',
-      name: 'resume.pdf'
+        url: 'http://findgoplayers.com/resume.pdf',
+        mimeType: 'application/pdf',
+        name: 'resume.pdf'
       }
     end
 
     let(:file_info) do
-      { 
-        documentURL: Echosign::UrlFileInfo.new(url_file_info) 
+      {
+        documentURL: Echosign::UrlFileInfo.new(url_file_info)
       }
     end
 
     let(:file_infos) do
-      [ Echosign::Fileinfo.new(file_info) ] 
+      [Echosign::Fileinfo.new(file_info)]
     end
 
-    let(:agreement_user_id) { nil } 
+    let(:agreement_user_id) { nil }
     let(:agreement_user_email) { nil }
 
     let(:agreement_info) do
       {
-        fileInfos: [ file_infos ],
-        recipientSetInfos: [ Echosign::Recipient.new({ role: 'SIGNER', email: 'goishi.san@gmail.com'})],
+        fileInfos: [file_infos],
+        recipientSetInfos: [Echosign::Recipient.new({ role: 'SIGNER', email: 'goishi.san@gmail.com' })],
         signatureFlow: "SENDER_SIGNS_LAST",
         signatureType: "ESIGN",
         name: "Rumplestiltskin Contract"
       }
     end
 
-    let(:agreement)  { Echosign::Agreement.new(agreement_user_id, agreement_user_email, agreement_info) }
+    let(:agreement) { Echosign::Agreement.new(agreement_user_id, agreement_user_email, agreement_info) }
 
     it 'returns the agreement_id' do
       VCR.use_cassette('create_agreement', :record => :once) do
@@ -68,13 +67,13 @@ describe Echosign::Client do
   end
 
   describe '.agreement_form_data' do
-   let(:agreement_id) { "2AAABLblqZhDvfdYluvps8mSzQXnXr074OVtMYTwTVtljZYFJNi43iuzYeBaPUUOMTSlGXrt04Sw*" }
+    let(:agreement_id) { "2AAABLblqZhDvfdYluvps8mSzQXnXr074OVtMYTwTVtljZYFJNi43iuzYeBaPUUOMTSlGXrt04Sw*" }
     it 'returns CSV data' do
       VCR.use_cassette('agreement_form_data', :record => :once) do
         response = client.agreement_form_data(agreement_id)
         expect(response).to_not be_nil
       end
-   end
+    end
   end
 
   describe '.cancel_agreement' do
@@ -109,7 +108,7 @@ describe Echosign::Client do
     it 'returns a document file from the selected agreement' do
       VCR.use_cassette('agreement_document_file', :record => :once) do
         result = client.agreement_document_file(agreement_id, document_id)
-        expect(result).to be_a String 
+        expect(result).to be_a String
         expect(result).to_not be_nil
       end
     end
@@ -121,7 +120,7 @@ describe Echosign::Client do
     it 'returns a pdf file for an audit trail on the agreement' do
       VCR.use_cassette('audit_trail_pdf', :record => :once) do
         result = client.audit_trail_pdf(agreement_id)
-        expect(result).to be_a String 
+        expect(result).to be_a String
         expect(result).to_not be_nil
       end
     end
@@ -133,7 +132,7 @@ describe Echosign::Client do
     it 'returns a combined pdf file ' do
       VCR.use_cassette('agreement_combined_pdf', :record => :once) do
         result = client.agreement_combined_pdf(agreement_id)
-        expect(result).to be_a String 
+        expect(result).to be_a String
         expect(result).to_not be_nil
       end
     end
@@ -149,9 +148,4 @@ describe Echosign::Client do
       end
     end
   end
-
-
-
 end
- 
-

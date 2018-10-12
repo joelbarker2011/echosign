@@ -6,7 +6,6 @@ require 'echosign/agreement/form_field_location'
 
 module Echosign
   class Agreement < Hash
-
     include Validatable
 
     attr_accessor :user_id, :user_email
@@ -34,10 +33,10 @@ module Echosign
     # @option params [String] :name The name of the agreement that will be used to identify it, in emails and on the
     #   website. (REQUIRED)
     # @return [Echosign::Agreement]
-    def initialize(user_id=nil, user_email=nil, params)
+    def initialize(user_id = nil, user_email = nil, params)
       @user_id = user_id
       @user_email = user_email
-      #TODO (cthomas) barf if user_id or user_email are blank
+      # TODO (cthomas) barf if user_id or user_email are blank
       if params.has_key?(:recipients)
         warn("NOTE: :recipients param in #{self.class}.new is deprecated; use :recipientSetInfos instead.\n" +
              "#{self.class}.new called from #{Gem.location_of_caller.join(":")}")
@@ -47,6 +46,5 @@ module Echosign
       require_keys([:signatureType, :recipientSetInfos, :signatureFlow, :fileInfos, :name], params)
       merge!({ documentCreationInfo: params })
     end
-
   end # class Agreement
 end # module Echosign

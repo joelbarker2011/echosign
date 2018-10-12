@@ -1,6 +1,5 @@
 module Echosign
   class User < Hash
-
     include Validatable
 
     # Creates a user for the current application
@@ -32,6 +31,5 @@ module Echosign
       require_keys([:firstName, :lastName, :email, :password], params)
       merge!(params)
     end
-
   end # class User
 end # module Echosign

@@ -25,33 +25,34 @@ describe Echosign::Client do
   end
 
   describe '.get_users' do
-   let(:email) { "nobody@nobody.com" }
+    let(:email) { "nobody@nobody.com" }
     it 'returns user data' do
       VCR.use_cassette('get_users', :record => :once) do
         response = client.get_users(email)
         expect(response).to be_a Hash
       end
-   end
+    end
   end
 
   describe '.get_user' do
-   let(:id) { "2AAABLblqZhBp6sZ412RCo4_5P1OCDATcuKQf3gzb7M-kea77rqC7h6kzMKSpofswP8rY9Cwv9Vw*" }
+    let(:id) { "2AAABLblqZhBp6sZ412RCo4_5P1OCDATcuKQf3gzb7M-kea77rqC7h6kzMKSpofswP8rY9Cwv9Vw*" }
     it 'returns user data' do
       VCR.use_cassette('get_user', :record => :once) do
         response = client.get_user(id)
         expect(response).to be_a Hash
       end
-   end
+    end
   end
 
   describe '.create_reminder' do
-    let(:reminderInfo) { { 
-        agreementId: "2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*", 
-        comment: "Hey don't forget..." 
-    } }
+    let(:reminderInfo) {
+      {
+        agreementId: "2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*",
+        comment: "Hey don't forget..."
+      } }
     let(:reminder) { Echosign::Reminder.new(reminderInfo) }
 
-    it 'returns result'  do
+    it 'returns result' do
       VCR.use_cassette('create_reminder', :record => :once) do
         response = client.create_reminder(reminder)
         expect(response).to be_a Hash
@@ -71,8 +72,4 @@ describe Echosign::Client do
       end
     end
   end
-
-
 end # describe Echosign::Client
-
-

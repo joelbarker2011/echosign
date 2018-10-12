@@ -1,13 +1,11 @@
 module Echosign
-
   class RequiredParameterError < StandardError; end
   class ParameterError < StandardError; end
 
   module Validatable
-
     def require_keys(required_fields, params)
       required_fields.each do |field|
-        validate_field(field, params) 
+        validate_field(field, params)
       end
     end
 
@@ -15,7 +13,7 @@ module Echosign
       set_fields = 0
       field_group.each do |field|
         begin
-          validate_field(field, params) 
+          validate_field(field, params)
         rescue RequiredParameterError
           next
         else
@@ -26,7 +24,7 @@ module Echosign
     end
 
     # TODO (bernardworthy) A validator accepting a block for conditional execution
-    # might be useful.  
+    # might be useful.
     # Maybe require_keys should accept a block.  Figure out later.
 
     def validate_field(field, params)
@@ -46,9 +44,7 @@ module Echosign
 
     # If blank? did not exist, we would need to invent it.
     def blank?(field)
-      field.nil? || field.empty? 
+      field.nil? || field.empty?
     end
-
   end
-
 end

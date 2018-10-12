@@ -4,7 +4,6 @@ describe Echosign::Client do
   include_context "shared client"
 
   describe '.create_widget' do
-
     let(:url_file_info_params) do
       {
         url: 'http://findgoplayers.com/resume.pdf',
@@ -14,18 +13,18 @@ describe Echosign::Client do
     end
 
     let(:file_info_params) do
-      { 
-        documentURL: Echosign::UrlFileInfo.new(url_file_info_params) 
+      {
+        documentURL: Echosign::UrlFileInfo.new(url_file_info_params)
       }
     end
 
     let(:widget_params) do
       {
         signatureFlow: 'SENDER_SIGNS_LAST',
-        fileInfos: [ Echosign::Fileinfo.new(file_info_params) ],
+        fileInfos: [Echosign::Fileinfo.new(file_info_params)],
         name: 'Test widget'
       }
-    end 
+    end
 
     let(:widget) { Echosign::Widget.new(nil, nil, widget_params) }
 
@@ -114,41 +113,39 @@ describe Echosign::Client do
     end
   end
 
-#  describe '.get_widget_audit_trail' do
-#    let(:widget_id) { "2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*" }
+  #  describe '.get_widget_audit_trail' do
+  #    let(:widget_id) { "2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*" }
 
-#    it 'returns widget document file' do
-#      VCR.use_cassette('get_widget_audit_trail', :record => :once) do
-#        widget_response = client.get_widget_audit_trail(widget_id)
-#        binding.pry
-#        expect(widget_response).to_not be_nil
-#      end
-#    end
-#  end
+  #    it 'returns widget document file' do
+  #      VCR.use_cassette('get_widget_audit_trail', :record => :once) do
+  #        widget_response = client.get_widget_audit_trail(widget_id)
+  #        binding.pry
+  #        expect(widget_response).to_not be_nil
+  #      end
+  #    end
+  #  end
 
-#  describe '.get_widget_combined_pdf' do
-#    let(:widget_id) { "2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*" }
+  #  describe '.get_widget_combined_pdf' do
+  #    let(:widget_id) { "2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*" }
 
-#    it 'returns widget document file' do
-#      VCR.use_cassette('get_widget_combined_pdf', :record => :once) do
-#        widget_response = client.get_widget_combined_pdf(widget_id)
-#        binding.pry
-#        expect(widget_response).to_not be_nil
-#      end
-#    end
-#  end
+  #    it 'returns widget document file' do
+  #      VCR.use_cassette('get_widget_combined_pdf', :record => :once) do
+  #        widget_response = client.get_widget_combined_pdf(widget_id)
+  #        binding.pry
+  #        expect(widget_response).to_not be_nil
+  #      end
+  #    end
+  #  end
 
-#  describe '.get_widget_form_data' do
-#    let(:widget_id) { "2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*" }
+  #  describe '.get_widget_form_data' do
+  #    let(:widget_id) { "2AAABLblqZhD_6RpgbZh5ZVlLXz1H1kfVzw4vHB91MtmjNHBDorFqO0H3_cGzBudZxiWNzPXFzOc*" }
 
-#    it 'returns widget document file' do
-#      VCR.use_cassette('get_widget_form_data', :record => :once) do
-#        widget_response = client.get_widget_form_data(widget_id)
-#        binding.pry
-#        expect(widget_response).to_not be_nil
-#      end
-#    end
-#  end
-
-
+  #    it 'returns widget document file' do
+  #      VCR.use_cassette('get_widget_form_data', :record => :once) do
+  #        widget_response = client.get_widget_form_data(widget_id)
+  #        binding.pry
+  #        expect(widget_response).to_not be_nil
+  #      end
+  #    end
+  #  end
 end

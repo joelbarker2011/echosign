@@ -1,9 +1,8 @@
 module Echosign
   class Fileinfo < Hash
-
     include Validatable
 
-    # Validates Fileinfo params 
+    # Validates Fileinfo params
     #
     # @param [Hash] params SYMBOL-referenced Hash containing exactly one of the following:
     # @option params [String] :transientDocumentId A transient document ID available to the sender
@@ -17,4 +16,3 @@ module Echosign
     end
   end
 end
-

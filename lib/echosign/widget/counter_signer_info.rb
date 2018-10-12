@@ -1,11 +1,10 @@
 module Echosign
   class CounterSignerInfo < Hash
-
     include Validatable
 
     # Initialization object
-    # 
-    # @param [Hash] params SYMBOL-referenced Hash containing: 
+    #
+    # @param [Hash] params SYMBOL-referenced Hash containing:
     # @option params [String] :email Email of the recipient (REQUIRED)
     # @option params [String] :role ['SIGNER' or 'APPROVER']: Specify the role of recipient (REQUIRED)
 
@@ -15,6 +14,5 @@ module Echosign
       require_keys([:email, :role], params)
       merge!(params)
     end
-
   end
 end

@@ -1,10 +1,9 @@
 module Echosign
   class WidgetCompletionInfo < Hash
-
     include Validatable
 
     # Widget initialization object
-    # 
+    #
     # @param [Hash] params SYMBOL-referenced Hash containing:
     # @option params [String] :url A publicly accessible url to which the user will be sent after successfully
     #   completing the widget. If the URL you provide includes information that allows you to identify the specific
@@ -21,18 +20,16 @@ module Echosign
     # @option params [Fixnum] :delay The delay (in seconds) before the user is taken to the success page. If this
     #   value is greater than 0, the user will first see the standard EchoSign success message, and then after a
     #   delay will be redirected to your success page. Note that this parameter has no effect for widgets loaded
-    #   with javascript when deframe is true 
+    #   with javascript when deframe is true
     def initialize(params)
       require_keys([:url])
       merge!(
-      {
-        :deframe => deframe,
-        :delay => delay,
-        :url => url,
-      }
+        {
+          :deframe => deframe,
+          :delay => delay,
+          :url => url,
+        }
       )
     end
-
   end
 end
-

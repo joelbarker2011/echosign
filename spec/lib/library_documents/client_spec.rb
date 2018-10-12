@@ -15,7 +15,7 @@ describe Echosign::Client do
   end
 
   describe '.get_library_document' do
-    let(:library_document_id) {"2AAABLblqZhCri9FNiCHjwsixnFegzTxO6cP52B-FIhfOXZjjDHggZoYPQB5r0YS66QZg4DLQV-g*"}
+    let(:library_document_id) { "2AAABLblqZhCri9FNiCHjwsixnFegzTxO6cP52B-FIhfOXZjjDHggZoYPQB5r0YS66QZg4DLQV-g*" }
     it 'returns info about library document' do
       VCR.use_cassette('get_library_document', :record => :once) do
         response = client.get_library_document(library_document_id)
@@ -25,7 +25,7 @@ describe Echosign::Client do
   end
 
   describe '.get_library_document_files' do
-    let(:library_document_id) {"2AAABLblqZhAlC4t0c3xAJ92RFv44xFGZhbCuHpalUdpcHW9k72imMEG-W1SYCmUoia1ZNgQZ-FE*"}
+    let(:library_document_id) { "2AAABLblqZhAlC4t0c3xAJ92RFv44xFGZhbCuHpalUdpcHW9k72imMEG-W1SYCmUoia1ZNgQZ-FE*" }
     it 'returns info about library document files' do
       VCR.use_cassette('get_library_document_file', :record => :once) do
         response = client.get_library_document_files(library_document_id)
@@ -40,7 +40,7 @@ describe Echosign::Client do
     it 'returns library document file data' do
       VCR.use_cassette('get_library_document_data', :record => :once) do
         response = client.get_library_document_file(library_document_id, file_id)
-        expect(response).to_not be_nil 
+        expect(response).to_not be_nil
       end
     end
   end
@@ -50,7 +50,7 @@ describe Echosign::Client do
     it 'returns library document file data' do
       VCR.use_cassette('library_document_audit_trail', :record => :once) do
         response = client.library_document_audit_trail(library_document_id)
-        expect(response).to_not be_nil 
+        expect(response).to_not be_nil
       end
     end
   end
@@ -60,12 +60,8 @@ describe Echosign::Client do
     it 'returns library combined document file data' do
       VCR.use_cassette('library_combined_document', :record => :once) do
         response = client.library_combined_document(library_document_id, nil, true)
-        expect(response).to_not be_nil 
+        expect(response).to_not be_nil
       end
     end
   end
-
-
-
 end
-

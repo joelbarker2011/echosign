@@ -1,11 +1,10 @@
 module Echosign
   class UrlFileInfo < Hash
-
     include Validatable
 
     # Validates UrlFileInfo parameters
     #
-    # @param [Hash] params SYMBOL-referenced Hash 
+    # @param [Hash] params SYMBOL-referenced Hash
     # @option params [String] :url A publicly accessible URL for retrieving the raw file content. HTTP
     #   authentication is supported using standard embedded syntax - i.e. http://username:password@your.server.com/path/to/file (REQUIRED)
     # @option params [String] :mimeType The mime type of the referenced file, used to determine if the file can be
@@ -18,4 +17,3 @@ module Echosign
     end
   end
 end
-

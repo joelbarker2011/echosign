@@ -1,6 +1,5 @@
 module Echosign
   class Reminder < Hash
-
     include Validatable
 
     # Reminder options

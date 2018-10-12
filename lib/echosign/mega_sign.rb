@@ -4,7 +4,6 @@ require 'echosign/agreement/recipient'
 
 module Echosign
   class MegaSign < Hash
-
     include Validatable
 
     attr_accessor :user_id, :user_email
@@ -31,14 +30,13 @@ module Echosign
     #   to request - written or eSignature. The possible values are ESIGN or WRITTEN  (REQUIRED)
     # @option params [String] :name The name of the megasign that will be used to identify it, in emails and on the
     #   website. (REQUIRED)
-    # @return [Echosign::MegaSign] 
-    def initialize(user_id=nil, user_email=nil, params)
+    # @return [Echosign::MegaSign]
+    def initialize(user_id = nil, user_email = nil, params)
       @user_id = user_id
       @user_email = user_email
-      #TODO (cthomas) barf if user_id or user_email are blank
+      # TODO (cthomas) barf if user_id or user_email are blank
       require_keys([:signatureType, :recipientSetInfos, :signatureFlow, :fileInfos, :name], params)
       merge!({ megaSignCreationInfo: params })
     end
-
   end # class MegaSign
 end # module Echosign

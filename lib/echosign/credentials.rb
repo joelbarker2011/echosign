@@ -1,6 +1,5 @@
 module Echosign
   class Credentials
-
     require 'oauth2'
 
     include Validatable
@@ -20,13 +19,13 @@ module Echosign
     #
     # @return [Echosign::Credentials] Echosign OAuth2 wrapper object
     def initialize(client_id, client_secret)
-
       @client = OAuth2::Client.new(
         client_id,
         client_secret,
         site: OAUTH_SITE,
         authorize_url: AUTHORIZE_PATH,
-        token_url: TOKEN_PATH)
+        token_url: TOKEN_PATH
+      )
     end
 
     # Build an authorization endpoint URL for EchoSign's OAuth2 provider
@@ -40,12 +39,11 @@ module Echosign
     # The redirect_uri must be specified on the app's OAuth Configuration page.
     # @see https://secure.na1.echosign.com/public/static/oauthDoc.jsp#authorizationRequest
     def authorize_url(redirect_uri, scope, state = nil)
-      
       return @client.auth_code.authorize_url(
-        redirect_uri: redirect_uri, 
-        scope: scope, 
-        state: state)
-
+        redirect_uri: redirect_uri,
+        scope: scope,
+        state: state
+      )
     end
 
     # Make a request to the token endpoint and return an access token
@@ -55,18 +53,16 @@ module Echosign
     #
     # @return [String] An access token that can be used in the EchoSign API
     def get_token(code, redirect_uri)
-      
       @client.options[:token_url] = TOKEN_PATH
       oauth_token = @client.get_token(code: code,
-                                   redirect_uri: redirect_uri,
-                                   grant_type: :authorization_code)
+                                      redirect_uri: redirect_uri,
+                                      grant_type: :authorization_code)
 
       @access_token = oauth_token.token
       @refresh_token = oauth_token.refresh_token
       @expires_at = oauth_token.expires_at
 
       return @access_token
-
     end
 
     # Update (refresh) an access token
@@ -86,7 +82,6 @@ module Echosign
       @expires_at = oauth_token.expires_at
 
       return @access_token
-
     end
 
     # Revoke an access or refresh token, and any corresponding tokens
@@ -95,7 +90,6 @@ module Echosign
     #
     # @return [void]
     def revoke_token(which = :access)
-
       if which == :access
         @client.request(:post, REVOKE_PATH, body: { token: @access_token })
       else
@@ -105,9 +99,6 @@ module Echosign
 
       @access_token = nil
       @expires_at = nil
-
     end
-
   end
 end
-

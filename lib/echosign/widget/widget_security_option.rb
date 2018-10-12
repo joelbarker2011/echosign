@@ -1,10 +1,9 @@
 module Echosign
   class WidgetSecurityOption < Hash
-
     include Validatable
 
     # Widget initialization object
-    # 
+    #
     # @param [Hash] params SYMBOL-referenced Hash containing:
     # @option params [String] :passwordProtection Specifies if signers are required to enter a password to have
     #   access to sign the widget. The possible values are NONE, EXTERNAL_USERS, INTERNAL_USERS, or ALL_USERS
@@ -12,7 +11,7 @@ module Echosign
     #   access to view and sign the widget. The possible values are NONE, EXTERNAL_USERS, INTERNAL_USERS, or ALL_USERS
     # @option params [String] :webIdentityProtection Specifies if signers are required to provide their web
     #   identity, before they gain access to view and sign the widget. The possible values are NONE, EXTERNAL_USERS,
-    #   INTERNAL_USERS, or ALL_USERS 
+    #   INTERNAL_USERS, or ALL_USERS
     # @option params [Boolean] :protectOpen If set to true, the document is always be encrypted with this password
     #   every time it is sent by email. Recipients need to provide the password to be able to view the PDF files
     # @option params [String] :internalPassword The secondary password that will be used to protect signing the
@@ -29,7 +28,5 @@ module Echosign
     def initialize(params)
       merge!(params)
     end
-
   end
 end
-

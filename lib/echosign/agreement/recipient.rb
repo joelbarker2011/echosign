@@ -1,6 +1,5 @@
 module Echosign
   class Recipient < Hash
-
     include Validatable
 
     # Creates an Echosign::Recipient object
@@ -17,9 +16,8 @@ module Echosign
 
     def initialize(params)
       require_exactly_one([:email, :fax], params)
-      email_or_fax = params[:email] ? {email:params[:email]} : {fax:params[:fax]}
-      merge!(recipientSetMemberInfos:email_or_fax, recipientSetRole:params[:role])
+      email_or_fax = params[:email] ? { email: params[:email] } : { fax: params[:fax] }
+      merge!(recipientSetMemberInfos: email_or_fax, recipientSetRole: params[:role])
     end
-
   end
 end
