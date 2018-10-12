@@ -2,7 +2,8 @@ module Echosign
 
   class Client
 
-    # Creates a widget and returns the Javascript snippet and URL to access the widget and widgetID in response to the client
+    # Creates a widget and returns the Javascript snippet and URL to access the widget and widgetID in response to
+    #   the client
     # 
     # @param widget [Echosign::Widget]
     # @return [Hash]
@@ -31,7 +32,9 @@ module Echosign
     # Retrieves widgets for a user
     # 
     # @param user_id [String] The ID of the user whose widgets are being requested
-    # @param user_email [String] The email address of the user whose widgets are being requested. If both user_id  and user_email are provided then user_id is given preference. If neither is specified then the user is inferred from the access token
+    # @param user_email [String] The email address of the user whose widgets are being requested. If both user_id 
+    #   and user_email are provided then user_id is given preference. If neither is specified then the user is
+    #   inferred from the access token
     # @return [Hash] Widgets info
     def get_widgets(user_id=nil, user_email=nil)
       request(:get_widgets, user_id, user_email)
@@ -48,7 +51,8 @@ module Echosign
     # Retrieves the IDs of the documents associated with widget.
     # 
     # @param widget_id [String]
-    # @param version_id [String] The version identifier of widget as provided by get_widget. If not provided then latest version will be used.
+    # @param version_id [String] The version identifier of widget as provided by get_widget. If not provided then
+    #   latest version will be used.
     # @param participant_email [String] The email address of the participant to be used to retrieve documents
     # @return [Hash] Info about widget documents
     def get_widget_documents(widget_id, version_id=nil, participant_email=nil)

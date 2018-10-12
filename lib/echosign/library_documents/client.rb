@@ -5,7 +5,9 @@ module Echosign
     # Retrieves library documents metadata for a user.
     #
     # @param user_id [String] The ID of the user whose library documents are being requested. 
-    # @param user_email [String] The email address of the user whose library documents are being requested. If both user_id and user_email are provided then user_id is given preference. If neither is specified then the user is inferred from the access token.
+    # @param user_email [String] The email address of the user whose library documents are being requested. If both
+    #   user_id and user_email are provided then user_id is given preference. If neither is specified then the user
+    #   is inferred from the access token.
     # @return [Hash] Library documents metadata
     def get_library_documents(user_id=nil, user_email=nil)
       request(:get_library_documents, user_id, user_email)
@@ -62,7 +64,8 @@ module Echosign
     #
     # @param library_document_id (REQUIRED)
     # @param file_path [String] File path for saving the document.  If none is given, nothing will be saved to disk.
-    # @param auditReport [Boolean] When set to YES attach an audit report to the library document PDF. Default value will be false.
+    # @param auditReport [Boolean] When set to YES attach an audit report to the library document PDF. Default value
+    #   will be false.
     # @return [String] Raw library combined document file data
     def library_combined_document(library_document_id, file_path=nil, auditReport=false)
       response = request(:library_combined_document, library_document_id, auditReport)

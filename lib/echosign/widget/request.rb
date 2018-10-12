@@ -1,6 +1,7 @@
 module Echosign::Request
 
-  # Creates a widget and returns the Javascript snippet and URL to access the widget and widgetID in response to the client
+  # Creates a widget and returns the Javascript snippet and URL to access the widget and widgetID in response to
+  #   the client
   # 
   # @param token [String] Auth token
   # @param widget [Echosign::Widget]

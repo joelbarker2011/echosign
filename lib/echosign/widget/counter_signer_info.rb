@@ -9,7 +9,8 @@ module Echosign
     # @option params [String] :email Email of the recipient (REQUIRED)
     # @option params [String] :role ['SIGNER' or 'APPROVER']: Specify the role of recipient (REQUIRED)
 
-    # @option params [Array] :securityOptions Populate with instances of {Echosign::WidgetSignerSecurityOption Echosign::WidgetSignerSecurityOption} Security options that apply to the counter signers
+    # @option params [Array] :securityOptions Populate with instances of {Echosign::WidgetSignerSecurityOption
+    #   Echosign::WidgetSignerSecurityOption} Security options that apply to the counter signers
     def initialize(params)
       require_keys([:email, :role], params)
       merge!(params)

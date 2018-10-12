@@ -4,7 +4,9 @@ module Echosign::Request
   #
   # @param token [String] Auth Token
   # @param user_id [String] The ID of the user whose library documents are being requested. 
-  # @param user_email [String] The email address of the user whose library documents are being requested. If both user_id and user_email are provided then user_id is given preference. If neither is specified then the user is inferred from the access token.
+  # @param user_email [String] The email address of the user whose library documents are being requested. If both
+  #   user_id and user_email are provided then user_id is given preference. If neither is specified then the user
+  #   is inferred from the access token.
   # @return [Hash] Library documents metadata
   def self.get_library_documents(token, base_uri, user_id=nil, user_email=nil)
     headers = { 'Access-Token' => token }

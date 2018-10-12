@@ -103,8 +103,10 @@ module Echosign::Request
   #
   # @param mega_sign_id [String] (REQUIRED)
   # @param recipient_email [String] The email address of the participant to be used to retrieve documents. (REQUIRED)
-  # @param format [String] Content format of the supported documents. It can have two possible values ORIGINAL or CONVERTED_PDF. (REQUIRED)
-  # @param version_id [String] Version of the mega_sign as provided by {mega_sign_info mega_sign_info}.  If not provided, the latest version of the mega_sign is used.
+  # @param format [String] Content format of the supported documents. It can have two possible values ORIGINAL or
+  #   CONVERTED_PDF. (REQUIRED)
+  # @param version_id [String] Version of the mega_sign as provided by {mega_sign_info mega_sign_info}.  If not
+  #   provided, the latest version of the mega_sign is used.
   # @return [Hash] MegaSign documents response body
   def self.mega_sign_documents(token, base_uri, mega_sign_id, recipient_email=nil, format=nil, version_id=nil)
     headers = { 'Access-Token' => token }
