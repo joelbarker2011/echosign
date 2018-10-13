@@ -32,19 +32,19 @@ module Echosign::Request
   end
 
   ENDPOINT = EndpointHash.new({
-    base_uri: '/base_uris',
-    transientDocument: '/transientDocuments',
-    agreement: '/agreements',
-    reminder: '/reminders',
-    user: '/users',
-    libraryDocument: '/libraryDocuments',
-    widget: '/widgets',
-    view: '/views',
-    search: '/search',
-    workflow: '/workflows',
-    group: '/groups',
-    megaSign: '/megaSigns',
-  }).freeze
+                                base_uri: '/base_uris',
+                                transientDocument: '/transientDocuments',
+                                agreement: '/agreements',
+                                reminder: '/reminders',
+                                user: '/users',
+                                libraryDocument: '/libraryDocuments',
+                                widget: '/widgets',
+                                view: '/views',
+                                search: '/search',
+                                workflow: '/workflows',
+                                group: '/groups',
+                                megaSign: '/megaSigns',
+                              }).freeze
 
   def self.get_base_uris(token)
     endpoint = ENDPOINT.fetch(:base_uri, BASE_URL)
@@ -60,7 +60,7 @@ module Echosign::Request
   # @return [Hash] New user response body
   def self.create_user(token, base_uri, body)
     endpoint = ENDPOINT.fetch(:user, base_uri)
-    headers = { 'Access-Token' => token}
+    headers = { 'Access-Token' => token }
     response = post(endpoint, body, headers)
     JSON.parse(response.body)
   end
@@ -71,10 +71,10 @@ module Echosign::Request
   # @param token [String] Auth Token
   # @return [Hash] Response body
   def self.create_reminder(token, base_uri, body)
-  endpoint = ENDPOINT.fetch(:reminder, base_uri)
-  headers = { 'Access-Token' => token}
-  response = post(endpoint, body, headers)
-  JSON.parse(response.body)
+    endpoint = ENDPOINT.fetch(:reminder, base_uri)
+    headers = { 'Access-Token' => token }
+    response = post(endpoint, body, headers)
+    JSON.parse(response.body)
   end
 
   # Performs REST create_transient_document operation
@@ -84,13 +84,14 @@ module Echosign::Request
   # @param file_handle [File] File handle (REQUIRED)
   # @param mime_type [String] Mime type
   # @return [Hash] Transient Document Response Body
-  def self.create_transient_document(token, base_uri, file_name, file_handle, mime_type=nil)
+  def self.create_transient_document(token, base_uri, file_name, file_handle, mime_type = nil)
     headers = { 'Access-Token' => token }
     if file_handle.is_a?(String)
-      raise "Cannot find file: #{file_handle}" unless File.exists?(file_handle)
+      raise "Cannot find file: #{file_handle}" unless File.exist?(file_handle)
+
       file_handle = File.new(file_handle)
     end
-    body = { 'File-Name' => file_name, 'Mime-Type' => mime_type, 'File' => file_handle}
+    body = { 'File-Name' => file_name, 'Mime-Type' => mime_type, 'File' => file_handle }
     response = post(ENDPOINT.fetch(:transientDocument, base_uri), body, headers)
 
     JSON.parse(response.body)
@@ -123,7 +124,7 @@ module Echosign::Request
   private
 
   def self.get(endpoint, headers)
-    #puts "[Echosign] #{endpoint}"
+    # puts "[Echosign] #{endpoint}"
     begin
       response = HTTParty.get(
         endpoint,
@@ -136,12 +137,12 @@ module Echosign::Request
   end
 
   def self.post(endpoint, body, headers, options = {})
-    option = {json:false}.merge(options)
-    #puts "[Echosign] #{endpoint}"
-    #puts "[Echosign] #{body}"
+    option = { json: false }.merge(options)
+    # puts "[Echosign] #{endpoint}"
+    # puts "[Echosign] #{body}"
     begin
       if options[:json]
-        headers.merge!('Content-Type' => 'application/json')
+        headers['Content-Type'] = 'application/json'
         body = body.to_json if body.is_a?(Hash)
       end
       response = HTTParty.post(endpoint, body: body, headers: headers)
@@ -153,7 +154,7 @@ module Echosign::Request
 
   def self.put(endpoint, query, headers)
     begin
-      headers.merge!('Content-Type' => 'application/json')
+      headers['Content-Type'] = 'application/json'
       response = HTTParty.put(endpoint, body: query, headers: headers)
       response
     rescue Exception => error
@@ -167,8 +168,8 @@ module Echosign::Request
 
   def self.raise_error(error)
     puts error
-    message = "#{error.inspect}.  \nSee Adobe Echosign REST API documentation for Error code meanings: https://secure.echosign.com/public/docs/restapi/v5"
+    message = "#{error.inspect}.  \nSee Adobe Echosign REST API documentation for Error code meanings: " \
+      "https://secure.echosign.com/public/docs/restapi/v5"
     raise Failure.new message, error
   end
-
 end

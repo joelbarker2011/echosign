@@ -1,9 +1,8 @@
 module Echosign
   class FormFieldLocation < Hash
-
     include Validatable
 
-    # Validates FormFieldLocation params 
+    # Validates FormFieldLocation params
     #
     # @param [Hash] params SYMBOL-referenced Hash containing exactly one of the following:
     # @option param [Integer] height (double): Height of the form field in pixels,

@@ -1,5 +1,4 @@
 module Echosign::Request
-
   # Performs REST create_agreement operation
   #
   # @param body [Hash] Request body  (REQUIRED)
@@ -7,11 +6,11 @@ module Echosign::Request
   # @param user_id [String] Echosign user ID  (REQUIRED)
   # @param user_email [String] Echosign user email
   # @return [Hash] Agreement response body
-  def self.create_agreement(token, base_uri, body, user_id=nil, user_email=nil)
+  def self.create_agreement(token, base_uri, body, user_id = nil, user_email = nil)
     headers = { 'Access-Token' => token }
-    headers.merge!('X-User-Id' => user_id) unless user_id.nil?
-    headers.merge!('X-User-Email' => user_email) unless user_email.nil?
-    response = post(ENDPOINT.fetch(:agreement, base_uri), body, headers, json:true)
+    headers['X-User-Id'] = user_id unless user_id.nil?
+    headers['X-User-Email'] = user_email unless user_email.nil?
+    response = post(ENDPOINT.fetch(:agreement, base_uri), body, headers, json: true)
     JSON.parse(response.body)
   end
 
@@ -54,7 +53,8 @@ module Echosign::Request
   # @param token [String] Auth Token
   # @param agreement_id [String] ID of agreement to retrieve info on.
   # @return [String] Raw bytes from document file
-  def self.agreement_combined_pdf(token, base_uri, agreement_id, versionId, participantEmail, attachSupportingDocuments, auditReport)
+  def self.agreement_combined_pdf(token, base_uri, agreement_id, versionId, participantEmail,
+                                  attachSupportingDocuments, auditReport)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement, base_uri)}/#{agreement_id}/combinedDocument"
     endpoint << add_query(endpoint, "versionId=#{versionId}") unless versionId.nil?
@@ -104,10 +104,12 @@ module Echosign::Request
   #
   # @param agreement_id [String] (REQUIRED)
   # @param recipient_email [String] The email address of the participant to be used to retrieve documents. (REQUIRED)
-  # @param format [String] Content format of the supported documents. It can have two possible values ORIGINAL or CONVERTED_PDF. (REQUIRED)
-  # @param version_id [String] Version of the agreement as provided by {agreement_info agreement_info}.  If not provided, the latest version of the agreement is used.
+  # @param format [String] Content format of the supported documents. It can have two possible values ORIGINAL or
+  #   CONVERTED_PDF. (REQUIRED)
+  # @param version_id [String] Version of the agreement as provided by {agreement_info agreement_info}.  If not
+  #   provided, the latest version of the agreement is used.
   # @return [Hash] Agreement documents response body
-  def self.agreement_documents(token, base_uri, agreement_id, recipient_email=nil, format=nil, version_id=nil)
+  def self.agreement_documents(token, base_uri, agreement_id, recipient_email = nil, format = nil, version_id = nil)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement, base_uri)}/#{agreement_id}/documents"
     endpoint << add_query(endpoint, "versionId=#{version_id}") unless version_id.nil?
@@ -129,5 +131,4 @@ module Echosign::Request
     response = put(endpoint, request_body.to_json, headers)
     JSON.parse(response.body)
   end
-
 end

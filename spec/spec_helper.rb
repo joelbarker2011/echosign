@@ -11,7 +11,7 @@ require 'vcr'
 require 'factory_girl'
 require 'echosign'
 require 'pry'
- 
+
 Bundler.setup
 
 VCR.configure do |c|
@@ -27,5 +27,3 @@ RSpec.configure do |config|
   config.include WebMock::API
   config.include FactoryGirl::Syntax::Methods
 end
-
-

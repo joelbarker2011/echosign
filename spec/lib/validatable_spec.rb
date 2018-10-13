@@ -3,7 +3,6 @@ require 'spec_helper'
 require 'echosign/validatable'
 
 describe Echosign::Validatable do
-
   let(:first_name)  { "John" }
   let(:last_name)   { "Public" }
 
@@ -11,24 +10,23 @@ describe Echosign::Validatable do
     {
       firstName:   first_name,
       lastName:    last_name,
-      phone:       "885551234" 
+      phone:       "885551234"
     }
   end
 
   let(:validatable_object) do
-    class Foo 
-      include Echosign::Validatable  
+    class Foo
+      include Echosign::Validatable
     end
     Foo.new
-  end 
+  end
 
   describe ".validate_field" do
-
     context "when field is nil" do
       let(:first_name) { nil }
 
       it "raises an invalid parameter error" do
-        expect do 
+        expect do
           validatable_object.validate_field(first_name, params)
         end.to raise_error(Echosign::RequiredParameterError)
       end
@@ -38,21 +36,19 @@ describe Echosign::Validatable do
       let(:first_name) { '' }
 
       it "raises an invalid parameter error" do
-        expect do 
+        expect do
           validatable_object.validate_field(first_name, params)
         end.to raise_error(Echosign::RequiredParameterError)
       end
-
     end
 
     context "when key is not present" do
       it "raises an invalid parameter error" do
-        expect do 
+        expect do
           validatable_object.validate_field([:unknown_field], params)
         end.to raise_error(Echosign::RequiredParameterError)
       end
     end
-
   end
 
   describe '.require_keys' do
@@ -65,7 +61,7 @@ describe Echosign::Validatable do
 
     context 'when all required fields are present' do
       it 'it does not raise an error' do
-        expect do 
+        expect do
           validatable_object.require_keys(required_fields, params)
         end.to_not raise_error
       end
@@ -73,7 +69,7 @@ describe Echosign::Validatable do
 
     context 'when a required field is not present' do
       it 'it raises an error' do
-        expect do 
+        expect do
           validatable_object.require_keys(required_fields.push(:unknown_field), params)
         end.to raise_error(Echosign::RequiredParameterError)
       end
@@ -83,7 +79,7 @@ describe Echosign::Validatable do
   describe '.require_exactly_one' do
     context 'when more than one key value is present' do
       it 'it raises an error' do
-        expect do 
+        expect do
           validatable_object.require_exactly_one([:firstName, :lastName], params)
         end.to raise_error(Echosign::ParameterError)
       end
@@ -91,7 +87,7 @@ describe Echosign::Validatable do
 
     context 'when none of the key values are present' do
       it 'it raises an error' do
-        expect do 
+        expect do
           validatable_object.require_exactly_one([:unknown_field], params)
         end.to raise_error(Echosign::ParameterError)
       end
@@ -99,12 +95,10 @@ describe Echosign::Validatable do
 
     context 'when exactly one of the key values is present' do
       it 'it does not raise an error' do
-        expect do 
+        expect do
           validatable_object.require_exactly_one([:firstName], params)
         end.to_not raise_error
       end
     end
-
   end
-
 end

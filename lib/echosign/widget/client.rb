@@ -1,9 +1,8 @@
 module Echosign
-
   class Client
-
-    # Creates a widget and returns the Javascript snippet and URL to access the widget and widgetID in response to the client
-    # 
+    # Creates a widget and returns the Javascript snippet and URL to access the widget and widgetID in response to
+    #   the client
+    #
     # @param widget [Echosign::Widget]
     # @return [Hash]
     def create_widget(widget)
@@ -11,7 +10,7 @@ module Echosign
     end
 
     # Personalize the widget to a signable document for a specific known user
-    # 
+    #
     # @param widget_id
     # @param personalization [Echosign::WidgetPersonalization]
     # @return [Hash] Operation result
@@ -20,7 +19,7 @@ module Echosign
     end
 
     # Enables or Disables a widget
-    # 
+    #
     # @param widget_id
     # @param status [Echosign::WidgetStatus]
     # @return [Hash] Widget status
@@ -29,16 +28,18 @@ module Echosign
     end
 
     # Retrieves widgets for a user
-    # 
+    #
     # @param user_id [String] The ID of the user whose widgets are being requested
-    # @param user_email [String] The email address of the user whose widgets are being requested. If both user_id  and user_email are provided then user_id is given preference. If neither is specified then the user is inferred from the access token
+    # @param user_email [String] The email address of the user whose widgets are being requested. If both user_id
+    #   and user_email are provided then user_id is given preference. If neither is specified then the user is
+    #   inferred from the access token
     # @return [Hash] Widgets info
-    def get_widgets(user_id=nil, user_email=nil)
+    def get_widgets(user_id = nil, user_email = nil)
       request(:get_widgets, user_id, user_email)
     end
 
     # Retrieves the details of a widget
-    # 
+    #
     # @param widget_id
     # @return [Hash] Detailed widget info
     def get_widget(widget_id)
@@ -46,22 +47,23 @@ module Echosign
     end
 
     # Retrieves the IDs of the documents associated with widget.
-    # 
+    #
     # @param widget_id [String]
-    # @param version_id [String] The version identifier of widget as provided by get_widget. If not provided then latest version will be used.
+    # @param version_id [String] The version identifier of widget as provided by get_widget. If not provided then
+    #   latest version will be used.
     # @param participant_email [String] The email address of the participant to be used to retrieve documents
     # @return [Hash] Info about widget documents
-    def get_widget_documents(widget_id, version_id=nil, participant_email=nil)
+    def get_widget_documents(widget_id, version_id = nil, participant_email = nil)
       request(:get_widget_documents, widget_id, version_id, participant_email)
     end
 
     # Retrieves the file stream of a document of a widget
-    # 
+    #
     # @param widget_id [String]
     # @param document_id [String]
     # @param file_path [String] File path where to save the document.  If none is given, nothing will be saved to file.
     # @return [String] Raw file stream
-    def get_widget_document_file(widget_id, document_id, file_path=nil)
+    def get_widget_document_file(widget_id, document_id, file_path = nil)
       response = request(:get_widget_document_file, widget_id, document_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
@@ -72,12 +74,12 @@ module Echosign
     end
 
     # Retrieves the audit trail of a widget identified by widgetId
-    # 
+    #
     # @note SEEMINGLY NOT YET IMPLEMENTED SERVER-SIDE
     # @param widget_id [String]
     # @param file_path [String] File path where to save the document.  If none is given, nothing will be saved to file.
     # @return [String] Raw file stream
-    def get_widget_audit_trail(widget_id, file_path=nil)
+    def get_widget_audit_trail(widget_id, file_path = nil)
       response = request(:get_widget_audit_trail, widget_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
@@ -88,12 +90,12 @@ module Echosign
     end
 
     # Gets a single combined PDF document for the documents associated with a widget.
-    # 
+    #
     # @note SEEMINGLY NOT YET IMPLEMENTED SERVER-SIDE
     # @param widget_id [String]
     # @param file_path [String] File path where to save the document.  If none is given, nothing will be saved to file.
     # @return [String] Raw file stream
-    def get_widget_combined_pdf(widget_id, file_path=nil)
+    def get_widget_combined_pdf(widget_id, file_path = nil)
       response = request(:get_widget_combined_pdf, widget_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
@@ -104,12 +106,12 @@ module Echosign
     end
 
     # Retrieves data entered by the user into interactive form fields at the time they signed the widget
-    # 
+    #
     # @note SEEMINGLY NOT YET IMPLEMENTED SERVER-SIDE
     # @param widget_id [String]
     # @param file_path [String] File path where to save the document.  If none is given, nothing will be saved to file.
     # @return [String] Raw file stream
-    def get_widget_form_data(widget_id, file_path=nil)
+    def get_widget_form_data(widget_id, file_path = nil)
       response = request(:get_widget_form_data, widget_id)
       unless file_path.nil?
         file = File.new(file_path, 'wb')
@@ -118,6 +120,5 @@ module Echosign
       end
       response
     end
-
   end
 end
