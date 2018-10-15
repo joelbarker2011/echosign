@@ -13,8 +13,7 @@ module Echosign
 
     # Gets list of agreements
     #
-    # @param agreement [Echosign::Agreement]
-    # @return [String] Agreement ID
+    # @return [Hash] An array of user agreement items
     def get_agreements
       get_agreements_response = request(:get_agreements)
       get_agreements_response.fetch("userAgreementList")

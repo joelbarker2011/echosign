@@ -12,11 +12,10 @@ module Echosign
 
     # Gets list of mega_signs
     #
-    # @param mega_sign [Echosign::Agreement]
-    # @return [String] Agreement ID
+    # @return [Hash] An array of mega sign parent agreements
     def get_mega_signs
       get_mega_signs_response = request(:get_mega_signs)
-      get_mega_signs_response.fetch("userAgreementList")
+      get_mega_signs_response.fetch("megaSignList")
     end
 
     # Gets detailed info on an mega_sign
