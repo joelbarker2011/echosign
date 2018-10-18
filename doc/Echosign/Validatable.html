@@ -218,6 +218,8 @@ execution might be useful.</p>
       <pre class="lines">
 
 
+12
+13
 14
 15
 16
@@ -228,25 +230,23 @@ execution might be useful.</p>
 21
 22
 23
-24
-25
-26</pre>
+24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/echosign/validatable.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'lib/echosign/validatable.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_require_exactly_one'>require_exactly_one</span><span class='lparen'>(</span><span class='id identifier rubyid_field_group'>field_group</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_set_fields'>set_fields</span> <span class='op'>=</span> <span class='int'>0</span>
   <span class='id identifier rubyid_field_group'>field_group</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_field'>field</span><span class='op'>|</span>
     <span class='kw'>begin</span>
-      <span class='id identifier rubyid_validate_field'>validate_field</span><span class='lparen'>(</span><span class='id identifier rubyid_field'>field</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span> 
+      <span class='id identifier rubyid_validate_field'>validate_field</span><span class='lparen'>(</span><span class='id identifier rubyid_field'>field</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
     <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="RequiredParameterError.html" title="Echosign::RequiredParameterError (class)">RequiredParameterError</a></span></span>
       <span class='kw'>next</span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_set_fields'>set_fields</span> <span class='op'>+=</span> <span class='int'>1</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ParameterError.html" title="Echosign::ParameterError (class)">ParameterError</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Exactly one of </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_field_group'>field_group</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='embexpr_end'>}</span><span class='tstring_content'> should be present</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_set_fields'>set_fields</span> <span class='op'>!=</span> <span class='int'>1</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ParameterError.html" title="Echosign::ParameterError (class)">ParameterError</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Exactly one of </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_field_group'>field_group</span><span class='embexpr_end'>}</span><span class='tstring_content'> should be present</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_set_fields'>set_fields</span> <span class='op'>!=</span> <span class='int'>1</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -268,18 +268,18 @@ execution might be useful.</p>
       <pre class="lines">
 
 
+6
+7
 8
 9
-10
-11
-12</pre>
+10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/echosign/validatable.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/echosign/validatable.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_require_keys'>require_keys</span><span class='lparen'>(</span><span class='id identifier rubyid_required_fields'>required_fields</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_required_fields'>required_fields</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_field'>field</span><span class='op'>|</span>
-    <span class='id identifier rubyid_validate_field'>validate_field</span><span class='lparen'>(</span><span class='id identifier rubyid_field'>field</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span> 
+    <span class='id identifier rubyid_validate_field'>validate_field</span><span class='lparen'>(</span><span class='id identifier rubyid_field'>field</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -300,9 +300,8 @@ execution might be useful.</p>
   <div class="discussion">
     
 <p>TODO (bernardworthy) A validator accepting a block for conditional
-execution might be useful.</p>
-
-<p>Maybe require_keys should accept a block.  Figure out later.</p>
+execution might be useful. Maybe require_keys should accept a block. 
+Figure out later.</p>
 
 
   </div>
@@ -316,17 +315,17 @@ execution might be useful.</p>
       <pre class="lines">
 
 
+30
+31
 32
 33
 34
 35
 36
-37
-38
-39</pre>
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/echosign/validatable.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/echosign/validatable.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_field'>validate_field</span><span class='lparen'>(</span><span class='id identifier rubyid_field'>field</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='kw'>begin</span>
@@ -346,7 +345,7 @@ execution might be useful.</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Sep  7 16:13:47 2018 by
+  Generated on Thu Oct 18 12:44:46 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.6.0).
 </div>
