@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["joel@mojamail.com"]
   spec.summary       = 'Package summary'
   spec.description   = "A ruby gem that simplifies the use of Adobe's EchoSign web API."
-  spec.homepage      = "http://github.com/chamberflag/echosign"
+  spec.homepage      = "http://github.com/joelbarker2011/echosign"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

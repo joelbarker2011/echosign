@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/chamberflag/echosign.svg?branch=master)](https://travis-ci.org/chamberflag/echosign)
+[![Build Status](https://travis-ci.org/joelbarker2011/echosign.svg?branch=master)](https://travis-ci.org/joelbarker2011/echosign)
 
 echosign
 ===========
@@ -13,9 +13,9 @@ gem install echosign
 
 ## Documentation
 
-The bulk of the API is on the [Echosign::Client class](http://rdoc.info/github/chamberflag/echosign/frames/Echosign/Client)
+The bulk of the API is on the [Echosign::Client class](http://rdoc.info/github/joelbarker2011/echosign/frames/Echosign/Client)
 
-You can read Echosign's full [API Documentation](http://rdoc.info/github/chamberflag/echosign/frames)
+You can read Echosign's full [API Documentation](http://rdoc.info/github/joelbarker2011/echosign/frames)
 
 It wouldn't hurt to read Adobe's [Echosign API documentation](https://secure.echosign.com/public/docs/restapi/v5)
 
