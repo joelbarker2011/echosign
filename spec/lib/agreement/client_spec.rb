@@ -45,6 +45,12 @@ describe Echosign::Client do
         expect(agreement_id).to_not be_nil
       end
     end
+
+    it 'raises a specific exception on failure' do
+      VCR.use_cassette('create_agreement_failure', record: :once) do
+        expect { client.create_agreement(agreement) }.to raise_error(Echosign::Request::Failure)
+      end
+    end
   end
 
   describe '.get_agreements' do

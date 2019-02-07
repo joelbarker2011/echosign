@@ -130,10 +130,11 @@ module Echosign::Request
         endpoint,
         headers: headers
       )
-      response
     rescue Exception => error
       raise_error(error)
     end
+
+    check_response(response)
   end
 
   def self.post(endpoint, body, headers, options = {})
@@ -146,20 +147,22 @@ module Echosign::Request
         body = body.to_json if body.is_a?(Hash)
       end
       response = HTTParty.post(endpoint, body: body, headers: headers)
-      response
     rescue Exception => error
       raise_error(error)
     end
+
+    check_response(response)
   end
 
   def self.put(endpoint, query, headers)
     begin
       headers['Content-Type'] = 'application/json'
       response = HTTParty.put(endpoint, body: query, headers: headers)
-      response
     rescue Exception => error
       raise_error(error)
     end
+
+    check_response(response)
   end
 
   def self.add_query(url, query)
@@ -171,5 +174,10 @@ module Echosign::Request
     message = "#{error.inspect}.  \nSee Adobe Echosign REST API documentation for Error code meanings: " \
       "https://secure.echosign.com/public/docs/restapi/v5"
     raise Failure.new message, error
+  end
+
+  def self.check_response(response)
+    raise_error(response) unless response.success?
+    response
   end
 end
