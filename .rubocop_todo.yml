@@ -50,7 +50,7 @@ Lint/UselessAssignment:
 # Configuration parameters: CountComments, ExcludedMethods.
 # ExcludedMethods: refine
 Metrics/BlockLength:
-  Max: 123
+  Max: 128
 
 # Offense count: 3
 # Configuration parameters: CountComments, ExcludedMethods.
@@ -60,7 +60,7 @@ Metrics/MethodLength:
 # Offense count: 1
 # Configuration parameters: CountComments.
 Metrics/ModuleLength:
-  Max: 101
+  Max: 105
 
 # Offense count: 6
 # Configuration parameters: CountKeywordArgs.

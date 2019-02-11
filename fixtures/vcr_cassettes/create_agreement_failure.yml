@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.eu1.echosign.com/api/rest/v5/agreements
+    body:
+      encoding: UTF-8
+      string: '{"documentCreationInfo":{"fileInfos":[[{"documentURL":{"url":"http://findgoplayers.com/resume.pdf","mimeType":"application/pdf","name":"resume.pdf"}}]],"recipientSetInfos":[{"recipientSetMemberInfos":{"email":"goishi.san@gmail.com"},"recipientSetRole":"SIGNER"}],"signatureFlow":"SENDER_SIGNS_LAST","signatureType":"ESIGN","name":"Rumplestiltskin
+        Contract"}}'
+    headers:
+      Access-Token:
+      - 3AAABLblqZhAN-cxVlpFIUv3XdlgqlyWF8qVbIWnUmmvkAB4u6yPBE50XAqTqzLNCjbWS8QKAZPdgYOaqZHv6EE5LEJOc5NOK
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Thu, 07 Feb 2019 02:01:30 GMT
+      Server:
+      - Apache
+      X-Request-Id:
+      - 597be404-e6ab-496b-88f2-57ee62fadb34
+      Content-Length:
+      - '91'
+      Strict-Transport-Security:
+      - max-age=31536000;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - none
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"code":"INVALID_ACCESS_TOKEN","message":"Access token provided is
+        invalid or has expired"}'
+    http_version: 
+  recorded_at: Thu, 07 Feb 2019 02:01:30 GMT
+recorded_with: VCR 4.0.0
