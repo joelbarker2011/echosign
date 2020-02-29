@@ -61,7 +61,7 @@ GEM
     public_suffix (3.0.3)
     rack (2.0.6)
     rainbow (3.0.0)
-    rake (10.3.2)
+    rake (13.0.1)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -109,7 +109,7 @@ DEPENDENCIES
   echosign!
   factory_girl (~> 4)
   pry (~> 0.10)
-  rake (~> 10)
+  rake (~> 13)
   rspec (~> 3)
   rubocop (~> 0.59)
   simplecov (~> 0.16)

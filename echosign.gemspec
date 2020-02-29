@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "factory_girl", "~> 4"
   spec.add_development_dependency "pry", "~> 0.10"
-  spec.add_development_dependency "rake", "~> 10"
+  spec.add_development_dependency "rake", "~> 13"
   spec.add_development_dependency "rspec", "~> 3"
   spec.add_development_dependency "rubocop", "~> 0.59"
   spec.add_development_dependency "simplecov", "~> 0.16"
