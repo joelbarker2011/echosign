@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/joelbarker2011/echosign.svg?branch=master)](https://travis-ci.org/joelbarker2011/echosign)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/joelbarker2011/echosign/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/joelbarker2011/echosign/tree/master)
 
 echosign
 ===========

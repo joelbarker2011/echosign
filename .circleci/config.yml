@@ -1,0 +1,41 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/ruby:3.1
+    steps:
+      - checkout
+      - run:
+          name: Install gems
+          command: bundle
+      - run:
+          name: Run RuboCop
+          command: bundle exec rubocop --fail-fast
+      - run:
+          name: Run Rake
+          command: bundle exec rake
+
+      # Save artifacts
+      - store_artifacts:
+          path: coverage/
+
+      # Save test results
+      - store_test_results:
+          path: test-results
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - test
+  weekly:
+    jobs:
+      - test
+    triggers:
+      - schedule:
+          cron: "0 0 * * 0"
+          filters:
+            branches:
+              only:
+                - master
