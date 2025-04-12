@@ -29,7 +29,7 @@ module Echosign
     # @param reminder [Echosign::Reminder]
     # @return [String] Reminder ID
     def create_reminder(reminder)
-      reminder_response = request(:create_reminder, reminder)
+      request(:create_reminder, reminder)
     end
 
     # Creates a transient document for later referral

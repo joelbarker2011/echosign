@@ -12,28 +12,24 @@ module Echosign
     def require_exactly_one(field_group, params)
       set_fields = 0
       field_group.each do |field|
-        begin
-          validate_field(field, params)
-        rescue RequiredParameterError
-          next
-        else
-          set_fields += 1
-        end
+        validate_field(field, params)
+      rescue RequiredParameterError
+        next
+      else
+        set_fields += 1
       end
       raise ParameterError, "Exactly one of #{field_group} should be present" if set_fields != 1
     end
 
-    # TODO (bernardworthy) A validator accepting a block for conditional execution
+    # TODO: (bernardworthy) A validator accepting a block for conditional execution
     # might be useful.
     # Maybe require_keys should accept a block.  Figure out later.
 
     def validate_field(field, params)
-      begin
-        value = params.fetch(field)
-        required_error(field) if value.nil? || (value.is_a?(String) && value.empty?)
-      rescue KeyError
-        required_error(field)
-      end
+      value = params.fetch(field)
+      required_error(field) if value.nil? || (value.is_a?(String) && value.empty?)
+    rescue KeyError
+      required_error(field)
     end
 
     private

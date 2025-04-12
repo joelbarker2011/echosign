@@ -34,7 +34,7 @@ module Echosign
     def initialize(user_id = nil, user_email = nil, params)
       @user_id = user_id
       @user_email = user_email
-      # TODO (cthomas) barf if user_id or user_email are blank
+      # TODO: (cthomas) barf if user_id or user_email are blank
       require_keys([:signatureType, :recipientSetInfos, :signatureFlow, :fileInfos, :name], params)
       merge!({ megaSignCreationInfo: params })
     end

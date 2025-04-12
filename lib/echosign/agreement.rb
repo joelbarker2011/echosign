@@ -36,10 +36,10 @@ module Echosign
     def initialize(user_id = nil, user_email = nil, params)
       @user_id = user_id
       @user_email = user_email
-      # TODO (cthomas) barf if user_id or user_email are blank
+      # TODO: (cthomas) barf if user_id or user_email are blank
       if params.has_key?(:recipients)
         warn("NOTE: :recipients param in #{self.class}.new is deprecated; use :recipientSetInfos instead.\n" +
-             "#{self.class}.new called from #{Gem.location_of_caller.join(":")}")
+             "#{self.class}.new called from #{Gem.location_of_caller.join(':')}")
         params = params.dup
         params[:recipientSetInfos] ||= params.delete :recipients
       end

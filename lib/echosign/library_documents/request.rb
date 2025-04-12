@@ -49,7 +49,7 @@ module Echosign::Request
   def self.get_library_document_file(token, base_uri, library_document_id, file_id)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:libraryDocument, base_uri)}/#{library_document_id}/documents/#{file_id}"
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 
   # Retrieves library document file data
@@ -60,7 +60,7 @@ module Echosign::Request
   def self.library_document_audit_trail(token, base_uri, library_document_id)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:libraryDocument, base_uri)}/#{library_document_id}/auditTrail"
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 
   # Retrieves library combined document file
@@ -72,6 +72,6 @@ module Echosign::Request
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:libraryDocument, base_uri)}/#{library_document_id}/combinedDocument"
     endpoint << add_query(endpoint, "auditReport=#{auditReport}")
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 end

@@ -39,7 +39,7 @@ module Echosign
     # The redirect_uri must be specified on the app's OAuth Configuration page.
     # @see https://secure.na1.echosign.com/public/static/oauthDoc.jsp#authorizationRequest
     def authorize_url(redirect_uri, scope, state = nil)
-      return @client.auth_code.authorize_url(
+      @client.auth_code.authorize_url(
         redirect_uri: redirect_uri,
         scope: scope,
         state: state
@@ -62,7 +62,7 @@ module Echosign
       @refresh_token = oauth_token.refresh_token
       @expires_at = oauth_token.expires_at
 
-      return @access_token
+      @access_token
     end
 
     # Update (refresh) an access token
@@ -73,7 +73,7 @@ module Echosign
     #
     # This method should only be called after #get_token
     def refresh_access_token(current_refresh_token = nil)
-      @refresh_token = current_refresh_token if current_refresh_token != nil
+      @refresh_token = current_refresh_token unless current_refresh_token.nil?
 
       @client.options[:token_url] = REFRESH_PATH
       oauth_token = @client.get_token(grant_type: :refresh_token, refresh_token: @refresh_token)
@@ -81,7 +81,7 @@ module Echosign
       @access_token = oauth_token.token
       @expires_at = oauth_token.expires_at
 
-      return @access_token
+      @access_token
     end
 
     # Revoke an access or refresh token, and any corresponding tokens

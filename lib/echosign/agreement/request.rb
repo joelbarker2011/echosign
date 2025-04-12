@@ -73,7 +73,7 @@ module Echosign::Request
   def self.agreement_form_data(token, base_uri, agreement_id)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:agreement, base_uri)}/#{agreement_id}/formData"
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 
   # Retrieve agreement document PDF

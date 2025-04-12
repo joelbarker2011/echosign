@@ -21,13 +21,13 @@ module Echosign
     #   value is greater than 0, the user will first see the standard EchoSign success message, and then after a
     #   delay will be redirected to your success page. Note that this parameter has no effect for widgets loaded
     #   with javascript when deframe is true
-    def initialize(params)
+    def initialize(_params)
       require_keys([:url])
       merge!(
         {
           deframe: deframe,
           delay: delay,
-          url: url,
+          url: url
         }
       )
     end

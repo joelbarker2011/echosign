@@ -53,7 +53,7 @@ module Echosign
     #   latest version of the mega_sign is used.
     # @return [Array] Documents relating to mega_sign.
     def mega_sign_documents(mega_sign_id, recipient_email, format, version_id = nil)
-      result = request(:mega_sign_documents, mega_sign_id, recipient_email, format, version_id)
+      request(:mega_sign_documents, mega_sign_id, recipient_email, format, version_id)
     end
 
     # Retrieve a document file from an mega_sign
@@ -77,7 +77,7 @@ module Echosign
     # @param mega_sign_id [String]  (REQUIRED)
     # @return [Hash] URL information for the eSign page of the mega_sign
     def mega_sign_signing_urls(mega_sign_id)
-      response = request(:mega_sign_signing_urls, mega_sign_id)
+      request(:mega_sign_signing_urls, mega_sign_id)
     end
 
     # Gets a single combined PDF document for the documents associated with an mega_sign.

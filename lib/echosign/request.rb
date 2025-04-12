@@ -7,7 +7,7 @@ module Echosign::Request
   class Failure < StandardError
     attr_reader :original_exception
 
-    def initialize msg, original_exception
+    def initialize(msg, original_exception)
       @message = msg
       @original_exception = original_exception
     end
@@ -43,7 +43,7 @@ module Echosign::Request
                                 search: '/search',
                                 workflow: '/workflows',
                                 group: '/groups',
-                                megaSign: '/megaSigns',
+                                megaSign: '/megaSigns'
                               }).freeze
 
   def self.get_base_uris(token)
@@ -121,8 +121,6 @@ module Echosign::Request
     JSON.parse(response.body)
   end
 
-  private
-
   def self.get(endpoint, headers)
     # puts "[Echosign] #{endpoint}"
     begin
@@ -130,15 +128,15 @@ module Echosign::Request
         endpoint,
         headers: headers
       )
-    rescue Exception => error
-      raise_error(error)
+    rescue Exception => e
+      raise_error(e)
     end
 
     check_response(response)
   end
 
   def self.post(endpoint, body, headers, options = {})
-    option = { json: false }.merge(options)
+    { json: false }.merge(options)
     # puts "[Echosign] #{endpoint}"
     # puts "[Echosign] #{body}"
     begin
@@ -147,8 +145,8 @@ module Echosign::Request
         body = body.to_json if body.is_a?(Hash)
       end
       response = HTTParty.post(endpoint, body: body, headers: headers)
-    rescue Exception => error
-      raise_error(error)
+    rescue Exception => e
+      raise_error(e)
     end
 
     check_response(response)
@@ -158,8 +156,8 @@ module Echosign::Request
     begin
       headers['Content-Type'] = 'application/json'
       response = HTTParty.put(endpoint, body: query, headers: headers)
-    rescue Exception => error
-      raise_error(error)
+    rescue Exception => e
+      raise_error(e)
     end
 
     check_response(response)
@@ -172,7 +170,7 @@ module Echosign::Request
   def self.raise_error(error)
     puts error
     message = "#{error.inspect}.  \nSee Adobe Echosign REST API documentation for Error code meanings: " \
-      "https://secure.echosign.com/public/docs/restapi/v5"
+              "https://secure.echosign.com/public/docs/restapi/v5"
     raise Failure.new message, error
   end
 

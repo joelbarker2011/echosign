@@ -54,7 +54,7 @@ module Echosign
     #   latest version of the agreement is used.
     # @return [Array] Documents relating to agreement.
     def agreement_documents(agreement_id, recipient_email, format, version_id = nil)
-      result = request(:agreement_documents, agreement_id, recipient_email, format, version_id)
+      request(:agreement_documents, agreement_id, recipient_email, format, version_id)
     end
 
     # Retrieve a document file from an agreement
@@ -78,7 +78,7 @@ module Echosign
     # @param agreement_id [String]  (REQUIRED)
     # @return [Hash] URL information for the eSign page of the agreement
     def agreement_signing_urls(agreement_id)
-      response = request(:agreement_signing_urls, agreement_id)
+      request(:agreement_signing_urls, agreement_id)
     end
 
     # Gets a single combined PDF document for the documents associated with an agreement.

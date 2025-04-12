@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'lib/shared_client.rb'
+require 'lib/shared_client'
 
 describe Echosign::Credentials do
   include_context "shared client"

@@ -63,7 +63,7 @@ module Echosign::Request
     endpoint << add_query(endpoint, "participantEmail=#{participantEmail}") unless participantEmail.nil?
     endpoint << add_query(endpoint, "attachSupportingDocuments=#{attachSupportingDocuments}")
     endpoint << add_query(endpoint, "auditReport=#{auditReport}")
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 
   # Retrieves data entered by the user into interactive form fields at the time they signed the mega_sign
@@ -74,7 +74,7 @@ module Echosign::Request
   def self.mega_sign_form_data(token, base_uri, mega_sign_id)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:megaSign, base_uri)}/#{mega_sign_id}/formData"
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 
   # Retrieve mega_sign document PDF
@@ -85,7 +85,7 @@ module Echosign::Request
   def self.mega_sign_document_file(token, base_uri, mega_sign_id, document_id)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:megaSign, base_uri)}/#{mega_sign_id}/documents/#{document_id}"
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 
   # Performs REST GET /mega_sign/:id/auditTrail operation
@@ -96,7 +96,7 @@ module Echosign::Request
   def self.audit_trail_pdf(token, base_uri, mega_sign_id)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:megaSign, base_uri)}/#{mega_sign_id}/auditTrail"
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 
   # Performs REST GET /mega_sign/:id/documents

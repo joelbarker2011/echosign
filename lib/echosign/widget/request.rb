@@ -86,7 +86,7 @@ module Echosign::Request
   def self.get_widget_document_file(token, base_uri, widget_id, document_id)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget, base_uri)}/#{widget_id}/documents/#{document_id}"
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 
   # Performs GET /widget/:id/auditTrail
@@ -96,7 +96,7 @@ module Echosign::Request
   def self.get_widget_audit_trail(token, base_uri, widget_id)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget, base_uri)}/#{widget_id}/auditTrail"
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 
   # Performs GET /widget/:id/formData
@@ -106,6 +106,6 @@ module Echosign::Request
   def self.get_widget_form_data(token, base_uri, widget_id)
     headers = { 'Access-Token' => token }
     endpoint = "#{ENDPOINT.fetch(:widget, base_uri)}/#{widget_id}/formData"
-    response = get(endpoint, headers)
+    get(endpoint, headers)
   end
 end

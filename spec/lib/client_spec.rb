@@ -1,20 +1,20 @@
 require 'spec_helper'
-require 'lib/shared_client.rb'
+require 'lib/shared_client'
 
 describe Echosign::Client do
   include_context "shared client"
 
   describe '.create_user' do
-    let (:user_params) do
+    let(:user_params) do
       {
-        firstName:  'JohnQ',
-        lastName:   'Public',
-        email:      'publius@comcast.net',
-        password:   'kN12oK9p!3',
-        title:      'Hedge Wizard'
+        firstName: 'JohnQ',
+        lastName: 'Public',
+        email: 'publius@comcast.net',
+        password: 'kN12oK9p!3',
+        title: 'Hedge Wizard'
       }
     end
-    let (:user) { Echosign::User.new(user_params) }
+    let(:user) { Echosign::User.new(user_params) }
 
     it 'returns the User ID' do
       VCR.use_cassette('create_user', record: :once) do
@@ -45,11 +45,12 @@ describe Echosign::Client do
   end
 
   describe '.create_reminder' do
-    let(:reminderInfo) {
+    let(:reminderInfo) do
       {
         agreementId: "2AAABLblqZhA79nM-6ALjW2nXMKKb_ECz-Nr2yr_WrJ-3-Vz7d5D5_Dn9B6K-25C_EDktQqawW7M*",
         comment: "Hey don't forget..."
-      } }
+      }
+    end
     let(:reminder) { Echosign::Reminder.new(reminderInfo) }
 
     it 'returns result' do

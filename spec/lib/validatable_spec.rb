@@ -8,9 +8,9 @@ describe Echosign::Validatable do
 
   let(:params) do
     {
-      firstName:   first_name,
-      lastName:    last_name,
-      phone:       "885551234"
+      firstName: first_name,
+      lastName: last_name,
+      phone: "885551234"
     }
   end
 

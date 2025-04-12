@@ -1,7 +1,7 @@
 RSpec.shared_context "shared client" do
-  let(:access_token) {
+  let(:access_token) do
     "3AAABLblqZhAN-cxVlpFIUv3XdlgqlyWF8qVbIWnUmmvkAB4u6yPBE50XAqTqzLNCjbWS8QKAZPdgYOaqZHv6EE5LEJOc5NOK"
-  }
+  end
 
   let(:client) do
     VCR.use_cassette('get_token', record: :once) do
