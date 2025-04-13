@@ -40,7 +40,7 @@ describe Echosign::Client do
     it 'returns library document file data' do
       VCR.use_cassette('get_library_document_data', record: :once) do
         response = client.get_library_document_file(library_document_id, file_id)
-        expect(response).to_not be_nil
+        expect(response.body).to_not be_nil
       end
     end
   end
@@ -50,7 +50,7 @@ describe Echosign::Client do
     it 'returns library document file data' do
       VCR.use_cassette('library_document_audit_trail', record: :once) do
         response = client.library_document_audit_trail(library_document_id)
-        expect(response).to_not be_nil
+        expect(response.body).to_not be_nil
       end
     end
   end
@@ -60,7 +60,7 @@ describe Echosign::Client do
     it 'returns library combined document file data' do
       VCR.use_cassette('library_combined_document', record: :once) do
         response = client.library_combined_document(library_document_id, nil, true)
-        expect(response).to_not be_nil
+        expect(response.body).to_not be_nil
       end
     end
   end

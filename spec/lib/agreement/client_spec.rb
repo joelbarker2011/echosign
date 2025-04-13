@@ -77,7 +77,7 @@ describe Echosign::Client do
     it 'returns CSV data' do
       VCR.use_cassette('agreement_form_data', record: :once) do
         response = client.agreement_form_data(agreement_id)
-        expect(response).to_not be_nil
+        expect(response.body).to_not be_nil
       end
     end
   end
