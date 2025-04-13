@@ -85,7 +85,7 @@ GEM
     racc (1.8.1)
     rack (3.1.12)
     rainbow (3.1.1)
-    rake (10.5.0)
+    rake (12.3.3)
     regexp_parser (2.10.0)
     rexml (3.4.1)
     rspec (3.13.0)
@@ -145,7 +145,7 @@ DEPENDENCIES
   echosign!
   factory_bot (~> 6)
   pry (~> 0.10)
-  rake (~> 10)
+  rake (~> 12)
   rspec (~> 3)
   rubocop (~> 1.75)
   simplecov (~> 0.16)
