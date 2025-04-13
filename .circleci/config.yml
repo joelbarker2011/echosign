@@ -20,9 +20,19 @@ jobs:
       version: <<parameters.version>>
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dep-{{ .Branch }}-<< parameters.version >>-{{ checksum "Gemfile.lock" }}
+            - v1-dep-master-<< parameters.version >>-{{ checksum "Gemfile.lock" }}
+            - v1-dep-{{ .Branch }}-<< parameters.version >>
+            - v1-dep-master-<< parameters.version >>
       - run:
           name: Install gems
-          command: bundle
+          command: bundle config path vendor/bundle && bundle check || bundle install --jobs=4 --retry=3
+      - save_cache:
+          key: v1-dep-{{ .Branch }}-<< parameters.version >>-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - run:
           name: Run RuboCop
           command: bundle exec rubocop --fail-fast
