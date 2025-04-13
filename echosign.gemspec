@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 3.0"
 
-  spec.add_development_dependency "bundler", "~> 2.6"
+  spec.add_development_dependency "bundler", "~> 2.5"
   spec.add_development_dependency "factory_bot", "~> 6"
   spec.add_development_dependency "pry", "~> 0.10"
   spec.add_development_dependency "rake", "~> 12"

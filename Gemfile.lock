@@ -141,7 +141,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 2.6)
+  bundler (~> 2.5)
   echosign!
   factory_bot (~> 6)
   pry (~> 0.10)
