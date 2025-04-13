@@ -8,7 +8,7 @@ end
 require 'bundler/setup'
 require 'webmock/rspec'
 require 'vcr'
-require 'factory_girl'
+require 'factory_bot'
 require 'echosign'
 require 'pry'
 
@@ -25,5 +25,5 @@ end
 
 RSpec.configure do |config|
   config.include WebMock::API
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 end

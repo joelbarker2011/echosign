@@ -19,13 +19,13 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 3.0"
 
   spec.add_development_dependency "bundler", "~> 2.6"
-  spec.add_development_dependency "factory_girl", "~> 4"
+  spec.add_development_dependency "factory_bot", "~> 6"
   spec.add_development_dependency "pry", "~> 0.10"
   spec.add_development_dependency "rake", "~> 10"
   spec.add_development_dependency "rspec", "~> 3"
   spec.add_development_dependency "rubocop", "~> 1.75"
   spec.add_development_dependency "simplecov", "~> 0.16"
-  spec.add_development_dependency "vcr", "~> 4"
+  spec.add_development_dependency "vcr", "~> 6"
   spec.add_development_dependency "webmock", "~> 3"
   spec.add_development_dependency "yard", "~> 0.9"
 
