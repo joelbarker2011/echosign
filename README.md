@@ -5,6 +5,11 @@ echosign
 
 Ruby Gem to consume Adobe's EchoSign e-signature service - REST service v5
 
+## Upgrading
+
+This is `echosign` version 2, which now supports Ruby 3.0.x through 3.4.x.
+If you are using an older 2.x version of Ruby, stick with `echosign` version 1.
+
 ## Installation
 
 ```
