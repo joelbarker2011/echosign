@@ -39,8 +39,11 @@ describe Echosign::Client do
     let(:file_id) { "2AAABLblqZhD0YJu7EaQ3t2aKYe74spEGcgIXHeloWBdhkceuEbfqs9cw0pdkFB6z3RR4N8OWkZg*" }
     it 'returns library document file data' do
       VCR.use_cassette('get_library_document_data', record: :once) do
-        response = client.get_library_document_file(library_document_id, file_id)
-        expect(response.body).to_not be_nil
+        Dir::Tmpname.create('library_document_file') do |tmp_filename|
+          response = client.get_library_document_file(library_document_id, file_id, tmp_filename)
+          expect(response.body).to_not be_nil
+          expect(File.size(tmp_filename)).to eq(response.content_length)
+        end
       end
     end
   end
@@ -49,8 +52,11 @@ describe Echosign::Client do
     let(:library_document_id) { "2AAABLblqZhAlC4t0c3xAJ92RFv44xFGZhbCuHpalUdpcHW9k72imMEG-W1SYCmUoia1ZNgQZ-FE*" }
     it 'returns library document file data' do
       VCR.use_cassette('library_document_audit_trail', record: :once) do
-        response = client.library_document_audit_trail(library_document_id)
-        expect(response.body).to_not be_nil
+        Dir::Tmpname.create('library_document_audit_trail') do |tmp_filename|
+          response = client.library_document_audit_trail(library_document_id, tmp_filename)
+          expect(response.body).to_not be_nil
+          expect(File.size(tmp_filename)).to eq(response.content_length)
+        end
       end
     end
   end
@@ -59,8 +65,11 @@ describe Echosign::Client do
     let(:library_document_id) { "2AAABLblqZhAlC4t0c3xAJ92RFv44xFGZhbCuHpalUdpcHW9k72imMEG-W1SYCmUoia1ZNgQZ-FE*" }
     it 'returns library combined document file data' do
       VCR.use_cassette('library_combined_document', record: :once) do
-        response = client.library_combined_document(library_document_id, nil, true)
-        expect(response.body).to_not be_nil
+        Dir::Tmpname.create('library_combined_document') do |tmp_filename|
+          response = client.library_combined_document(library_document_id, tmp_filename, true)
+          expect(response.body).to_not be_nil
+          expect(File.size(tmp_filename)).to eq(response.content_length)
+        end
       end
     end
   end

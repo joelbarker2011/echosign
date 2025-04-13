@@ -107,8 +107,11 @@ describe Echosign::Client do
 
     it 'returns widget document file' do
       VCR.use_cassette('get_widget_document_file', record: :once) do
-        widget_response = client.get_widget_document_file(widget_id, document_id)
-        expect(widget_response.body).to_not be_nil
+        Dir::Tmpname.create('widget_document_file') do |tmp_filename|
+          widget_response = client.get_widget_document_file(widget_id, document_id, tmp_filename)
+          expect(widget_response.body).to_not be_nil
+          expect(File.size(tmp_filename)).to eq(widget_response.content_length)
+        end
       end
     end
   end

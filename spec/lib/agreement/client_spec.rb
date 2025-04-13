@@ -76,8 +76,11 @@ describe Echosign::Client do
     let(:agreement_id) { "2AAABLblqZhDvfdYluvps8mSzQXnXr074OVtMYTwTVtljZYFJNi43iuzYeBaPUUOMTSlGXrt04Sw*" }
     it 'returns CSV data' do
       VCR.use_cassette('agreement_form_data', record: :once) do
-        response = client.agreement_form_data(agreement_id)
-        expect(response.body).to_not be_nil
+        Dir::Tmpname.create('agreement_form_data') do |tmp_filename|
+          response = client.agreement_form_data(agreement_id, tmp_filename)
+          expect(response.body).to_not be_nil
+          expect(File.size(tmp_filename)).to eq(response.content_length)
+        end
       end
     end
   end
@@ -113,9 +116,12 @@ describe Echosign::Client do
 
     it 'returns a document file from the selected agreement' do
       VCR.use_cassette('agreement_document_file', record: :once) do
-        result = client.agreement_document_file(agreement_id, document_id)
-        expect(result).to be_a String
-        expect(result).to_not be_nil
+        Dir::Tmpname.create('agreement_document_file') do |tmp_filename|
+          result = client.agreement_document_file(agreement_id, document_id, tmp_filename)
+          expect(result).to be_a String
+          expect(result).to_not be_nil
+          expect(File.size(tmp_filename)).to eq(result.bytesize)
+        end
       end
     end
   end
@@ -137,9 +143,12 @@ describe Echosign::Client do
 
     it 'returns a combined pdf file ' do
       VCR.use_cassette('agreement_combined_pdf', record: :once) do
-        result = client.agreement_combined_pdf(agreement_id)
-        expect(result).to be_a String
-        expect(result).to_not be_nil
+        Dir::Tmpname.create('agreement_combined_pdf') do |tmp_filename|
+          result = client.agreement_combined_pdf(agreement_id, tmp_filename)
+          expect(result).to be_a String
+          expect(result).to_not be_nil
+          expect(File.size(tmp_filename)).to eq(result.bytesize)
+        end
       end
     end
   end

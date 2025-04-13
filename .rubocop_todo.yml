@@ -47,7 +47,9 @@ Lint/RescueException:
 # Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
 # AllowedMethods: refine
 Metrics/BlockLength:
-  Max: 128
+  Max: 100
+  Exclude:
+    - 'spec/lib/agreement/client_spec.rb'
 
 # Offense count: 2
 # Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.

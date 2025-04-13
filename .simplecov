@@ -1,2 +1,2 @@
-SimpleCov.minimum_coverage_by_file 50
-SimpleCov.minimum_coverage 84
+SimpleCov.minimum_coverage_by_file 57
+SimpleCov.minimum_coverage 89

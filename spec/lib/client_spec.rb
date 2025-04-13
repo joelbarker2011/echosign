@@ -4,6 +4,17 @@ require 'lib/shared_client'
 describe Echosign::Client do
   include_context "shared client"
 
+  #   describe '.get_base_uris' do
+  #     it 'returns base URI data' do
+  #       VCR.use_cassette('get_base_uris', record: :once) do
+  #         response = client.get_base_uris
+  #         expect(response).to be_a Hash
+  #         expect(response).to have_key(:apiAccessPoint)
+  #         expect(response).to have_key(:webAccessPoint)
+  #       end
+  #     end
+  #   end
+
   describe '.create_user' do
     let(:user_params) do
       {
