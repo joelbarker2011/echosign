@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry", "~> 0.10"
   spec.add_development_dependency "rake", "~> 12"
   spec.add_development_dependency "rspec", "~> 3"
+  spec.add_development_dependency "rspec_junit_formatter", "~> 0.6"
   spec.add_development_dependency "rubocop", "~> 1.75"
   spec.add_development_dependency "simplecov", "~> 0.16"
   spec.add_development_dependency "vcr", "~> 6"

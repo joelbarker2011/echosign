@@ -1,5 +1,1 @@
-*swp
-.yardoc
-.yardoc/*
-.DS_Store
-coverage/
+test-results/rspec
